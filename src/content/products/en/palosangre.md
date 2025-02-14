@@ -61,6 +61,6 @@ specificationsRight:
   - title: "Ebanistería y carpintería de precisión"
     subTitle: "Material excelente para trabajos de lujo y personalizados."
 blueprints:
-  first: "@/images/palosangre/Palosangre_centrada.jpg"
-  second: "@/images/palosangre/Palosangre_lateral.jpg"
+  first: "@/images/palosangre/Palosangre_Centrada.jpg"
+  second: "@/images/palosangre/Palosangre_Lateral.jpg"
 ---
