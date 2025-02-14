@@ -23,7 +23,7 @@ longDescription:
    subTitle: |
     
    btnTitle: "📲 ¿Quieres saber más sobre esta Madera? Habla con un Asesor"
-   btnURL: "https://wa.me/51987654321?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20la%20madera%20de%20Cumala%20disponible%20en%20Cheaper%20Buy."
+   btnURL: "https://wa.me/51975733744?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20la%20madera%20de%20Cumala%20disponible%20en%20Cheaper%20Buy."
 descriptionList:
   - title: " Madera liviana"
     subTitle: "Fácil de manejar y transportar."

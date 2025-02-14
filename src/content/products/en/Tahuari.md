@@ -24,7 +24,7 @@ longDescription:
   subTitle: |
     
   btnTitle: "¿Quieres saber más de esta Madera? Comunícate con nuestro Asesor"
-  btnURL: "https://wa.me/51987654321?text=Hola,%20quiero%20más%20información%20sobre%20la%20madera%20Tahuari."
+  btnURL: "https://wa.me/51975733744?text=Hola,%20quiero%20más%20información%20sobre%20la%20madera%20Tahuari."
 descriptionList:
   - title: "Alta dureza y densidad"
     subTitle: "Una de las maderas más resistentes, ideal para usos estructurales."
