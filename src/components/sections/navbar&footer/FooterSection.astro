@@ -80,15 +80,11 @@ const sectionThreeContent =
         <FooterSocialLink url={strings.socialLinks.facebook}>
           <Icon name="facebookFooter" />
         </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.instagram}>
-          <Icon name="instagramFooter" />
-        </FooterSocialLink>
       </div>
     </div>
 
     <script>
-      document.getElementById("current-year").innerText = new Date().getFullYear();
-    </script>
+    document.getElementById("current-year").innerText = new Date().getFullYear().toString();
+</script>
   </div>
 </footer>

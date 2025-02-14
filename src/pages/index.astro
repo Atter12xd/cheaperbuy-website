@@ -14,10 +14,12 @@ import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import arquitectoImagen from "@images/arquitecto-imagen.jpeg";
+
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import arquitectoImagen from "../images/arquitecto-imagen.jpeg";
+
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -33,7 +35,6 @@ const avatarSrcs: Array<string> = [
     btnTitle="Saber mas de Nosotros"
     url="/blog"
   />
-  
   <HeroSection
     title={`Pisos de Madera Premium al Mejor Precio
 Calidad, resistencia y elegancia natural. Descubre la belleza de nuestros pisos de madera 100% peruana, diseñados para durar y transformar cualquier espacio con un acabado impecable y fácil instalación.
@@ -43,10 +44,8 @@ Calidad, resistencia y elegancia natural. Descubre la belleza de nuestros pisos 
     subTitle="Venta de pisos, parquet, machimbrado, marcos de puertas y más."
     primaryBtn="Explorar nuestras Maderas"
     primaryBtnURL="/products"
-    primaryBtnClasses="inline-flex items-center justify-center rounded-lg bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 transition duration-300 shadow-lg transform hover:scale-105"
     secondaryBtn="Contáctanos"
     secondaryBtnURL="/contact"
-    secondaryBtnClasses="inline-flex items-center justify-center rounded-lg border border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-medium px-6 py-3 transition duration-300"
     withReview={true}
     avatars={avatarSrcs}
     rating={`<span class="font-bold">4.8</span> / 5`}

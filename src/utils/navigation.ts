@@ -14,14 +14,12 @@ const footerLinks = [
     links: [
       { name: "Sobre Nosotros", url: "/services" },
       { name: "Blog", url: "/blog" },
-     
     ],
   },
   {
     section: "Atención al Cliente",
     links: [
       { name: "Soporte", url: "/contact" },
-     
     ],
   },
 ];
@@ -29,7 +27,6 @@ const footerLinks = [
 // Redes sociales
 const socialLinks = {
   facebook: "https://www.facebook.com/cheaperbuy", // Reemplaza con el link real
-  instagram: "https://www.instagram.com/cheaperbuy", // Agregué Instagram
   whatsapp: "https://wa.me/tu-numero", // Link directo a WhatsApp
   linkedin: "https://www.linkedin.com/company/cheaperbuy", // Agregado si tienes LinkedIn
 };
