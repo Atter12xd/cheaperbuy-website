@@ -4,8 +4,10 @@ import palosangreCentrada from "@images/palosangre/Palosangre_centrada.jpg";
 import palosangreLateral from "@images/palosangre/Palosangre_lateral.jpg";
 
 // Importar datos del Markdown correctamente
-const madera = await import("../../content/products/en/palosangre.md");
-const { title, description } = madera.frontmatter;
+const madera = await import("../../content/products/en/palosangre.md").then(m => m.frontmatter);
+
+// Extraer valores de madera
+const { title, description } = madera;
 ---
 
 <section>
