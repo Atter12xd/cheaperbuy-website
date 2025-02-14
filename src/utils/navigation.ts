@@ -1,38 +1,37 @@
-// An array of links for navigation bar
+// Enlaces de la barra de navegación
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
+  { name: "Inicio", url: "/" },
+  { name: "Productos", url: "/products" },
+  { name: "Servicios", url: "/services" },
   { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  { name: "Contáctanos", url: "/contact" },
 ];
-// An array of links for footer
+
+// Enlaces del footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Nuestra Empresa",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Sobre Nosotros", url: "/services" },
+      { name: "Blog", url: "/blog" },
+     
     ],
   },
   {
-    section: "Company",
+    section: "Atención al Cliente",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Soporte", url: "/contact" },
+     
     ],
   },
 ];
-// An object of links for social icons
+
+// Redes sociales
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  facebook: "https://www.facebook.com/cheaperbuy", // Reemplaza con el link real
+  instagram: "https://www.instagram.com/cheaperbuy", // Agregué Instagram
+  whatsapp: "https://wa.me/tu-numero", // Link directo a WhatsApp
+  linkedin: "https://www.linkedin.com/company/cheaperbuy", // Agregado si tienes LinkedIn
 };
 
 export default {

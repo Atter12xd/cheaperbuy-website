@@ -1,5 +1,4 @@
 ---
-// Import the necessary dependencies.
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
@@ -8,111 +7,100 @@ import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
-// Define the variables that will be used in this component
-const title: string = "Contact us";
-const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+// Definir las variables que se utilizarán en este componente
+const title = "Contáctanos";
+const subTitle =
+  "¿Tienes dudas o necesitas cotizar un pedido? Escríbenos y nuestro equipo te asesorará en todo lo que necesites sobre nuestros productos de madera.";
+const formTitle = "Completa el formulario";
+const formSubTitle = "Te responderemos en un plazo de 24 a 48 horas.";
 ---
 
-<!-- Contact Us -->
+<!-- Sección de contacto -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
-      <h1
-        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-      >
-        {title}
-      </h1>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {subTitle}
-      </p>
+      <h1 class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">{title}</h1>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">{subTitle}</p>
     </div>
 
     <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
-      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
-        <h2
-          class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
-        >
-          {formTitle}
-        </h2>
-        <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
+      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8 bg-white dark:bg-neutral-800 shadow-lg">
+        <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">{formTitle}</h2>
+
+        <!-- Formulario de contacto -->
+        <form id="contact-form" onsubmit="sendToWhatsApp(event)">
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <TextInput
-                id="hs-firstname-contacts"
-                label="First Name"
-                name="hs-firstname-contacts"
-              />
-              <TextInput
-                id="hs-lastname-contacts"
-                label="Last Name"
-                name="hs-firstname-contacts"
-              />
+              <TextInput id="name" label="Nombre" name="name" />
+              <TextInput id="lastname" label="Apellido" name="lastname" />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
-            <TextAreaInput
-              id="hs-about-contacts"
-              label="Details"
-              name="hs-about-contacts"
-            />
+            <EmailContactInput id="email" name="email" />
+            <PhoneInput id="phone" name="phone" />
+            <TextAreaInput id="details" label="Detalles de tu consulta" name="details" />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <button type="submit" class="rounded-lg bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 transition duration-300 shadow-lg transform hover:scale-105">
+              Enviar Mensaje
+            </button>
           </div>
 
           <div class="mt-3 text-center">
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              {formSubTitle}
-            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">{formSubTitle}</p>
           </div>
         </form>
       </div>
 
-      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
+      <!-- Métodos de contacto alternativos -->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
-        <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
-          isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="question" />
+        <ContactIconBlock heading="Centro de ayuda" content="Explora nuestra base de conocimientos con guías y artículos sobre nuestros productos." isLinkVisible={true} linkTitle="Ver guías y tutoriales" linkURL="#" isArrowVisible={true}>
+          <Icon name="question" />
         </ContactIconBlock>
 
-        <ContactIconBlock
-          heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
-          isLinkVisible={true}
-          linkTitle="Visit FAQ"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="chatBubble" />
+        <ContactIconBlock heading="Preguntas frecuentes" content="Resuelve dudas rápidas en nuestra sección de preguntas frecuentes." isLinkVisible={true} linkTitle="Ver FAQ" linkURL="#" isArrowVisible={true}>
+          <Icon name="chatBubble" />
         </ContactIconBlock>
 
-        <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
-          ><Icon name="mapPin" />
+        <ContactIconBlock heading="Nuestra Material" content="Cheaper Buy - Distribuidora de Madera" isAddressVisible={true} addressContent="Pucallpa, Perú">
+          <Icon name="mapPin" />
         </ContactIconBlock>
 
-        <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
-          isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
-          linkURL="#"
-          ><Icon name="envelopeOpen" />
+        <ContactIconBlock heading="Escríbenos por WhatsApp" content="¿Prefieres un contacto más directo? Chatea con nuestro equipo en WhatsApp." isLinkVisible={true} linkTitle="Iniciar chat" linkURL="https://wa.me/51987654321">
+          <Icon name="whatsapp" />
+        </ContactIconBlock>
+
+        <ContactIconBlock heading="Correo electrónico" content="Envíanos un correo y te responderemos a la brevedad posible." isLinkVisible={true} linkTitle="contacto@cheaperbuy.com" linkURL="mailto:contacto@cheaperbuy.com">
+          <Icon name="envelopeOpen" />
         </ContactIconBlock>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    // Capturar los valores del formulario usando FormData
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const name = formData.get("name") || "Usuario";
+    const lastname = formData.get("lastname") || "";
+    const email = formData.get("email") || "No proporcionado";
+    const phone = formData.get("phone") || "No proporcionado";
+    const details = formData.get("details") || "Sin detalles";
+
+    // Definir el número de WhatsApp del asesor
+    const whatsappNumber = "51987654321";
+
+    // Construir el mensaje para WhatsApp
+    const message = `Hola, me llamo *${name} ${lastname}* y quisiera más información sobre los productos de madera de Cheaper Buy.%0A📧 Correo: ${email}%0A📞 Teléfono: ${phone}%0A📝 Detalles: ${details}`;
+
+    // Crear el enlace de WhatsApp
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Redirigir al usuario a WhatsApp
+    window.open(whatsappURL, "_blank");
+  }
+</script>

@@ -5,7 +5,7 @@ import GithubBtn from "@components/ui/buttons/GithubBtn.astro";
 // Define props from Astro
 const { title, subTitle, url } = Astro.props;
 
-const btnTitle = Astro.currentLocale === "fr" ? "Continuer avec Github" : "Continue with Github";
+const btnTitle = Astro.currentLocale === "fr" ? "Continuer avec Github" : "";
 
 // Define TypeScript interface for props
 interface Props {
@@ -27,7 +27,7 @@ interface Props {
       height="64"
       fill="none"
       stroke-width="1.5"
-      color="#ea580c"
+      color="#6c8f74" 
       viewBox="0 0 24 24"
     >
       <path

@@ -23,18 +23,22 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "Nuestros Productos de Madera";
 const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "En Cheaper Buy, ofrecemos una selección de maderas premium, cuidadosamente elegidas por su calidad, resistencia y belleza natural. Nuestra variedad de maderas es perfecta para pisos, revestimientos, muebles y estructuras, garantizando una combinación ideal de durabilidad y diseño elegante."
+
+  "Cada tipo de madera que ofrecemos ha sido seleccionada para brindar alto rendimiento y un acabado excepcional, adaptándose a diferentes necesidades y estilos arquitectónicos."
+
+"🔹 Explora nuestra colección y descubre la madera ideal para tu proyecto. 🌳✨";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   // First testimonial data
   {
     content:
-      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
-    author: "Jason Clark",
-    role: "Site Foreman | TopBuild",
+      " \"Desde que trabajo con Cheaper Buy, la calidad de mis proyectos ha mejorado significativamente. Sus productos de madera son resistentes, elegantes y fáciles de instalar. ¡Totalmente recomendados!\" ",
+    author: "Carlos Mendoza",
+    role: "Arquitecto  | Mendoza & Asociados",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -42,9 +46,9 @@ const testimonials = [
   // Second testimonial data
   {
     content:
-      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
-    author: "Maria Gonzalez",
-    role: "Interior Designer | Creative Spaces",
+      " \"Como diseñadora, siempre busco materiales de alta calidad que aporten estilo y durabilidad. La madera de Cheaper Buy ha sido clave en mis proyectos, brindando acabados impecables y una amplia variedad de opciones.\" ",
+    author: "María González",
+    role: "Diseñadora de Interiores | Espacios Creativoss",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -52,9 +56,9 @@ const testimonials = [
   // Third testimonial data
   {
     content:
-      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
+      " \"Llevo más de 15 años en carpintería, y puedo decir con seguridad que los productos de Cheaper Buy son de los mejores que he utilizado. La madera es fuerte, bien tratada y se adapta perfectamente a cualquier diseño. Además, el servicio al cliente es excepcional.\" ",
     author: "Richard Kim",
-    role: "Master Carpenter | WoodWright",
+    role: " Carpintero Profesional | WoodWright",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -100,7 +104,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
           )
         }
       </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+      <PrimaryCTA title="Historias de Clientes " url="#testimonials" noArrow={true} />
     </div>
     <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
     <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
@@ -119,17 +123,17 @@ const pageTitle: string = `Products | ${SITE.title}`;
   </div>
   <!--Features statistics section-->
   <FeaturesStatsAlt
-    title="Why Choose ScrewFast?"
-    subTitle="Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
+    title="¿Por qué elegir Cheaper Buy?"
+    subTitle="Convierte tus ideas en realidad con los productos de Cheaper Buy. Ya sea que estés renovando tu hogar o trabajando en un gran proyecto, nuestra madera de alta calidad está diseñada para ofrecerte resistencia, elegancia y durabilidad con total confianza."
     benefits={[
-      "Robust and reliable tools for long-lasting performance.",
-      "Innovative solutions tailored to modern construction needs.",
-      "Customer support dedicated to your project's success.",
+      "Maderas resistentes y de larga duración.",
+      "Soluciones innovadoras adaptadas a cualquier proyecto.",
+      "Atención personalizada para garantizar tu satisfacción.",
     ]}
   />
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="What Our Customers Say"
+    title="Lo que dicen nuestros clientes"
     testimonials={testimonials}
   />
 </MainLayout>

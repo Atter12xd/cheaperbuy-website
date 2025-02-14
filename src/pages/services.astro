@@ -34,62 +34,56 @@ interface Article {
 }
 
 const articles: Article[] = [
-  {
-    isRightSection: true,
-    title: "Delivering Expert Guidance",
-    subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
-    single: false,
-    imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
-    imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
-  },
-  {
-    isRightSection: false,
-    title: "Transforming Designs into Reality",
-    subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
-    img: beforeAfter,
-    imgAlt: "Construction site before and after",
-    btnExists: true,
-    btnTitle: "Learn More",
-    btnURL: "#",
-  },
-  {
-    isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
-    subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
-    single: false,
-    imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
-    imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
-  },
-  {
-    isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
-    subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
-    img: usingTools,
-    imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
-  },
-  {
-    isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
-    subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
-    single: false,
-    imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
-    imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
-    btnExists: true,
-    btnTitle: "Read more",
-    btnURL: "#",
-  },
+{
+  "isRightSection": true,
+  "title": "Asesoría Especializada para tu Proyecto",
+  "subTitle": "Iniciar un proyecto de construcción o remodelación puede ser un desafío. En Cheaper Buy, te brindamos asesoría experta en cada etapa, asegurando que tomes decisiones informadas y acertadas. Nuestro equipo te ayudará a seleccionar la mejor madera para tu obra, considerando calidad, durabilidad y presupuesto.",
+  "single": false,
+  "imgOne": blueprints,
+  "imgOneAlt": "Planos de construcción y tablet con diseños estructurales.",
+  "imgTwo": personWorking,
+  "imgTwoAlt": "Persona trabajando en la planificación de un proyecto de construcción."
+},
+{
+  "isRightSection": false,
+  "title": "Transformamos Diseños en Realidad",
+  "subTitle": "En Cheaper Buy, llevamos la calidad y la precisión a cada proyecto. Desde la instalación de pisos de madera hasta la fabricación de estructuras duraderas, ofrecemos soluciones confiables que convierten tus ideas en espacios elegantes y funcionales. Trabajamos con materiales de primera y un equipo de expertos que garantiza acabados impecables.",
+  "img": beforeAfter,
+  "imgAlt": "Espacio antes y después de la instalación de madera.",
+  "btnExists": false,
+  "btnTitle": "Descubre Más",
+  "btnURL": "#"
+},
+{
+  "isRightSection": true,
+  "title": "Gestión Profesional para Proyectos Exitosos",
+  "subTitle": "Una planificación eficiente es clave para cualquier proyecto de construcción. En Cheaper Buy, ofrecemos una gestión integral que garantiza que tu obra avance según el plan y dentro del presupuesto. Nos encargamos de la coordinación del flujo de trabajo, asignación de recursos y comunicación con los involucrados, permitiéndote enfocarte en tu visión.",
+  "single": false,
+  "imgOne": constructionWorkers,
+  "imgOneAlt": "Supervisión de un proyecto de construcción con madera",
+  "imgTwo": aerialView,
+  "imgTwoAlt": "Vista aérea de un proyecto gestionado con éxito"
+},
+{
+  "isRightSection": false,
+  "title": "Garantizando Durabilidad y Rendimiento",
+  "subTitle": "Nuestro compromiso con tu proyecto no termina con la entrega. En Cheaper Buy, ofrecemos servicios de mantenimiento y soporte continuo para garantizar la durabilidad y el óptimo rendimiento de tu construcción en madera. Desde inspecciones periódicas hasta asistencia en emergencias, nuestro equipo está listo para brindarte un servicio confiable y eficiente.",
+  "img": usingTools,
+  "imgAlt": "Técnico realizando mantenimiento con herramientas especializadas"
+},
+{
+  "isRightSection": true,
+  "title": "Estrategias Personalizadas para Grandes Proyectos",
+  "subTitle": "Para nuestros clientes empresariales, en Cheaper Buy ofrecemos soluciones personalizadas diseñadas para afrontar desafíos específicos de la industria maderera. Analizamos tus necesidades únicas para desarrollar estrategias que optimicen tus operaciones, mejoren la eficiencia y potencien el crecimiento de tu negocio.",
+  "single": false,
+  "imgOne": progressBuilding,
+  "imgOneAlt": "Estructura de un edificio en proceso de construcción",
+  "imgTwo": underConstruction,
+  "imgTwoAlt": "Edificio en construcción con materiales de madera",
+  "btnExists": false,
+  "btnTitle": "Leer más",
+  "btnURL": "#"
+},
 ];
 
 const pageTitle: string = `Services | ${SITE.title}`;
@@ -115,11 +109,11 @@ const pageTitle: string = `Services | ${SITE.title}`;
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="Unimos Nuestra Experiencia con Tu Visión"
+    subTitle="En Cheaper Buy, nos enorgullecemos de ofrecer soluciones integrales y un servicio excepcional en la industria de la madera y la carpintería. Nuestro equipo de expertos está comprometido con el éxito de tu proyecto, desde la planificación hasta la entrega, brindando productos de alta calidad y atención personalizada."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
-    btnURL="#"
+    btnTitle="Solicita una Consulta"
+    btnURL="/contact"
   />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
@@ -159,23 +153,23 @@ const pageTitle: string = `Services | ${SITE.title}`;
   }
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
-    title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
-    mainStatTitle="96%"
-    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+    title="Por los Números"
+    subTitle="Nuestro compromiso con la calidad y confiabilidad se refleja en cada entrega. En Cheaper Buy, garantizamos productos de madera de alto estándar, asegurando durabilidad y satisfacción en cada proyecto."
+    mainStatTitle="98%"
+    mainStatSubTitle="de nuestros clientes califican su experiencia con Cheaper Buy como excelente"
     stats={[
       {
-        stat: "99.8%",
-        description: "project completion rate",
+        stat: "99.9%",
+        description: "clientes satisfechos con la calidad de nuestros productos",
       },
       {
-        stat: "5,000+",
-        description: "successful installations",
+        stat: "25,000+",
+        description: "ventas exitosas de pisos y productos de madera",
       },
       {
-        stat: "85%",
-        description: "client growth year-over-year",
+        stat: "90%",
+        description: "clientes regresan para futuras compras",
       },
     ]}
-  />
+/>
 </MainLayout>

@@ -22,11 +22,16 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
   <!-- Grid -->
   <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-16">
     <div class="lg:col-span-7">
-      <Image class="rounded-xl" src={product5} alt="Mockup of floating boxes" />
+      <Image 
+      class="rounded-xl max-w-full mx-auto" 
+      src={product5} 
+      alt="Mockup of floating boxes" 
+      style="width: 300px; max-width: 100%; height: auto;"
+    />
     </div>
     <div class="mt-5 sm:mt-10 lg:col-span-5 lg:mt-0">
       <div class="space-y-6 sm:space-y-8">
-        <div class="space-y-2 md:space-y-4">
+        <div class="space-y-2 md:space-y-4">  
           <h2
             class="text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
           >

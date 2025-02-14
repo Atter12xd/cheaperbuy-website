@@ -1,54 +1,65 @@
 ---
-title: "SF-AB A765"
-description: "Assorted Screw Set" 
+title: "Madera de Ana Caspi"
+description: "Madera de Ana Caspi"
 main:
   id: 2
   content: |
-    Introducing the SF-AB A765 Assorted Screw Set – the ultimate solution for your screw fastening needs. This comprehensive set includes a wide variety of screws meticulously curated to tackle various projects with ease and precision.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
-  imgAlt: "Mockup boxes of assorted screw set"
+    La madera de Ana Caspi es una opción altamente resistente y duradera, utilizada en la carpintería y construcción debido a su alta densidad y gran estabilidad. Su coloración varía entre tonos marrón oscuro y rojizo, con una textura fina y uniforme. Es conocida por su gran resistencia a la humedad y a los ataques de insectos, lo que la hace ideal para aplicaciones tanto en interiores como en exteriores.
+  imgCard: "@/images/ana_caspi/Ana_Caspi_ateral.avif"
+  imgMain: "@/images/ana_caspi/Ana_Caspi.avif"
+  imgAlt: "Boîtes factices de l'ensemble de vis assorties"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
-    title: "Description"
+    title: "Características"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Specifications"
+    title: "Aplicaciones"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
+    title: "Más fotos"
 longDescription:
-  title: "Versatile Screw Fastening Solutions"
+  title: "Características"
   subTitle: |
-    The SF-AB A765 Assorted Screw Set offers unmatched versatility and convenience, making it the perfect choice for DIY enthusiasts and professionals alike. With a comprehensive selection of screws, you'll always have the right fastener for the job.
-  btnTitle: "Contact sales to learn more"
-  btnURL: "#"
+    
+  btnTitle: "📲 ¿Quieres saber más sobre esta Madera? Habla con un Asesor"
+  btnURL: "https://wa.me/51987654321?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20la%20madera%20de%20Ana_Caspi%20disponible%20en%20Cheaper%20Buy."
 descriptionList:
-  - title: "Wide Variety"
-    subTitle: "Includes a diverse range of screw types and sizes to accommodate various applications and materials."
-  - title: "Ease of Use"
-    subTitle: "Each screw is designed for effortless installation, ensuring hassle-free fastening every time."
-  - title: "Convenience"
-    subTitle: "Eliminates the need for multiple trips to the hardware store, saving time and effort on your projects."
+  - title: "Dureza excepcional"
+    subTitle: "Altamente resistente al desgaste y al impacto.."
+  - title: "Gran estabilidad dimensional"
+    subTitle: "No se deforma fácilmente con cambios climáticos."
+  - title: "Resistente a la humedad"
+    subTitle: "Ideal para zonas húmedas o expuestas a la intemperie."
+  - title: "Color atractivo"
+    subTitle: " Tonos marrón oscuro con vetas rojizas elegantes."
+  - title: " Fácil acabado"
+    subTitle: " Acepta barnices y aceites, logrando una apariencia sofisticada."
+  - title: "Soporta grandes cargas"
+    subTitle: " Perfecta para estructuras y vigas de alto peso."
+  - title: "Larga vida útil"
+    subTitle: " Excelente resistencia a plagas y hongos."
+  - title: "Sostenibilidad"
+    subTitle: "Puede provenir de fuentes certificadas y de manejo responsable."
 specificationsLeft:
-  - title: "Material"
-    subTitle: "Constructed from high-quality materials such as stainless steel, ensuring durability and corrosion resistance."
-  - title: "Assortment"
-    subTitle: "Contains a generous assortment of screws, including wood screws, machine screws, and sheet metal screws."
-  - title: "Quantity"
-    subTitle: "Each set includes a sufficient quantity of screws to handle a wide range of projects and tasks."
-  - title: "Sizes"
-    subTitle: "Available in various sizes to suit different project requirements, ensuring compatibility and versatility."
-tableData:
-  - feature: ["Specification", "Value"]
-    description:
-      - ["Length (mm)", "Various"]
-      - ["Weight (g)", "N/A"]
-      - ["Material", "Stainless Steel"]
-      - ["Finish", "Assorted"]
-      - ["Package Contents", "Various screws in a set"]
+  - title: "Pisos de alto tránsito"
+    subTitle: "Su dureza la hace ideal para suelos en viviendas y oficinas."
+  - title: "Muebles rústicos y de lujo"
+    subTitle: "Utilizada en mesas, sillas, escritorios y muebles macizos."
+  - title: "Puertas y ventanas"
+    subTitle: "Su resistencia a la humedad la hace ideal para marcos y estructuras exteriores."
+  - title: "vigas y columnas estrucutrales"
+    subTitle: "Se usa en techos y soportes debido a su gran capacidad de carga."
+specificationsRight:
+  - title: "Construcción de embarcaciones"
+    subTitle: "Resistente al agua, es ideal para botes y estructuras navales."
+  - title: "Pasamanos y escaleras"
+    subTitle: "Aporta resistencia y un acabado elegante a interiores y exteriores."
+  - title: "Postes y cercas"
+    subTitle: "Gran durabilidad para exteriores en zonas rurales y urbanas."
+  - title: "Instrumentos musicales"
+    subTitle: "Su densidad y acústica la hacen excelente para fabricar guitarras y tambores."
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "@/images/ana_caspi/Ana_Caspi_centrada.avif"
+  second: "@/images/ana_caspi/Ana_Caspi_ateral.avif"
 ---

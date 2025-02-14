@@ -1,29 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Resolvemos todas tus dudas sobre nuestros productos y servicios.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "¿Qué tipos de madera ofrecen?",
+      "answer": "En Cheaper Buy ofrecemos una amplia variedad de maderas, incluyendo parquet, machimbrado, vigas, marcos de puertas y más. Todas nuestras maderas son de alta calidad y con origen 100% peruano."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "¿Realizan envíos internacionales?",
+      "answer": "Sí, exportamos nuestras maderas a EE.UU., Canadá y México. Si deseas realizar un pedido fuera de estos países, contáctanos y evaluaremos la mejor opción para tu envío."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "¿Cómo puedo solicitar una cotización?",
+      "answer": "Puedes solicitar una cotización directamente a través de nuestro WhatsApp o llenando nuestro formulario de contacto en la web. Te responderemos en el menor tiempo posible."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "¿Ofrecen descuentos por compras al por mayor?",
+      "answer": "Sí, tenemos precios especiales para compras en grandes volúmenes. Cuéntanos tu necesidad y te brindaremos un presupuesto personalizado con los mejores descuentos."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "¿Cuánto tiempo demora la entrega?",
+      "answer": "El tiempo de entrega varía según la ubicación y el volumen del pedido. Para envíos dentro de Perú, el tiempo estimado es de 3 a 7 días hábiles. Para exportaciones, depende del destino y la logística aduanera."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "¿Qué métodos de pago aceptan?",
+      "answer": "Aceptamos pagos mediante transferencias bancarias, depósitos y pago por WhatsApp. Si tienes un método de pago específico en mente, contáctanos para evaluar opciones."
     }
   ]
 }
