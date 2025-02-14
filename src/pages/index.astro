@@ -19,7 +19,7 @@ import pricing from "@data/pricing.json";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
-import arquitectoImagen from "@images/arquitecto-imagen.jpeg?url";
+import arquitectoImagen from "@images/arquitecto-imagen.jpeg";
 
 
 
@@ -111,13 +111,15 @@ features={features}
 
 <TestimonialsSection
   title="La Mejor Calidad en Maderas"
-  subTitle="En Cheaper Buy, nos aseguramos de ofrecer productos de alta calidad con una experiencia de compra rápida y confiable."
+  subTitle="En Cheaper Buy, nos aseguramos de ofrecer productos de alta calidad y con una experiencia de compra rápida y confiable."
   testimonials={[
     {
       content: "Cheaper Buy revolucionó nuestra forma de comprar madera. Recibimos productos de excelente calidad y con tiempos de entrega rápidos. ¡Definitivamente recomendado!",
       author: "Carlos Mendoza",
       role: "Arquitecto | Mendoza & Asociados",
-      avatarSrc: arquitectoImagen
+      avatarSrc: arquitectoImagen, // Ya importado arriba
+      width: 200, // Agregar ancho
+      height: 200 // Agregar alto
     }
   ]}
   statistics={[
