@@ -61,6 +61,6 @@ specificationsRight:
   - title: "Uso en exteriores"
     subTitle: "Perfecta para pérgolas, decks y estructuras al aire libre."
 blueprints:
-  first: "@/images/shihuahuaco/Shihuahuaco_centrada.jpg"
-  second: "@/images/shihuahuaco/Shihuahuaco_lateral.jpg"
+  first: "@/images/shihuahuaco/Shihuahuaco_Centrada.jpg"
+  second: "@/images/shihuahuaco/Shihuahuaco_Lateral.jpg"
 ---
