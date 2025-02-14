@@ -84,7 +84,10 @@ const sectionThreeContent =
     </div>
 
     <script>
-    document.getElementById("current-year").innerText = new Date().getFullYear().toString();
+    const yearElement = document.getElementById("current-year");
+if (yearElement) {
+  yearElement.innerText = new Date().getFullYear().toString();
+}
 </script>
   </div>
 </footer>

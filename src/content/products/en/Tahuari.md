@@ -1,6 +1,6 @@
 ---
 title: "Madera de Tahuari"
-description: "Madera de Tahuari - Alta resistencia y durabilidad para construcción y mobiliario"
+description: "Madera de Tahuari "
 main:
   id: 10
   content: |

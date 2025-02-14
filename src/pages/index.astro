@@ -7,18 +7,20 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import features from "@data/features.json";
+
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
-import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-
+ // ← ¡IMPORTANTE! Agrega esta línea
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
-import arquitectoImagen from "../images/arquitecto-imagen.jpeg";
+import arquitectoImagen from "@images/arquitecto-imagen.jpeg?url";
+
 
 
 const avatarSrcs: Array<string> = [
@@ -62,13 +64,17 @@ subTitle="Exportamos madera desde Pucallpa a EE.UU., Canadá y México. Descubre
 showMap={true}
 />
 
-  <FeaturesGeneral
-    title="Satisfaciendo las Demandas de la Industria"
-    subTitle="En Cheaper Buy, abordamos los desafíos únicos en los sectores de ferretería y construcción. Desde herramientas innovadoras hasta servicios especializados, estamos comprometidos a ayudarte a superar obstáculos y alcanzar tus objetivos."
+<FeaturesGeneral
+title="Satisfaciendo las Demandas de la Industria"
+subTitle="En Cheaper Buy, abordamos los desafíos únicos en los sectores de ferretería y construcción. Desde herramientas innovadoras hasta servicios especializados, estamos comprometidos a ayudarte a superar obstáculos y alcanzar tus objetivos."
+
+
+features={features}
+/>
     
     
-    features={features}
-  />
+    
+ 
 
   <FeaturesNavs
   title=`Personaliza la experiencia de <span class="text-yellow-500 dark:text-yellow-400">Cheaper Buy</span> para satisfacer tus necesidades en madera y construcción.`
@@ -111,7 +117,7 @@ showMap={true}
         "Cheaper Buy revolucionó nuestra forma de comprar madera. Recibimos productos de excelente calidad y con tiempos de entrega rápidos. ¡Definitivamente recomendado!",
       author: "Carlos Mendoza",
       role: "Arquitecto | Mendoza & Asociados",
-      avatarSrc: arquitectoImagen, // Usar la imagen importada
+avatarSrc: arquitectoImagen, 
     },
   ]}
   statistics={[

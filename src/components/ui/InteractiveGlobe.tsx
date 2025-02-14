@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import gsap from "gsap";
 
 const InteractiveGlobe = () => {
@@ -40,7 +40,7 @@ const InteractiveGlobe = () => {
         });
 
         // Ajustar el tamaño del globo según el tamaño de la pantalla
-        const globeSize = window.innerWidth < 768 ? 2.5 : 3.8; // Reducido el tamaño
+        const globeSize = window.innerWidth < 768 ? 3.9 : 3.8; // Reducido el tamaño
 
         const geometry = new THREE.SphereGeometry(globeSize, 64, 64);
         const globeMesh = new THREE.Mesh(geometry, material);
