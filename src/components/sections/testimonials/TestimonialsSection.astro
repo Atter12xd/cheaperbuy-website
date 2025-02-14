@@ -2,79 +2,72 @@
 import TestimonialItem from "./TestimonialItem.astro";
 import StatsGrid from "../../ui/blocks/StatsGrid.astro";
 
-const {
-  title,
-  subTitle,
-  testimonials,
-  statistics
-} = Astro.props;
-
-interface Props {
-  title: string;
-  subTitle?: string;
-  testimonials?: Testimonial[];
-  statistics?: StatProps[];
-}
-
-// TypeScript type for testimonials
-type Testimonial = {
+// Define los tipos de datos para TypeScript
+interface Testimonial {
   content: string;
   author: string;
   role: string;
   avatarSrc: string;
-};
+}
 
-// TypeScript type for stats.
-type StatProps = {
+interface StatProps {
   count: string;
   description: string;
-};
+}
+
+// Extraer los props y definir tipos por defecto
+const {
+  title,
+  subTitle,
+  testimonials = [] as Testimonial[], // Definir como array de `Testimonial`
+  statistics = [] as StatProps[] // Definir como array de `StatProps`
+} = Astro.props;
 ---
 
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <!-- Container for the testimonials -->
-  <div
-    class="lg:grid lg:grid-cols-12 lg:items-center lg:justify-between lg:gap-16"
-  >
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+  <!-- Contenedor principal -->
+  <div class="lg:grid lg:grid-cols-12 lg:items-center lg:justify-between lg:gap-16">
     <div class="lg:col-span-5 lg:col-start-1">
-      <!-- Title and Subtitle -->
+      <!-- Título y Subtítulo -->
       <div class="mb-8">
-        <h2
-          class="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
-        >
+        <h2 class="mb-2 text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl">
           {title}
         </h2>
-        {subTitle &&
-        <p class="text-neutral-600 dark:text-neutral-400">
-          {subTitle}
-        </p>
-      }
+        {subTitle && (
+          <p class="text-neutral-600 dark:text-neutral-400">{subTitle}</p>
+        )}
       </div>
 
-      <!-- Generate a blockquote for each testimonial in the testimonials array by mapping over the array. -->
-      { testimonials &&
-        testimonials.map((testimonial) => (
-        <TestimonialItem content={testimonial.content} author={testimonial.author} role={testimonial.role} avatarSrc={testimonial.avatarSrc} />
+      <!-- Lista de testimonios -->
+      {testimonials.length > 0 ? (
+        testimonials.map((testimonial: Testimonial) => (
+          <TestimonialItem 
+            content={testimonial.content} 
+            author={testimonial.author} 
+            role={testimonial.role} 
+            avatarSrc={testimonial.avatarSrc} 
+          />
         ))
-      }
+      ) : (
+        <p class="text-neutral-600 dark:text-neutral-400">No hay testimonios disponibles.</p>
+      )}
     </div>
-{ statistics &&
-    <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
-      <div class="space-y-6 sm:space-y-8">
-        <ul
-          class="grid grid-cols-2 divide-x-2 divide-y-2 divide-neutral-300 overflow-hidden dark:divide-neutral-700"
-        >
-          <!-- Generate a list item for each stat in the statistics array by mapping over the array. -->
-          {
-            statistics.map((stat, index) => (
-            <StatsGrid count={stat.count} description={stat.description} index={index}/>
-            ))
-          }
-        </ul>
+
+    <!-- Estadísticas -->
+    {statistics.length > 0 && (
+      <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <ul class="grid grid-cols-2 divide-x-2 divide-y-2 divide-neutral-300 overflow-hidden dark:divide-neutral-700">
+            {statistics.map((stat: StatProps, index: number) => (
+              <StatsGrid 
+                count={stat.count} 
+                description={stat.description} 
+                index={index} 
+              />
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  }
+    )}
   </div>
 </section>
