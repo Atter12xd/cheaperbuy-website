@@ -5,34 +5,30 @@ import faviconSvgSrc from "@images/icon.svg";
 import faviconSrc from "@images/icon.png";
 
 // Default properties for the Meta component. These values are used if props are not provided.
-// 'meta' sets a default description meta tag to describe the page content.
-// 'structuredData' defines default structured data in JSON-LD format to enhance search engine understanding of the page (for SEO purposes).
 const defaultProps = {
   meta: SITE.description,
   structuredData: SEO.structuredData,
 };
 
-// Extract props with default values assigned from defaultProps. Values can be overridden when the component is used.
-// For example:
-// <MainLayout title="Custom Title" meta="Custom description." />
+// Extract props with default values assigned from defaultProps.
 const {
   meta = defaultProps.meta,
   structuredData = defaultProps.structuredData,
 } = Astro.props;
 
 // Define the metadata for your website and individual pages
-const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
+const URL = `${Astro.site}`;
 const author = SITE.author;
 const canonical = Astro.url.href;
 const basePath = Astro.url.pathname;
-const ogTitle = OG.title;
-const ogDescription = OG.description;
+const ogTitle = SITE.title; // Modificado para usar SITE.title en lugar de OG.title
+const ogDescription = SITE.description; // Modificado para usar SITE.description en lugar de OG.description
 const socialImageRes = await getImage({
   src: OG.image,
   width: 1200,
   height: 600,
 });
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
+const socialImage = Astro.url.origin + socialImageRes.src;
 
 const languages: { [key: string]: string } = {
   en: "",
@@ -41,9 +37,8 @@ const languages: { [key: string]: string } = {
 
 function createHref(lang: string, prefix: string, path: string): string {
   const hasPrefix = path.startsWith(`/${prefix}/`);
-
   const basePath = hasPrefix ? path : `/${prefix}${path}`;
-  const normalizedBasePath = basePath.replace(/\/\/+/g, "/");
+  const normalizedBasePath = basePath.replace(/\/\/+/, "/");
   return `${URL.slice(0, -1)}${normalizedBasePath}`;
 }
 
@@ -74,8 +69,7 @@ const appleTouchIcon = await getImage({
 });
 ---
 
-<!-- Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
-     https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data -->{
+<!-- Inject structured data into the page if provided. -->{
   structuredData && (
     <script
       type="application/ld+json"
@@ -96,7 +90,7 @@ const appleTouchIcon = await getImage({
 <Fragment set:html={alternateLanguageLinks} />
 
 <!-- Facebook Meta Tags -->
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="es_PE" /> <!-- Modificado a es_PE -->
 <meta property="og:url" content={URL} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={ogTitle} />
@@ -117,7 +111,6 @@ const appleTouchIcon = await getImage({
 
 <!-- Links to the webmanifest and sitemap -->
 <link rel="manifest" href="/manifest.json" />
-<!-- https://docs.astro.build/en/guides/integrations-guide/sitemap/ -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Links for favicons -->

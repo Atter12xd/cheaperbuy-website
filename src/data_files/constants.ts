@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "Cheaper Buy",
+  tagline: "Maderas de Alta Calidad para Construcción y Diseño",
+  description: "Cheaper Buy ofrece maderas premium para pisos, parquet, marcos de puertas y más Encuentra la mejor calidad con envíos rápidos y precios accesibles.",
+  description_short: "Compra maderas de alta calidad en Cheaper Buy.",
+  url: "https://cheaper.online",
+  author: "Cheaper Buy",
 };
 
 export const SEO = {
@@ -30,10 +30,10 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: "en_US",
+  locale: "es_PE",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: `${SITE.title} | Compra Maderas Premium`,
+  description: "En Cheaper Buy encontrarás pisos de madera, parquet y más. Calidad premium, resistencia y precios accesibles.",
   image: ogImageSrc,
 };
