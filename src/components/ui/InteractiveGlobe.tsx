@@ -39,8 +39,8 @@ const InteractiveGlobe = () => {
           metalness: 0.3
         });
 
-        // Ajustar el tamaño del globo según el tamaño de la pantalla
-        const globeSize = window.innerWidth < 768 ? 3.9 : 3.8; // Reducido el tamaño
+        // 🔥 Aumentar el tamaño en 20% en dispositivos móviles
+        const globeSize = window.innerWidth < 768 ? 4.68 : 3.8;
 
         const geometry = new THREE.SphereGeometry(globeSize, 64, 64);
         const globeMesh = new THREE.Mesh(geometry, material);
@@ -68,20 +68,21 @@ const InteractiveGlobe = () => {
 
         gsap.fromTo(globeMesh.scale, { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" });
 
+        // 📌 Ajuste dinámico en tiempo real
         const handleResize = () => {
-  camera.aspect = mountRef.current!.clientWidth / mountRef.current!.clientHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
+          camera.aspect = mountRef.current!.clientWidth / mountRef.current!.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(mountRef.current!.clientWidth, mountRef.current!.clientHeight);
 
-  // Ajustar la cámara y el tamaño del globo en tiempo real
-  if (window.innerWidth < 768) {
-    camera.position.z = 10;
-    globeMesh.scale.set(0.7, 0.7, 0.7); // Reducido en móvil
-  } else {
-    camera.position.z = 8;
-    globeMesh.scale.set(0.9, 0.9, 0.9); // Reducido en escritorio
-  }
-};
+          // 🔥 Escalar un 20% más en móviles
+          if (window.innerWidth < 768) {
+            camera.position.z = 10;
+            globeMesh.scale.set(0.84, 0.84, 0.84); // Aumentado en un 20%
+          } else {
+            camera.position.z = 8;
+            globeMesh.scale.set(0.9, 0.9, 0.9);
+          }
+        };
 
         window.addEventListener("resize", handleResize);
 
