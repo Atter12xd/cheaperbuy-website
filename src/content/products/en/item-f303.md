@@ -56,6 +56,6 @@ specificationsRight:
   - title: "Construcción ligera"
     subTitle: "Se usa en techos y estructuras internas en casas y cabañas."
 blueprints:
-  first: "@/images/cumala/Cumala_lateral.avif"
-  second: "@/images/cumala/CumalaCentrada.avif"    
+  first: "@/images/cumala/Cumala_lateral.jpg"
+  second: "@/images/cumala/CumalaCentrada.jpg"    
 ---
