@@ -5,7 +5,7 @@ main:
   id: 2
   content: |
     La madera de Ana Caspi es una opción altamente resistente y duradera, utilizada en la carpintería y construcción debido a su alta densidad y gran estabilidad. Su coloración varía entre tonos marrón oscuro y rojizo, con una textura fina y uniforme. Es conocida por su gran resistencia a la humedad y a los ataques de insectos, lo que la hace ideal para aplicaciones tanto en interiores como en exteriores.
-  imgCard: "@/images/ana_caspi/Ana_Caspi_ateral.avif"
+  imgCard: "@/images/ana_caspi/Ana_Caspi.avif"
   imgMain: "@/images/ana_caspi/Ana_Caspi.avif"
   imgAlt: "Boîtes factices de l'ensemble de vis assorties"
 tabs:
