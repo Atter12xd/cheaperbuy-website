@@ -59,6 +59,7 @@ specificationsRight:
   - title: "Instrumentos musicales"
     subTitle: "Utilizada en la fabricación de guitarras y otros instrumentos por su resonancia."
 blueprints:
+
   first: "@/images/tahuari/Tahuari_centrada.jpg"
   second: "@/images/tahuari/Tahuari_lateral.jpg"
 ---
