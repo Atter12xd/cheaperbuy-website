@@ -39,38 +39,37 @@ interface Props {
 ---
 
 <!-- Sección principal con diseño responsivo -->
+<!-- Sección principal con diseño responsivo -->
 <section
   class="mx-auto max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 2xl:max-w-full grid gap-6 md:grid-cols-2 md:items-center"
 >
-  <!-- Sección de texto -->
+  <!-- Sección de texto con mejoras -->
   <div>
     <h1
-      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-2xl lg:text-3xl"
-    >
-      <Fragment set:html={title} />
-    </h1>
+  class="text-3xl font-extrabold text-neutral-800 dark:text-neutral-100 sm:text-4xl lg:text-5xl leading-tight uppercase tracking-wide shadow-lg"
+>
+  <Fragment set:html={title} />
+</h1>
 
-    {subTitle && (
-      <p class="mt-3 text-sm text-neutral-700 dark:text-neutral-400 lg:w-4/5">
-        {subTitle}
-      </p>
-    )}
+<p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5">
+  {subTitle}
+</p>
+  
 
     <!-- Botones CTA -->
-    <div class="mt-7 flex flex-col sm:flex-row gap-3">
+    <div class="mt-7 flex flex-col sm:flex-row gap-4">
       {primaryBtn && (
-        <PrimaryCTA
-          title={primaryBtn}
-          url={primaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-2 text-sm transition duration-300 shadow-lg transform hover:scale-105"
-        />
-      )}
-      {secondaryBtn && (
-        <SecondaryCTA
-          title={secondaryBtn}
-          url={secondaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg border border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-medium px-5 py-2 text-sm transition duration-300"
-        />
+     <PrimaryCTA
+  title={primaryBtn}
+  url={primaryBtnURL}
+  customClasses="w-full sm:w-auto text-center rounded-lg bg-green-800 dark:bg-green-400 text-white dark:text-black font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
+/>
+
+<SecondaryCTA
+  title={secondaryBtn}
+  url={secondaryBtnURL}
+  customClasses="w-full sm:w-auto text-center rounded-lg border border-green-400 dark:border-green-500 text-green-800 dark:text-green-300 hover:bg-green-400 hover:text-white dark:hover:bg-green-500 dark:hover:text-black font-medium px-6 py-3 text-base transition duration-300"
+/>
       )}
     </div>
 
@@ -80,16 +79,17 @@ interface Props {
     )}
   </div>
 
-  <!-- Sección de imagen con ajuste responsivo -->
+  <!-- Sección de imagen optimizada -->
   <div class="flex justify-center md:justify-end">
     {src && alt && (
       <img
         src={src.src}  
         alt={alt} 
-        class="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] object-cover rounded-lg shadow-lg"
+        class="w-full max-w-[450px] md:max-w-[550px] lg:max-w-[600px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700"
         draggable="false"
         loading="eager"
       />
     )}
   </div>
 </section>
+
