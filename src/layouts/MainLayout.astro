@@ -15,7 +15,7 @@ interface Props {
 }
 ---
 
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="lenis lenis-smooth scroll-pt-16">
   <head>
     <Meta meta={meta} structuredData={structuredData} />
     <title>{title}</title>
@@ -33,6 +33,23 @@ interface Props {
     <script>
       import "@scripts/lenisSmoothScroll.js";
     </script>
+    <style>
+      /* Scrollbar personalizada */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ff6600;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #cc5500;
+      }
+    </style>
   </head>
 
   <body class="relative text-white">
@@ -40,25 +57,14 @@ interface Props {
 
     <!-- Contenido Principal con fondo aplicado -->
     <main 
-    class="relative min-h-screen bg-cover bg-center bg-fixed backdrop-blur-xl"
-    style="background-image: url('/images/fondo-jo.jpeg');"
-  >
+      class="relative min-h-screen bg-cover bg-center bg-fixed backdrop-blur-xl overflow-y-auto"
+      style="background-image: url('/images/fondo-jo.jpeg');"
+    >
       <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 bg-white/90 dark:bg-black/75 shadow-lg rounded-lg p-6">
         <slot />
       </div>
     </main>
 
     <FooterSection />
-
-    <style>
-      /* Oculta la barra de desplazamiento */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
   </body>
 </html>
