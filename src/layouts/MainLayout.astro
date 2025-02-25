@@ -36,32 +36,30 @@ interface Props {
     <style>
       /* Scrollbar personalizada */
       ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #1a1a1a;
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #ff6600;
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #cc5500;
-  }
-
-  /* Scrollbar para móviles (más gruesa y llamativa) */
-  @media (max-width: 768px) {
-    ::-webkit-scrollbar {
-      width: 14px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ff4500;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #e63900;
-    }
-  }
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ff6600;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #cc5500;
+      }
+      
+      /* Scroll más grande en móviles */
+      @media (max-width: 768px) {
+        ::-webkit-scrollbar {
+          width: 16px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #ff6600;
+          border-radius: 12px;
+        }
+      }
     </style>
   </head>
 
