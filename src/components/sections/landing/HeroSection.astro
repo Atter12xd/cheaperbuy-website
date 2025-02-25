@@ -51,9 +51,8 @@ interface Props {
   <Fragment set:html={title} />
 </h1>
 
-<p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5">
-  {subTitle}
-</p>
+<p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5" set:html={subTitle}></p>
+
   
 
     <!-- Botones CTA -->
@@ -85,7 +84,7 @@ interface Props {
       <img
         src={src.src}  
         alt={alt} 
-        class="w-full max-w-[450px] md:max-w-[550px] lg:max-w-[600px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700"
+        class="w-full max-w-[250px] md:max-w-[450px] lg:max-w-[500px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700"
         draggable="false"
         loading="eager"
       />
