@@ -4,6 +4,9 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 import heroImage from "@images/casa1.jpeg";
+import foRo1 from "@images/fo-ro1.jpeg";
+import foRo2 from "@images/fo-ro2.jpeg";
+import foRo3 from "@images/fo-ro3.jpeg";
 
 const {
   title,
@@ -36,9 +39,9 @@ interface Props {
   src?: any;
   alt?: string;
 }
+
 ---
 
-<!-- Sección principal con diseño responsivo -->
 <!-- Sección principal con diseño responsivo -->
 <section
   class="mx-auto max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 2xl:max-w-full grid gap-6 md:grid-cols-2 md:items-center"
@@ -46,29 +49,29 @@ interface Props {
   <!-- Sección de texto con mejoras -->
   <div>
     <h1
-  class="text-3xl font-extrabold text-neutral-800 dark:text-neutral-100 sm:text-4xl lg:text-5xl leading-tight uppercase tracking-wide shadow-lg"
->
-  <Fragment set:html={title} />
-</h1>
+      class="text-3xl font-extrabold text-neutral-800 dark:text-neutral-100 sm:text-4xl lg:text-5xl leading-tight uppercase tracking-wide shadow-lg"
+    >
+      <Fragment set:html={title} />
+    </h1>
 
-<p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5" set:html={subTitle}></p>
-
-  
+    <p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5" set:html={subTitle}></p>
 
     <!-- Botones CTA -->
     <div class="mt-7 flex flex-col sm:flex-row gap-4">
       {primaryBtn && (
-     <PrimaryCTA
-  title={primaryBtn}
-  url={primaryBtnURL}
-  customClasses="w-full sm:w-auto text-center rounded-lg bg-green-800 dark:bg-green-400 text-white dark:text-black font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
-/>
-
-<SecondaryCTA
-  title={secondaryBtn}
-  url={secondaryBtnURL}
-  customClasses="w-full sm:w-auto text-center rounded-lg border border-green-400 dark:border-green-500 text-green-800 dark:text-green-300 hover:bg-green-400 hover:text-white dark:hover:bg-green-500 dark:hover:text-black font-medium px-6 py-3 text-base transition duration-300"
-/>
+        <PrimaryCTA
+          title={primaryBtn}
+          url={primaryBtnURL}
+          customClasses="w-full sm:w-auto text-center rounded-lg bg-green-800 dark:bg-green-400 text-white dark:text-black font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
+        />
+      )}
+      
+      {secondaryBtn && (
+        <SecondaryCTA
+          title={secondaryBtn}
+          url={secondaryBtnURL}
+          customClasses="w-full sm:w-auto text-center rounded-lg border border-green-400 dark:border-green-500 text-green-800 dark:text-green-300 hover:bg-green-400 hover:text-white dark:hover:bg-green-500 dark:hover:text-black font-medium px-6 py-3 text-base transition duration-300"
+        />
       )}
     </div>
 
@@ -80,15 +83,31 @@ interface Props {
 
   <!-- Sección de imagen optimizada -->
   <div class="flex justify-center md:justify-end">
-    {src && alt && (
-      <img
-        src={src.src}  
-        alt={alt} 
-        class="w-full max-w-[250px] md:max-w-[450px] lg:max-w-[500px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700"
-        draggable="false"
-        loading="eager"
-      />
-    )}
+    <img
+    id="heroImage"
+    src="/images/fo-ro1.jpeg"
+    alt={alt || "Imagen del producto"}
+    class="w-full max-w-[250px] md:max-w-[450px] lg:max-w-[600px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 transition-opacity duration-1000 ease-in-out"
+    draggable="false"
+    loading="eager"
+    />
   </div>
 </section>
 
+<!-- Script para cambiar la imagen automáticamente -->
+<script>
+  const images = [
+    "/images/fo-ro1.jpeg",
+    "/images/fo-ro2.jpeg",
+    "/images/fo-ro3.jpeg"
+  ];
+  let currentIndex = 0;
+
+  setInterval(() => {
+    const heroImage = document.getElementById("heroImage") as HTMLImageElement;
+    if (heroImage) {
+      heroImage.src = images[currentIndex];
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+  }, 2000);
+</script>
