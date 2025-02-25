@@ -50,8 +50,12 @@ interface Props {
         background: #cc5500;
       }
       
-      /* Scroll más grande en móviles */
+      /* Scroll siempre visible en móviles */
       @media (max-width: 768px) {
+        body {
+          overflow-y: scroll !important;
+          -webkit-overflow-scrolling: touch;
+        }
         ::-webkit-scrollbar {
           width: 16px;
         }
@@ -63,12 +67,12 @@ interface Props {
     </style>
   </head>
 
-  <body class="relative text-white">
+  <body class="relative text-white overflow-y-scroll">
     <Navbar />
 
     <!-- Contenido Principal con fondo aplicado -->
     <main 
-      class="relative min-h-screen bg-cover bg-center bg-fixed backdrop-blur-xl overflow-y-auto"
+      class="relative min-h-screen bg-cover bg-center bg-fixed backdrop-blur-xl"
       style="background-image: url('/images/fondo-jo.jpeg');"
     >
       <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 bg-white/90 dark:bg-black/75 shadow-lg rounded-lg p-6">
