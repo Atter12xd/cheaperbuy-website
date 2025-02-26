@@ -5,8 +5,9 @@ import gsap from "gsap";
 
 const InteractiveGlobe = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const [globe, setGlobe] = useState<THREE.Mesh | null>(null);
-  const textureLoader = new THREE.TextureLoader();
+  const globeRef = useRef<THREE.Mesh | null>(null);
+  const controlsRef = useRef<OrbitControls | null>(null);
+  const [isGlobeClicked, setIsGlobeClicked] = useState(false);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -18,13 +19,13 @@ const InteractiveGlobe = () => {
       0.1,
       1000
     );
-
     camera.position.set(0, 0, window.innerWidth < 768 ? 10 : 8);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
+    const textureLoader = new THREE.TextureLoader();
     textureLoader.load(
       "/images/globe/joven.jpeg",
       (texture) => {
@@ -39,10 +40,10 @@ const InteractiveGlobe = () => {
         const geometry = new THREE.SphereGeometry(globeSize, 64, 64);
         const globeMesh = new THREE.Mesh(geometry, material);
         scene.add(globeMesh);
-        setGlobe(globeMesh);
+        globeRef.current = globeMesh; // Guardamos la referencia
 
-        // 🔄 Posición inicial más a la izquierda (10 cm)
-        globeMesh.position.x = 0,1;
+        // 🔄 Posición inicial
+        globeMesh.position.x = 0.1;
 
         // Iluminación
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
@@ -50,13 +51,14 @@ const InteractiveGlobe = () => {
         directionalLight.position.set(5, 3, 5);
         scene.add(ambientLight, directionalLight);
 
-        // Controles
+        // Controles de OrbitControls
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
         controls.enableZoom = false;
+        controlsRef.current = controls; // Guardamos la referencia
 
-        // 🔄 Movimiento arriba y abajo (más amplio)
+        // 🔄 Movimiento de rotación automática
         gsap.to(globeMesh.rotation, {
           x: Math.PI * 0.2,
           duration: 5,
@@ -71,7 +73,7 @@ const InteractiveGlobe = () => {
         // Render loop
         const animate = () => {
           requestAnimationFrame(animate);
-          controls.update();
+          if (!isGlobeClicked) controls.update(); // Solo actualizar controles si no se ha hecho clic
           renderer.render(scene, camera);
         };
         animate();
@@ -94,11 +96,19 @@ const InteractiveGlobe = () => {
       undefined,
       (error) => console.error("❌ Error al cargar la textura del globo:", error)
     );
-  }, []);
+  }, []); // ❌ isGlobeClicked eliminado del array de dependencias
+
+  // 🔹 Evento para deshabilitar el control cuando se hace clic
+  const handleGlobeClick = () => {
+    setIsGlobeClicked(true);
+    if (controlsRef.current) {
+      controlsRef.current.enabled = false; // Desactivar controles
+    }
+  };
 
   return (
     <div className="relative w-full h-[550px] md:h-[620px] lg:h-[700px] flex justify-center items-center">
-      <div ref={mountRef} className="globe-container w-full h-full"></div>
+      <div ref={mountRef} className="globe-container w-full h-full" onClick={handleGlobeClick}></div>
     </div>
   );
 };
