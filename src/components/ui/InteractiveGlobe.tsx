@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import gsap from "gsap";
 
 const InteractiveGlobe = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const globeRef = useRef<THREE.Mesh | null>(null);
-  const controlsRef = useRef<OrbitControls | null>(null);
-  const [isGlobeClicked, setIsGlobeClicked] = useState(false);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -40,7 +37,6 @@ const InteractiveGlobe = () => {
         const geometry = new THREE.SphereGeometry(globeSize, 64, 64);
         const globeMesh = new THREE.Mesh(geometry, material);
         scene.add(globeMesh);
-        globeRef.current = globeMesh; // Guardamos la referencia
 
         // 🔄 Posición inicial
         globeMesh.position.x = 0.1;
@@ -51,14 +47,11 @@ const InteractiveGlobe = () => {
         directionalLight.position.set(5, 3, 5);
         scene.add(ambientLight, directionalLight);
 
-        // Controles de OrbitControls
+        // 🚫 Desactivar controles desde el inicio
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-        controls.enableZoom = false;
-        controlsRef.current = controls; // Guardamos la referencia
+        controls.enabled = false; // ❌ No permitir interacción con el ratón/táctil
 
-        // 🔄 Movimiento de rotación automática
+        // 🔄 Movimiento de rotación automática (arriba y abajo)
         gsap.to(globeMesh.rotation, {
           x: Math.PI * 0.2,
           duration: 5,
@@ -73,7 +66,6 @@ const InteractiveGlobe = () => {
         // Render loop
         const animate = () => {
           requestAnimationFrame(animate);
-          if (!isGlobeClicked) controls.update(); // Solo actualizar controles si no se ha hecho clic
           renderer.render(scene, camera);
         };
         animate();
@@ -96,19 +88,11 @@ const InteractiveGlobe = () => {
       undefined,
       (error) => console.error("❌ Error al cargar la textura del globo:", error)
     );
-  }, []); // ❌ isGlobeClicked eliminado del array de dependencias
-
-  // 🔹 Evento para deshabilitar el control cuando se hace clic
-  const handleGlobeClick = () => {
-    setIsGlobeClicked(true);
-    if (controlsRef.current) {
-      controlsRef.current.enabled = false; // Desactivar controles
-    }
-  };
+  }, []);
 
   return (
     <div className="relative w-full h-[550px] md:h-[620px] lg:h-[700px] flex justify-center items-center">
-      <div ref={mountRef} className="globe-container w-full h-full" onClick={handleGlobeClick}></div>
+      <div ref={mountRef} className="globe-container w-full h-full"></div>
     </div>
   );
 };
