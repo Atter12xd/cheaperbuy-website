@@ -7,18 +7,23 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import features from "@data/fr/features.json";
+
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+import heroImage from "@images/casa1.jpeg";
 import faqs from "@data/fr/faqs.json";
-import features from "@data/fr/features.json";
+
 import pricing from "@data/fr/pricing.json";
-import featureImage from "@images/features-image.avif";
+ // ← ¡IMPORTANTE! Agrega esta línea
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import arquitectoImagen from "@images/arquitecto-imagen.jpeg";
+import foRo1 from "@images/fo-ro1.jpeg";
+import foRo2 from "@images/fo-ro2.jpeg";
+import foRo3 from "@images/fo-ro3.jpeg";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -28,118 +33,118 @@ const avatarSrcs: Array<string> = [
 ];
 ---
 
-<MainLayout lang="fr">
+<MainLayout>
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Découvrez ScrewFast sur GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
+    btnTitle="Learn More About Us"
+    url="/blog"
   />
 
   <HeroSection
-    title=`Équipez vos projets avec <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Outils matériels de haute qualité et services de construction experts pour tous les besoins en projet."
-    primaryBtn="Commencez à explorer"
-    primaryBtnURL={getRelativeLocaleUrl("fr", "products")}
-    secondaryBtn="Contacter l'équipe commerciale"
-    secondaryBtnURL={getRelativeLocaleUrl("fr", "contact")}
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
-    src={heroImage}
-    alt="Pile de boîtes de produits ScrewFast contenant des outils matériels assortis"
-  />
+  title="PREMIUM WOOD FLOORS"
+subTitle={`<span class="text-orange-600 dark:text-orange-400 font-semibold">
+  100% Peruvian, Durable, and Sustainable.
+</span> Quick installation, flawless finishes, and top-quality at the best price to enhance your home's aesthetics.`}
+primaryBtn="Explore Our Woods"
+primaryBtnURL="/products"
+secondaryBtn="Contact Us"
+secondaryBtnURL="/contact"
+withReview={true}
+avatars={avatarSrcs}
+rating={`<span class="font-bold">4.8</span> / 5`}
+starCount={4}
+reviews={`Based on more than <span class="font-bold">12.8k</span> reviews`}
+src={[foRo1, foRo2, foRo3]} 
+alt="Image of wood products for Cheaper Buy"
+/>
 
-  <ClientsSection
-    title="Faites confiance aux leaders de l'industrie"
-    subTitle="Découvrez la fiabilité choisie par les géants de l'industrie."
-  />
+<ClientsSection
+title="Madera Peruana para Exportación"
+subTitle="Exportamos madera desde Pucallpa a EE.UU., Canadá y México. Descubre nuestras rutas y productos."
+showMap={true}
+/>
 
-  <FeaturesGeneral
-    title="Répondre aux exigences de l'industrie"
-    subTitle="Chez ScrewFast, nous relevons les défis uniques rencontrés dans les secteurs du matériel et de la construction. Des outils de pointe aux services experts, nous sommes déterminés à vous aider à surmonter les obstacles et à atteindre vos objectifs."
-    src={featureImage}
-    alt="Produits ScrewFast dans des boîtes flottantes"
-    features={features}
-  />
+<FeaturesGeneral
+title="Meeting Industry Demands"
+subTitle="At Cheaper Buy, we tackle the unique challenges in the hardware and construction sectors. From innovative tools to specialized services, we are committed to helping you overcome obstacles and achieve your goals."
 
-  <FeaturesNavs
-    title=`Personnalisez les offres de <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> pour répondre parfaitement à vos besoins en matériel et en construction.`
-    tabs={[
-      {
-        heading: "Outils de pointe",
-        content:
-          "Optimisez vos projets avec les outils de pointe de ScrewFast. Faites l'expérience d'une efficacité accrue dans la gestion de la construction avec nos solutions automatisées sophistiquées.",
-        svg: "tools",
-        src: tools,
-        alt: "Équipement lourd jaune et noir sur un champ d'herbe brune",
-        first: true,
-      },
-      {
-        heading: "Tableaux de bord intuitifs",
-        content:
-          "Naviguez facilement avec les tableaux de bord intuitifs de ScrewFast. Configurez et supervisez vos projets de manière transparente, avec des interfaces conviviales conçues pour une gestion efficace des flux de travail rapide et efficace.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "Capture d'écran ou représentation graphique du tableau de bord intuitif",
-        second: true,
-      },
-      {
-        heading: "Fonctionnalités robustes",
-        content:
-          "Minimisez la complexité, maximisez la productivité. Les fonctionnalités robustes de ScrewFast sont conçues pour rationaliser votre processus de construction, offrant des résultats qui se distinguent par leur excellence.",
-        svg: "house",
-        src: construction,
-        alt: "Structure métallique grise d'un bâtiment près d'une grue à tour pendant la journée",
-      },
-    ]}
-  />
 
-  <TestimonialsSection
-    title="Accélérez vos projets"
-    subTitle="Chez ScrewFast, nous assurons un démarrage rapide avec une configuration de compte instantanée. Découvrez la vitesse de la construction redéfinie."
-    testimonials={[
-      {
-        content:
-          "ScrewFast a considérablement augmenté l'efficacité de notre projet. La configuration a été instantanée et leurs temps de réponse rapides sont phénoménaux. Vraiment un changement de jeu dans le support matériel et de construction !",
-        author: "Samantha Ruiz",
-        role: "Directrice des opérations | ConstructIt Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "70k+",
-        description:
-          "clients équipés — des bricoleurs aux grandes entreprises de construction",
-      },
-      {
-        count: "35%",
-        description:
-          "hausse de l'efficacité des projets avec les outils et services de ScrewFast",
-      },
-      {
-        count: "15,3%",
-        description:
-          "réduction des coûts de maintenance rapportée par des clients à long terme",
-      },
-      {
-        count: "2x",
-        description:
-          "assemblage plus rapide grâce à des solutions de fixation innovantes",
-      },
-    ]}
-  />
+features={features}
+/>
 
-  <PricingSection pricing={pricing} />
+<FeaturesNavs
+title=`Customize the <span class=\"text-yellow-500 dark:text-yellow-400\">Cheaper Buy</span> experience to meet your wood and construction needs.`
+tabs={[
+  {
+    heading: "High-Quality Woods",
+    content:
+      "Transform your spaces with our carefully selected woods. We offer flooring, parquet, and door frames with durable and elegant finishes, perfect for any project.",
+    svg: "tools",
+    src: tools,
+    alt: "Pisos de madera en instalación",
+    first: true,
+  },
+  {
+    heading: "Efficient Order Management",
+    content:
+     "Explore our intuitive platform to manage your wood orders quickly and easily. From quotation to delivery, everything is just a click away.",
+    svg: "dashboard",
+    src: dashboard,
+    alt: "Screenshot of the order management panel",
+    second: true
+  },
+  {
+    heading: "Sustainability and Durability",
+    content:
+      "Committed to the environment, our wood comes from sustainable sources and is treated to offer maximum durability in any setting.",
+    svg: "house",
+    src: construction,
+    alt: "Sustainable wood used in construction projects",
+  },
+]}
+/>
 
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+<TestimonialsSection
+title="The Best Quality in Wood"
+subTitle="At Cheaper Buy, we ensure high-quality products with a fast and reliable shopping experience."
+testimonials={[
+  {
+    content:"Cheaper Buy revolutionized the way we buy wood. We received top-quality products with fast delivery times. Definitely recommended!",
+    author: "Carlos Mendoza",
+    role: "Architect | Mendoza & Associates",
+    avatarSrc: arquitectoImagen, // Ya importado arriba
+    width: 200, // Agregar ancho
+    height: 200 // Agregar alto
+  }
+]}
+statistics={[
+  {
+    count: "70k+",
+    description: "Satisfied clients in the construction and hardware sectors."
+  },
+  {
+    count: "35%",
+    description: "Increased project efficiency with our products."
+  },
+  {
+    count: "15.3%",
+    description: "Reduced material costs with our exclusive deals."
+  },
+  {
+    count: "2x",
+    description: "Faster installation of flooring and structures."
+  }
+]}
+/>
 
-  <HeroSectionAlt
-    title="Construisons ensemble"
-    subTitle="ScrewFast est un modèle open source, méticuleusement conçu avec les frameworks Astro, Tailwind CSS et Preline UI."
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
+<PricingSection pricing={pricing} />
+
+<FAQ title="Frequently Asked Questions" faqs={faqs} />
+
+<HeroSectionAlt
+  title="Let's Build Together"
+  subTitle="Cheaper Buy is your trusted partner for purchasing quality wood, with an easy-to-use platform and expert support."
+  url="https://cheaperbuy.com"
+/>
 </MainLayout>
+

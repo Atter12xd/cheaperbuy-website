@@ -14,7 +14,7 @@ import type { CollectionEntry } from "astro:content";
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id }) => {
-    return id.startsWith("fr/");
+    return id.startsWith("fr/");  
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
@@ -22,47 +22,49 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Produits";
+const title: string = "Our Wood Products";
 const subTitle: string =
-  "Explorez la durabilité et la précision des outils ScrewFast, conçus aussi bien pour les professionnels que pour les amateurs. Chacun de nos produits est fabriqué avec précision et conçu pour durer, garantissant que vous disposez du bon outil pour chaque tâche.";
+  "At Cheaper Buy, we offer a selection of premium woods, carefully chosen for their quality, durability, and natural beauty. Our variety of woods is perfect for flooring, paneling, furniture, and structures, ensuring the ideal combination of longevity and elegant design.";
+
+  "Each type of wood we offer is selected to provide high performance and an exceptional finish, adapting to different needs and architectural styles.";
+
+"🔹 Explore our collection and find the perfect wood for your project. 🌳✨";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   {
-    content:
-      "Depuis que nous avons adopté les outils matériels de ScrewFast, l'efficacité sur nos chantiers de construction a explosé. La durabilité des boulons hexagonaux et la précision des vis machine sont tout simplement inégalées. C'est rafraîchissant de travailler avec une entreprise qui comprend vraiment les exigences quotidiennes de l'industrie.",
-    author: "Jason Clark",
-    role: "Contremaître de chantier | TopBuild",
-    avatarSrc:
+   "content":
+      " \"Since I started working with Cheaper Buy, the quality of my projects has improved significantly. Their wood products are durable, elegant, and easy to install. Highly recommended!\" ",
+    "author": "Carlos Mendoza",
+    "role": "Architect | Mendoza & Associates",
+    "avatarSrc":
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Description de l'image",
+    "avatarAlt": "Image Description"
   },
-
   {
-    content:
-      "En tant que designer d'intérieur, je suis toujours à la recherche de matériaux et d'outils de haute qualité qui m'aident à donner vie à mes visions. L'assortiment de vis mixtes de ScrewFast a révolutionné mes projets, offrant le mélange parfait de qualité et de variété. Le support client exceptionnel était la cerise sur le gâteau !",
-    author: "Maria Gonzalez",
-    role: "Designer d'intérieur | Creative Spaces",
-    avatarSrc:
+    "content":
+      " \"As a designer, I always look for high-quality materials that provide style and durability. Cheaper Buy’s wood has been key in my projects, offering impeccable finishes and a wide range of options.\" ",
+    "author": "María González",
+    "role": "Interior Designer | Creative Spaces",
+    "avatarSrc":
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Description de l'image",
+    "avatarAlt": "Image Description"
   },
-
   {
-    content:
-      "Je suis menuisier professionnel depuis plus de 15 ans, et je peux sincèrement dire que les boulons et écrous à tarauder de ScrewFast sont parmi les meilleurs que j'ai utilisés. Ils adhèrent comme aucun autre, et j'ai une confiance totale dans chaque joint et élément. De plus, le service est impeccable - ils se soucient vraiment du succès de mon projet.",
-    author: "Richard Kim",
-    role: "Menuisier-Maître | WoodWright",
-    avatarSrc:
+    "content":
+      " \"I have been in carpentry for over 15 years, and I can confidently say that Cheaper Buy’s products are among the best I have used. The wood is strong, well-treated, and adapts perfectly to any design. Plus, their customer service is outstanding.\" ",
+    "author": "Richard Kim",
+    "role": "Professional Carpenter | WoodWright",
+    "avatarSrc":
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Description de l'image",
+    "avatarAlt": "Image Description"
   },
 ];
 ---
 
 <MainLayout
-  title="Produits | ScrewFast"
-  lang="fr"
+  title="Products | Cheaper Buy"
+  lang="en"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -100,7 +102,7 @@ const testimonials = [
         }
       </div>
       <PrimaryCTA
-        title="Histoires de clients"
+        title="Customer Stories"
         url="#testimonials"
         noArrow={true}
       />
@@ -122,17 +124,17 @@ const testimonials = [
   </div>
   <!--Features statistics section-->
   <FeaturesStatsAlt
-    title="Pourquoi choisir ScrewFast ?"
-    subTitle="Transformez vos idées en résultats tangibles avec les outils ScrewFast. Que vous commenciez par un croquis sur un coin de table ou plongiez dans un projet de construction complet, nos outils sont conçus pour vous aider à construire en toute confiance."
-    benefits={[
-      "Outils robustes et fiables pour des performances durables.",
-      "Solutions innovantes adaptées aux besoins de construction modernes.",
-      "Support client dédié au succès de votre projet.",
-    ]}
-  />
+  title="Why Choose Cheaper Buy?"
+  subTitle="Turn your ideas into reality with Cheaper Buy products. Whether you're renovating your home or working on a large-scale project, our high-quality wood is designed to provide strength, elegance, and durability with total confidence."
+  benefits={[
+    "Durable and long-lasting wood materials.",
+    "Innovative solutions tailored to any project.",
+    "Personalized support to ensure your satisfaction.",
+  ]}
+/>
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="Ce que disent nos clients"
+    title="What Our Customers Say"
     testimonials={testimonials}
   />
 </MainLayout>

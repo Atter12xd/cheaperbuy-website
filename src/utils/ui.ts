@@ -1,4 +1,4 @@
 export const languages = {
-    es: "Español",
-    fr: "",
+    en: "Español",
+    fr: "Ingles",
 };

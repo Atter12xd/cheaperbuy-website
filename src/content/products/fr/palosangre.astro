@@ -1,0 +1,21 @@
+---
+import palosangreImage from "@images/palosangre/Palosangre.jpg";
+import palosangreCentrada from "@images/palosangre/Palosangre_Centrada.jpg";
+import palosangreLateral from "@images/palosangre/Palosangre_Lateral.jpg";
+
+// Importar datos del Markdown correctamente
+const madera = await import("../../content/products/en/palosangre.md").then(m => m.frontmatter);
+
+// Extraer valores de madera
+const { title, description } = madera;
+---
+
+<section>
+    <h1>{title}</h1>
+    <p>{description}</p>
+
+    <!-- Mostrar imágenes correctamente -->
+    <img src={palosangreImage.src} alt="Madera Palosangre" />
+    <img src={palosangreCentrada.src} alt="Madera Palosangre vista centrada" />
+    <img src={palosangreLateral.src} alt="Madera Palosangre vista lateral" />
+</section>

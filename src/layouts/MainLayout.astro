@@ -52,12 +52,13 @@ interface Props {
       
       /* Scroll siempre visible en móviles */
       @media (max-width: 768px) {
-        body {
-          overflow-y: scroll !important;
+        html, body {
+          overflow-y: auto !important;
           -webkit-overflow-scrolling: touch;
+          min-height: 100vh;
         }
         ::-webkit-scrollbar {
-          width: 16px;
+          width: 14px;
         }
         ::-webkit-scrollbar-thumb {
           background: #ff6600;
@@ -67,7 +68,7 @@ interface Props {
     </style>
   </head>
 
-  <body class="relative text-white overflow-y-scroll">
+  <body class="relative text-white overflow-y-auto min-h-screen">
     <Navbar />
 
     <!-- Contenido Principal con fondo aplicado -->
