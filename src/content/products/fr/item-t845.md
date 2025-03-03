@@ -1,6 +1,6 @@
 ---
 title: "Almond Wood"
-description: "Almond Wood"
+description: ""
 main:
   id: 1
   content: |

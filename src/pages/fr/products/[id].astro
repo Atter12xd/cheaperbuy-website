@@ -37,37 +37,24 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
   </div>
 
-  <section
-  class="mx-auto flex max-w-[95rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div
-    class="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0"
-  >
-    <div id="fadeInUp">
-      <h1
-        class="block text-4xl font-bold tracking-tighter text-neutral-800 dark:text-neutral-200 sm:text-5xl md:text-6xl lg:text-7xl"
-      >
-        {product.data.title}
-      </h1>
-      <p class="text-lg text-neutral-600 dark:text-neutral-400">
-        {product.data.description}
-      </p>
-    </div>
-  </div>
-
-  <div>
-    <p
-      id="fadeText"
-      class="mt-8 max-w-prose text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl"
-    >
-      {product.data.main.content}
-    </p>
+  <section class="mx-auto flex max-w-[95rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="flex flex-col sm:flex-row items-center justify-between space-y-6 sm:space-y-0 sm:space-x-6">
+      
+      {/* Contenedor de Texto (Izquierda en pantallas grandes) */}
+      <div id="fadeInUp" class="sm:w-1/2">
+        <h1 class="block text-4xl font-bold tracking-tighter text-neutral-800 dark:text-neutral-200 sm:text-5xl md:text-6xl lg:text-7xl">
+          {product.data.title}
+        </h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+          {product.data.description}
+        </p>
+        <p id="fadeText" class="mt-4 max-w-prose text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl">
+          {product.data.main.content}
+        </p>
       </div>
-
-      
-
-      
-      <div class="flex justify-center items-center">
+  
+      {/* Contenedor de Imagen (Derecha en pantallas grandes) */}
+      <div class="sm:w-1/2 flex justify-center">
         <Image
           id="fadeInMoveRight"
           src={product.data.main.imgMain}
@@ -77,6 +64,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
           loading={"eager"}
         />
       </div>
+  
     </div>
   </section>
   <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">

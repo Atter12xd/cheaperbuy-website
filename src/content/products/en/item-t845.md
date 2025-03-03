@@ -1,6 +1,6 @@
 ---
 title: "Madera de Almendro"
-description: "Madera Almendro"
+description: ""
 main:
   id: 1
   content: |
