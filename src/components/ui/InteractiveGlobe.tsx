@@ -38,34 +38,36 @@ const InteractiveGlobe = () => {
         const globeMesh = new THREE.Mesh(geometry, material);
         scene.add(globeMesh);
 
-        // 🔄 Posición inicial
-        globeMesh.position.x = 0.1;
-
         // Iluminación
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(5, 3, 5);
         scene.add(ambientLight, directionalLight);
 
-        // 🚫 Desactivar controles desde el inicio
+        // 🚀 Habilitar controles con velocidad reducida
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enabled = false; // ❌ No permitir interacción con el ratón/táctil
+        controls.enableDamping = true; // Suaviza el movimiento
+        controls.dampingFactor = 0.05; // Reduce la velocidad de desaceleración
+        controls.rotateSpeed = 0.3; // Ajusta la velocidad de rotación (valor bajo = más lento)
+        controls.minPolarAngle = Math.PI / 3; // Restringir la rotación vertical
+        controls.maxPolarAngle = Math.PI - Math.PI / 3;
+        controls.enableZoom = false; // Desactiva zoom para evitar cambios de escala
 
-        // 🔄 Movimiento de rotación automática (arriba y abajo)
-        gsap.to(globeMesh.rotation, {
-          x: Math.PI * 0.2,
-          duration: 5,
-          repeat: -1,
-          yoyo: true,
-          ease: "power1.inOut",
-        });
-
-        // Animación de aparición
-        gsap.fromTo(globeMesh.scale, { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1, duration: 1, ease: "elastic.out(1, 0.2)" });
+        // 🔄 Rotación automática suave
+        const animateRotation = () => {
+          gsap.to(globeMesh.rotation, {
+            y: "+=0.5", // Rotación constante
+            duration: 10, // Más lento
+            repeat: -1,
+            ease: "linear"
+          });
+        };
+        animateRotation();
 
         // Render loop
         const animate = () => {
           requestAnimationFrame(animate);
+          controls.update(); // Mantiene la interacción suave
           renderer.render(scene, camera);
         };
         animate();
