@@ -1,38 +1,34 @@
-
+// Enlaces de la barra de navegación
 const navBarLinks = [
-  { name: "Home", url: "/fr" },
-  { name: "Products", url: "/fr/products" },
-  { name: "Services", url: "/fr/services" },
+  { name: "Inicio", url: "/fr/" },
+  { name: "Productos", url: "/fr/products" },
+  { name: "Servicios", url: "/fr/services" },
   { name: "Blog", url: "/fr/blog" },
-  { name: "Contact", url: "/fr/contact" },
+  { name: "Contáctanos", url: "/fr/contact" },
 ];
 
+// Enlaces del footer
 const footerLinks = [
   {
-    section: "Écosystème",
+    section: "Nuestra Empresa",
     links: [
-      { name: "Documentation", url: "/fr/welcome-to-docs/" },
-      { name: "Outils et Équipements", url: "/fr/products" },
-      { name: "Services de Construction", url: "/fr/services" },
+      { name: "Sobre Nosotros", url: "/services" },
+      { name: "Blog", url: "/blog" },
     ],
   },
   {
-    section: "Société",
+    section: "Atención al Cliente",
     links: [
-      { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/fr/blog" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "Soporte", url: "/contact" },
     ],
   },
 ];
 
+// Redes sociales
 const socialLinks = {
-  facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "#",
-  slack: "#",
+  facebook: "https://www.facebook.com/cheaperbuy", // Reemplaza con el link real
+  whatsapp: "https://wa.me/tu-numero", // Link directo a WhatsApp
+  linkedin: "https://www.linkedin.com/company/cheaperbuy", // Agregado si tienes LinkedIn
 };
 
 export default {

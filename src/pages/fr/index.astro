@@ -7,15 +7,14 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import features from "@data/fr/features.json";
+import features from "@data/features.json";
 
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/casa1.jpeg";
-import faqs from "@data/fr/faqs.json";
-
-import pricing from "@data/fr/pricing.json";
+import faqs from "@data/faqs.json";
+import pricing from "@data/pricing.json";
  // ← ¡IMPORTANTE! Agrega esta línea
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
@@ -24,6 +23,9 @@ import arquitectoImagen from "@images/arquitecto-imagen.jpeg";
 import foRo1 from "@images/fo-ro1.jpeg";
 import foRo2 from "@images/fo-ro2.jpeg";
 import foRo3 from "@images/fo-ro3.jpeg";
+
+
+
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -36,115 +38,117 @@ const avatarSrcs: Array<string> = [
 <MainLayout>
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Learn More About Us"
+    btnTitle="Saber mas de Nosotros"
     url="/blog"
   />
-
   <HeroSection
-  title="PREMIUM WOOD FLOORS"
-subTitle={`<span class="text-orange-600 dark:text-orange-400 font-semibold">
-  100% Peruvian, Durable, and Sustainable.
-</span> Quick installation, flawless finishes, and top-quality at the best price to enhance your home's aesthetics.`}
-primaryBtn="Explore Our Woods"
-primaryBtnURL="/products"
-secondaryBtn="Contact Us"
-secondaryBtnURL="/contact"
-withReview={true}
-avatars={avatarSrcs}
-rating={`<span class="font-bold">4.8</span> / 5`}
-starCount={4}
-reviews={`Based on more than <span class="font-bold">12.8k</span> reviews`}
-src={[foRo1, foRo2, foRo3]} 
-alt="Image of wood products for Cheaper Buy"
+  title="PISOS DE MADERA PREMIUM"
+  subTitle={`<span class="text-orange-600 dark:text-orange-400 font-semibold">
+    100% Peruana, Duraderos y Sostenibles.
+  </span> Instalación rápida, acabados impecables y calidad al mejor precio para elevar la estética de tu hogar.`}
+  primaryBtn="Explorar nuestras Maderas"
+  primaryBtnURL="/products"
+  secondaryBtn="Contáctanos"
+  secondaryBtnURL="/contact"
+  withReview={true}
+  avatars={avatarSrcs}
+  rating={`<span class="font-bold">4.8</span> / 5`}
+  starCount={4}
+  reviews={`Basado en más de <span class="font-bold">12.8k</span> opiniones`}
+  src={[foRo1, foRo2, foRo3]} 
+  alt="Imagen de productos de madera para Cheaper Buy"
 />
 
+
 <ClientsSection
-title="🌎 We are located in the following countries"
+title="🌎 Nos encontramos en los siguientes paises"
 subTitle=""
 showMap={true}
 />
 
 <FeaturesGeneral
-title="Meeting Industry Demands"
-subTitle="At Cheaper Buy, we tackle the unique challenges in the hardware and construction sectors. From innovative tools to specialized services, we are committed to helping you overcome obstacles and achieve your goals."
+title="Satisfaciendo las Demandas de la Industria"
+subTitle="En Cheaper Buy, abordamos los desafíos únicos en los sectores de ferretería y construcción. Desde herramientas innovadoras hasta servicios especializados, estamos comprometidos a ayudarte a superar obstáculos y alcanzar tus objetivos."
 
 
 features={features}
 />
+    
+    
+    
+ 
 
-<FeaturesNavs
-title=`Customize the <span class=\"text-yellow-500 dark:text-yellow-400\">Cheaper Buy</span> experience to meet your wood and construction needs.`
-tabs={[
-  {
-    heading: "High-Quality Woods",
-    content:
-      "Transform your spaces with our carefully selected woods. We offer flooring, parquet, and door frames with durable and elegant finishes, perfect for any project.",
-    svg: "tools",
-    src: tools,
-    alt: "Pisos de madera en instalación",
-    first: true,
-  },
-  {
-    heading: "Efficient Order Management",
-    content:
-     "Explore our intuitive platform to manage your wood orders quickly and easily. From quotation to delivery, everything is just a click away.",
-    svg: "dashboard",
-    src: dashboard,
-    alt: "Screenshot of the order management panel",
-    second: true
-  },
-  {
-    heading: "Sustainability and Durability",
-    content:
-      "Committed to the environment, our wood comes from sustainable sources and is treated to offer maximum durability in any setting.",
-    svg: "house",
-    src: construction,
-    alt: "Sustainable wood used in construction projects",
-  },
-]}
+  <FeaturesNavs
+  title=`Personaliza la experiencia de <span class="text-yellow-500 dark:text-yellow-400">Cheaper Buy</span> para satisfacer tus necesidades en madera y construcción.`
+  tabs={[
+    {
+      heading: "Maderas de Alta Calidad",
+      content:
+        "Transforma tus espacios con nuestras maderas seleccionadas. Ofrecemos pisos, parquet y marcos de puertas con acabados resistentes y elegantes, perfectos para cualquier proyecto.",
+      svg: "tools",
+      src: tools,
+      alt: "Pisos de madera en instalación",
+      first: true,
+    },
+    {
+      heading: "Gestión de Pedidos Eficiente",
+      content:
+        "Explora nuestra plataforma intuitiva para gestionar tus pedidos de madera de manera rápida y sencilla. Desde la cotización hasta la entrega, todo al alcance de un clic.",
+      svg: "dashboard",
+      src: dashboard,
+      alt: "Captura de pantalla del panel de gestión de pedidos",
+      second: true,
+    },
+    {
+      heading: "Sostenibilidad y Resistencia",
+      content:
+        "Comprometidos con el medio ambiente, nuestras maderas provienen de fuentes sostenibles y están tratadas para ofrecer máxima durabilidad en cualquier entorno.",
+      svg: "house",
+      src: construction,
+      alt: "Madera sostenible utilizada en proyectos de construcción",
+    },
+  ]}
 />
 
 <TestimonialsSection
-title="The Best Quality in Wood"
-subTitle="At Cheaper Buy, we ensure high-quality products with a fast and reliable shopping experience."
-testimonials={[
-  {
-    content:"Cheaper Buy revolutionized the way we buy wood. We received top-quality products with fast delivery times. Definitely recommended!",
-    author: "Carlos Mendoza",
-    role: "Architect | Mendoza & Associates",
-    avatarSrc: arquitectoImagen, // Ya importado arriba
-    width: 200, // Agregar ancho
-    height: 200 // Agregar alto
-  }
-]}
-statistics={[
-  {
-    count: "70k+",
-    description: "Satisfied clients in the construction and hardware sectors."
-  },
-  {
-    count: "35%",
-    description: "Increased project efficiency with our products."
-  },
-  {
-    count: "15.3%",
-    description: "Reduced material costs with our exclusive deals."
-  },
-  {
-    count: "2x",
-    description: "Faster installation of flooring and structures."
-  }
-]}
+  title="La Mejor Calidad en Maderas"
+  subTitle="En Cheaper Buy, nos aseguramos de ofrecer productos de alta calidad y con una experiencia de compra rápida y confiable."
+  testimonials={[
+    {
+      content: "Cheaper Buy revolucionó nuestra forma de comprar madera. Recibimos productos de excelente calidad y con tiempos de entrega rápidos. ¡Definitivamente recomendado!",
+      author: "Carlos Mendoza",
+      role: "Arquitecto | Mendoza & Asociados",
+      avatarSrc: arquitectoImagen, // Ya importado arriba
+      width: 200, // Agregar ancho
+      height: 200 // Agregar alto
+    }
+  ]}
+  statistics={[
+    {
+      count: "70k+",
+      description: "Clientes satisfechos en el sector de construcción y ferretería."
+    },
+    {
+      count: "35%",
+      description: "Aumento en la eficiencia de proyectos con nuestros productos."
+    },
+    {
+      count: "15.3%",
+      description: "Reducción de costos en materiales con nuestras ofertas exclusivas."
+    },
+    {
+      count: "2x",
+      description: "Mayor rapidez en la instalación de pisos y estructuras."
+    }
+  ]}
 />
-
 <PricingSection pricing={pricing} />
 
-<FAQ title="Frequently Asked Questions" faqs={faqs} />
+<FAQ title="Preguntas frecuentes" faqs={faqs} />
 
 <HeroSectionAlt
-  title="Let's Build Together"
-  subTitle="Cheaper Buy is your trusted partner for purchasing quality wood, with an easy-to-use platform and expert support."
+  title="Construyamos Juntos"
+  subTitle="Cheaper Buy es tu aliado en la compra de madera de calidad, con una plataforma fácil de usar y soporte especializado."
   url="https://cheaperbuy.com"
 />
 </MainLayout>
-

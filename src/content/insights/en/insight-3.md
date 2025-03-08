@@ -1,65 +1,65 @@
 ---
-title: "El Impacto de las Prácticas Sostenibles en la Industria de la Madera"
-description: "Descubre cómo Cheaper Buy lidera la transformación hacia un futuro más verde en la construcción con madera sostenible."
+title: "The Impact of Sustainable Practices in the Wood Industry"
+description: "Discover how Cheaper Buy is leading the transformation towards a greener future in construction with sustainable wood."
 cardImage: "@/images/insights/insight-3.avif"
-cardImageAlt: "Vista superior de herramientas de carpintería y madera sostenible"
+cardImageAlt: "Top view of carpentry tools and sustainable wood"
 ---
 
-La industria de la construcción tiene un impacto significativo en el medio ambiente. Desde la deforestación y el desperdicio de recursos hasta el consumo energético y las emisiones de carbono, las prácticas tradicionales de construcción han afectado de manera directa a nuestro planeta. 
+The construction industry has a significant impact on the environment. From deforestation and resource waste to energy consumption and carbon emissions, traditional construction practices have directly affected our planet.
 
-Sin embargo, un cambio está en marcha, y **Cheaper Buy** está a la vanguardia de esta transformación, liderando el camino con su compromiso con la madera sostenible y la responsabilidad ambiental.
+However, change is underway, and **Cheaper Buy** is at the forefront of this transformation, leading the way with its commitment to sustainable wood and environmental responsibility.
 
-## 🌿 El Desafío Medioambiental
+## 🌿 The Environmental Challenge
 
-Los datos hablan por sí solos:  
-- La industria de la construcción representa **36% del consumo energético global** y **40% de las emisiones de CO₂**.  
-- El 30% de los materiales utilizados en la construcción provienen de recursos no renovables.  
-- Más del 40% de los residuos sólidos provienen de procesos constructivos.  
+The numbers speak for themselves:  
+- The construction industry accounts for **36% of global energy consumption** and **40% of CO₂ emissions**.  
+- 30% of materials used in construction come from non-renewable resources.  
+- More than 40% of solid waste comes from construction processes.  
 
-Con estas cifras, es evidente que continuar con los métodos tradicionales **no es una opción viable**. En Cheaper Buy, creemos que la sostenibilidad es el futuro y que la madera puede desempeñar un papel clave en la reducción del impacto ambiental.
+With these figures, it is clear that continuing with traditional methods **is not a viable option**. At Cheaper Buy, we believe sustainability is the future and that wood can play a key role in reducing environmental impact.
 
-## 🌱 Cheaper Buy: Construyendo con Responsabilidad
+## 🌱 Cheaper Buy: Building Responsibly
 
-En **Cheaper Buy**, la sostenibilidad no es solo un compromiso, sino el **corazón de nuestra operación**. A través de innovación, responsabilidad y alianzas estratégicas, estamos impulsando una industria de la madera más ecológica.
+At **Cheaper Buy**, sustainability is not just a commitment but the **core of our operation**. Through innovation, responsibility, and strategic partnerships, we are driving a greener wood industry.
 
-### 🌲 Uso de Madera Certificada y Renovable
+### 🌲 Use of Certified and Renewable Wood
 
-Nuestra madera proviene de **fuentes certificadas y gestionadas de manera responsable**. Esto significa que por cada árbol utilizado en nuestros productos, se plantan nuevos árboles, garantizando el equilibrio ecológico y la regeneración del bosque.
+Our wood comes from **certified and responsibly managed sources**. This means that for every tree used in our products, new trees are planted, ensuring ecological balance and forest regeneration.
 
-### 💡 Eficiencia Energética en la Construcción
+### 💡 Energy Efficiency in Construction
 
-El uso de **madera como material de construcción** tiene enormes beneficios en comparación con materiales convencionales como el hormigón o el acero:
-- **Menor huella de carbono** en el proceso de fabricación y transporte.
-- **Mayor aislamiento térmico** para reducir el consumo de energía en edificaciones.
-- **Flexibilidad estructural**, lo que permite diseños más eficientes y con menos desperdicio de material.
+Using **wood as a construction material** has enormous benefits compared to conventional materials like concrete or steel:
+- **Lower carbon footprint** in manufacturing and transportation processes.
+- **Greater thermal insulation** to reduce energy consumption in buildings.
+- **Structural flexibility**, allowing for more efficient designs with less material waste.
 
-### 🔄 Reducción de Residuos y Optimización de Recursos
+### 🔄 Waste Reduction and Resource Optimization
 
-El **manejo eficiente de los residuos** es clave en nuestro proceso productivo:
-- **Uso de madera reciclada y subproductos** para maximizar cada pieza de materia prima.  
-- **Diseño modular** que permite aprovechar mejor los materiales en la construcción.  
-- **Reciclaje y reutilización de excedentes** en nuevos productos de madera, evitando desperdicios.  
+**Efficient waste management** is key in our production process:
+- **Use of recycled wood and by-products** to maximize each piece of raw material.  
+- **Modular design** that optimizes material use in construction.  
+- **Recycling and reusing surplus materials** in new wood products, preventing waste.  
 
-### 🌍 Alianzas para un Impacto Sostenible
+### 🌍 Partnerships for a Sustainable Impact
 
-Sabemos que la sostenibilidad es un esfuerzo colectivo. Por eso, **trabajamos con proveedores, carpinteros y arquitectos comprometidos con la construcción responsable**. Además, colaboramos con programas de reforestación y educación ambiental para seguir promoviendo el uso responsable de la madera.
+We know that sustainability is a collective effort. That is why we **work with suppliers, carpenters, and architects committed to responsible construction**. Additionally, we collaborate with reforestation programs and environmental education initiatives to promote the responsible use of wood.
 
-## 📈 El Impacto de un Cambio Sostenible
+## 📈 The Impact of a Sustainable Change
 
-Nuestro compromiso con la sostenibilidad no solo protege el medio ambiente, sino que también genera beneficios a largo plazo para todos:
+Our commitment to sustainability not only protects the environment but also generates long-term benefits for everyone:
 
-- **🌱 Beneficios ecológicos**: Menos deforestación, reducción de emisiones y protección de los ecosistemas.  
-- **💰 Ventajas económicas**: La construcción con madera certificada es más eficiente y genera ahorros energéticos.  
-- **🏡 Responsabilidad social**: Promovemos la construcción sostenible para hogares y espacios de trabajo más saludables.  
+- **🌱 Ecological benefits**: Less deforestation, reduced emissions, and ecosystem protection.  
+- **💰 Economic advantages**: Building with certified wood is more efficient and generates energy savings.  
+- **🏡 Social responsibility**: We promote sustainable construction for healthier homes and workspaces.  
 
-## 🔥 Liderando el Futuro de la Construcción en Madera
+## 🔥 Leading the Future of Wood Construction
 
-Cheaper Buy no solo **vende productos de madera**, sino que lidera una **revolución sostenible** en la industria. Nuestra visión es clara: **una construcción más ecológica y eficiente** que beneficie tanto a las personas como al planeta.
+Cheaper Buy not only **sells wood products** but also leads a **sustainable revolution** in the industry. Our vision is clear: **a greener and more efficient construction approach** that benefits both people and the planet.
 
-## 🚀 Un Futuro Más Verde con Cheaper Buy
+## 🚀 A Greener Future with Cheaper Buy
 
-El sector de la construcción está en un **punto de inflexión**. A medida que más empresas adoptan prácticas sostenibles, el impacto será aún mayor. 
+The construction sector is at a **turning point**. As more companies adopt sustainable practices, the impact will be even greater.
 
-En **Cheaper Buy**, estamos comprometidos en seguir impulsando el uso responsable de la madera, ayudando a transformar la industria hacia un **modelo más ecológico, eficiente y sostenible**.  
+At **Cheaper Buy**, we are committed to continuing to drive the responsible use of wood, helping transform the industry into a **more ecological, efficient, and sustainable model**.
 
-🌿 **Únete a nuestra misión y sé parte del cambio hacia un futuro más verde.**
+🌿 **Join our mission and be part of the change towards a greener future.**

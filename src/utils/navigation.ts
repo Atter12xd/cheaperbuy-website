@@ -1,34 +1,38 @@
-// Enlaces de la barra de navegación
+
 const navBarLinks = [
-  { name: "Inicio", url: "/" },
-  { name: "Productos", url: "/products" },
-  { name: "Servicios", url: "/services" },
+  { name: "Home", url: "/" },
+  { name: "Products", url: "/products" },
+  { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
-  { name: "Contáctanos", url: "/contact" },
+  { name: "Contact", url: "/contact" },
 ];
 
-// Enlaces del footer
 const footerLinks = [
   {
-    section: "Nuestra Empresa",
+    section: "Écosystème",
     links: [
-      { name: "Sobre Nosotros", url: "/services" },
-      { name: "Blog", url: "/blog" },
+      { name: "Documentation", url: "/fr/welcome-to-docs/" },
+      { name: "Outils et Équipements", url: "/fr/products" },
+      { name: "Services de Construction", url: "/fr/services" },
     ],
   },
   {
-    section: "Atención al Cliente",
+    section: "Société",
     links: [
-      { name: "Soporte", url: "/contact" },
+      { name: "À propos de nous", url: "#" },
+      { name: "Blog", url: "/fr/blog" },
+      { name: "Carrières", url: "#" },
+      { name: "Clients", url: "#" },
     ],
   },
 ];
 
-// Redes sociales
 const socialLinks = {
-  facebook: "https://www.facebook.com/cheaperbuy", // Reemplaza con el link real
-  whatsapp: "https://wa.me/tu-numero", // Link directo a WhatsApp
-  linkedin: "https://www.linkedin.com/company/cheaperbuy", // Agregado si tienes LinkedIn
+  facebook: "#",
+  x: "#",
+  github: "https://github.com/mearashadowfax/ScrewFast",
+  google: "#",
+  slack: "#",
 };
 
 export default {

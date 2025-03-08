@@ -7,15 +7,15 @@ import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
-// Definir las variables que se utilizarán en este componente
-const title = "Contáctanos";
+// Define the variables to be used in this component
+const title = "Contact Us";
 const subTitle =
-  "¿Tienes dudas o necesitas cotizar un pedido? Escríbenos y nuestro equipo te asesorará en todo lo que necesites sobre nuestros productos de madera.";
-const formTitle = "Completa el formulario";
-const formSubTitle = "Te responderemos en un plazo de 24 a 48 horas.";
+  "Do you have questions or need a quote? Write to us, and our team will assist you with everything you need about our wood products.";
+const formTitle = "Fill out the form";
+const formSubTitle = "We will respond within 24 to 48 hours.";
 ---
 
-<!-- Sección de contacto -->
+<!-- Contact Section -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
@@ -35,18 +35,18 @@ const formSubTitle = "Te responderemos en un plazo de 24 a 48 horas.";
           {formTitle}
         </h2>
 
-        <!-- Formulario de contacto -->
+        <!-- Contact Form -->
         <form>
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
-                label="Nombre"
+                label="First Name"
                 name="hs-firstname-contacts"
               />
               <TextInput
                 id="hs-lastname-contacts"
-                label="Apellido"
+                label="Last Name"
                 name="hs-lastname-contacts"
               />
             </div>
@@ -54,13 +54,13 @@ const formSubTitle = "Te responderemos en un plazo de 24 a 48 horas.";
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Detalles de tu consulta"
+              label="Details of your inquiry"
               name="hs-about-contacts"
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Enviar Mensaje" />
+            <AuthBtn title="Send Message" />
           </div>
 
           <div class="mt-3 text-center">
@@ -71,48 +71,48 @@ const formSubTitle = "Te responderemos en un plazo de 24 a 48 horas.";
         </form>
       </div>
 
-      <!-- Métodos de contacto alternativos -->
+      <!-- Alternative Contact Methods -->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Centro de ayuda"
-          content="Explora nuestra base de conocimientos con guías y artículos sobre nuestros productos."
+          heading="Help Center"
+          content="Explore our knowledge base with guides and articles about our products."
           isLinkVisible={true}
-          linkTitle="Ver guías y tutoriales"
+          linkTitle="View Guides and Tutorials"
           linkURL="#"
           isArrowVisible={true}
           ><Icon name="question" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Preguntas frecuentes"
-          content="Resuelve dudas rápidas en nuestra sección de preguntas frecuentes."
+          heading="Frequently Asked Questions"
+          content="Find quick answers in our FAQ section."
           isLinkVisible={true}
-          linkTitle="Ver FAQ"
+          linkTitle="View FAQ"
           linkURL="#"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Nuestra Material"
-          content="Cheaper Buy - Distribuidora de Madera"
+          heading="Our Location"
+          content="Cheaper Buy - Wood Distributor"
           isAddressVisible={true}
-          addressContent="Pucallpa, Perú"
+          addressContent="Pucallpa, Peru"
           ><Icon name="mapPin" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Escríbenos por WhatsApp"
-          content="¿Prefieres un contacto más directo? Chatea con nuestro equipo en WhatsApp."
+          heading="Message us on WhatsApp"
+          content="Prefer a more direct contact? Chat with our team on WhatsApp."
           isLinkVisible={true}
-          linkTitle="Iniciar chat"
+          linkTitle="Start Chat"
           linkURL="https://wa.me/51975733744"
           ><Icon name="whatsapp" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Correo electrónico"
-          content="Envíanos un correo y te responderemos a la brevedad posible."
+          heading="Email Us"
+          content="Send us an email, and we will get back to you as soon as possible."
           isLinkVisible={true}
           linkTitle="contacto@cheaperbuy.com"
           linkURL="mailto:contacto@cheaperbuy.com"
