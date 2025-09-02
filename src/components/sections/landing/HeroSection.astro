@@ -42,27 +42,54 @@ interface Props {
 
 ---
 
-<!-- Sección principal con diseño responsivo -->
+<!-- Sección principal con diseño responsivo y más atractiva -->
 <section
-  class="mx-auto max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 2xl:max-w-full grid gap-6 md:grid-cols-2 md:items-center"
+  class="relative mx-auto max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8 2xl:max-w-full grid gap-8 md:grid-cols-2 md:items-center overflow-hidden"
 >
-  <!-- Sección de texto con mejoras -->
-  <div>
-    <h1
-      class="text-3xl font-extrabold text-neutral-800 dark:text-neutral-100 sm:text-4xl lg:text-5xl leading-tight uppercase tracking-wide shadow-lg"
-    >
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-brown-200 to-yellow-200 rounded-full opacity-20 -translate-x-16 -translate-y-16"></div>
+  <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-green-200 to-brown-200 rounded-full opacity-20 translate-x-24 translate-y-24"></div>
+  
+  <!-- Sección de texto mejorada -->
+  <div class="relative z-10">
+    <!-- Badge promocional -->
+    <div class="inline-flex items-center px-4 py-2 mb-6 text-sm font-semibold text-brown-700 bg-yellow-100 rounded-full border border-yellow-300">
+      🎉 Oferta Especial - Hasta 30% OFF
+    </div>
+
+    <h1 class="text-4xl font-black text-neutral-800 dark:text-neutral-100 sm:text-5xl lg:text-6xl leading-tight tracking-tight mb-6">
       <Fragment set:html={title} />
     </h1>
 
-    <p class="mt-4 text-lg text-neutral-700 dark:text-neutral-300 lg:w-4/5" set:html={subTitle}></p>
+    <div class="text-lg text-neutral-700 dark:text-neutral-300 lg:w-4/5 leading-relaxed" set:html={subTitle}></div>
 
-    <!-- Botones CTA optimizados para fondo de bosque -->
-    <div class="mt-7 flex flex-col sm:flex-row gap-4">
+    <!-- Garantías/Beneficios destacados -->
+    <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+      <div class="flex items-center gap-2 text-green-700">
+        <span class="text-lg">✅</span>
+        <span class="font-medium">Garantía 10 años</span>
+      </div>
+      <div class="flex items-center gap-2 text-brown-700">
+        <span class="text-lg">🚚</span>
+        <span class="font-medium">Envío gratuito</span>
+      </div>
+      <div class="flex items-center gap-2 text-yellow-700">
+        <span class="text-lg">⚡</span>
+        <span class="font-medium">Instalación 24h</span>
+      </div>
+      <div class="flex items-center gap-2 text-neutral-700">
+        <span class="text-lg">💳</span>
+        <span class="font-medium">Financiamiento</span>
+      </div>
+    </div>
+
+    <!-- Botones CTA mejorados -->
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
       {primaryBtn && (
         <PrimaryCTA
           title={primaryBtn}
           url={primaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg bg-brown-600 dark:bg-brown-500 hover:bg-brown-700 dark:hover:bg-brown-600 text-white font-bold px-6 py-3 text-base transition duration-300 shadow-lg transform hover:scale-105"
+          customClasses="w-full sm:w-auto text-center rounded-xl bg-gradient-to-r from-brown-600 to-brown-700 hover:from-brown-700 hover:to-brown-800 dark:from-brown-500 dark:to-brown-600 text-white font-bold px-8 py-4 text-lg transition-all duration-300 shadow-xl transform hover:scale-105 hover:shadow-2xl"
         />
       )}
       
@@ -70,44 +97,94 @@ interface Props {
         <SecondaryCTA
           title={secondaryBtn}
           url={secondaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg border-2 border-brown-600 dark:border-brown-400 text-brown-700 dark:text-brown-300 hover:bg-brown-600 hover:text-white dark:hover:bg-brown-500 dark:hover:text-white font-medium px-6 py-3 text-base transition duration-300 shadow-md"
+          customClasses="w-full sm:w-auto text-center rounded-xl border-2 border-brown-600 dark:border-brown-400 text-brown-700 dark:text-brown-300 hover:bg-brown-600 hover:text-white dark:hover:bg-brown-500 dark:hover:text-white font-semibold px-8 py-4 text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
         />
       )}
     </div>
 
-    <!-- Sección de reseñas -->
+    <!-- Sección de reseñas mejorada -->
     {withReview && (
-      <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
+      <div class="mt-8 p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl backdrop-blur-sm border border-neutral-200 dark:border-neutral-700">
+        <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
+      </div>
     )}
   </div>
 
-  <!-- Sección de imagen optimizada -->
-  <div class="flex justify-center md:justify-end">
-    <img
-    id="heroImage"
-    src="/images/fo-ro1.jpeg"
-    alt={alt || "Imagen del producto"}
-    class="w-full max-w-[250px] md:max-w-[450px] lg:max-w-[800px] object-cover rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 transition-opacity duration-1000 ease-in-out"
-    draggable="false"
-    loading="eager"
-    />
+  <!-- Sección de imagen mejorada con efectos -->
+  <div class="relative flex justify-center md:justify-end">
+    <!-- Elementos decorativos alrededor de la imagen -->
+    <div class="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full animate-pulse"></div>
+    <div class="absolute -top-2 -right-2 w-6 h-6 bg-brown-500 rounded-full animate-pulse delay-300"></div>
+    <div class="absolute -bottom-3 -left-2 w-7 h-7 bg-green-400 rounded-full animate-pulse delay-700"></div>
+    
+    <!-- Contenedor de imagen con efectos -->
+    <div class="relative">
+      <img
+        id="heroImage"
+        src="/images/fo-ro1.jpeg"
+        alt={alt || "Imagen del producto"}
+        class="w-full max-w-[280px] md:max-w-[480px] lg:max-w-[820px] object-cover rounded-2xl shadow-2xl border-4 border-white dark:border-neutral-700 transition-all duration-1000 ease-in-out transform hover:scale-105 hover:shadow-3xl"
+        draggable="false"
+        loading="eager"
+      />
+      
+      <!-- Badge flotante sobre la imagen -->
+      <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-bounce">
+        🔥 NUEVO
+      </div>
+      
+      <!-- Indicador de cambio de imagen -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        <div class="w-2 h-2 bg-white rounded-full opacity-50" id="dot1"></div>
+        <div class="w-2 h-2 bg-white rounded-full opacity-50" id="dot2"></div>
+        <div class="w-2 h-2 bg-white rounded-full opacity-50" id="dot3"></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Script para cambiar la imagen automáticamente -->
+<!-- Script mejorado para cambiar la imagen con indicadores -->
 <script>
   const images = [
     "/images/fo-ro1.jpeg",
     "/images/fo-ro2.jpeg",
     "/images/fo-ro3.jpeg"
   ];
+  const dots = ["dot1", "dot2", "dot3"];
   let currentIndex = 0;
 
-  setInterval(() => {
+  function updateImage() {
     const heroImage = document.getElementById("heroImage") as HTMLImageElement;
+    
     if (heroImage) {
-      heroImage.src = images[currentIndex];
-      currentIndex = (currentIndex + 1) % images.length;
+      heroImage.style.opacity = "0.7";
+      
+      setTimeout(() => {
+        heroImage.src = images[currentIndex];
+        heroImage.style.opacity = "1";
+        
+        // Actualizar indicadores
+        dots.forEach((dotId, index) => {
+          const dot = document.getElementById(dotId);
+          if (dot) {
+            dot.style.opacity = index === currentIndex ? "1" : "0.5";
+            dot.style.backgroundColor = index === currentIndex ? "#fbbf24" : "white";
+          }
+        });
+        
+        currentIndex = (currentIndex + 1) % images.length;
+      }, 200);
     }
-  }, 2000);
+  }
+
+  // Inicializar primer dot
+  document.addEventListener("DOMContentLoaded", () => {
+    const firstDot = document.getElementById("dot1");
+    if (firstDot) {
+      firstDot.style.opacity = "1";
+      firstDot.style.backgroundColor = "#fbbf24";
+    }
+  });
+
+  setInterval(updateImage, 3000);
 </script>
