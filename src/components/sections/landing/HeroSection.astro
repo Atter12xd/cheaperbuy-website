@@ -56,13 +56,13 @@ interface Props {
 
     <p class="mt-4 text-lg text-neutral-700 dark:text-neutral-300 lg:w-4/5" set:html={subTitle}></p>
 
-    <!-- Botones CTA con menos verde -->
+    <!-- Botones CTA optimizados para fondo de bosque -->
     <div class="mt-7 flex flex-col sm:flex-row gap-4">
       {primaryBtn && (
         <PrimaryCTA
           title={primaryBtn}
           url={primaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
+          customClasses="w-full sm:w-auto text-center rounded-lg bg-amber-600 dark:bg-amber-500 hover:bg-amber-700 dark:hover:bg-amber-600 text-white font-bold px-6 py-3 text-base transition duration-300 shadow-lg transform hover:scale-105"
         />
       )}
       
@@ -70,7 +70,7 @@ interface Props {
         <SecondaryCTA
           title={secondaryBtn}
           url={secondaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg border-2 border-slate-700 dark:border-slate-500 text-slate-800 dark:text-slate-300 hover:bg-slate-700 hover:text-white dark:hover:bg-slate-500 dark:hover:text-white font-medium px-6 py-3 text-base transition duration-300"
+          customClasses="w-full sm:w-auto text-center rounded-lg border-2 border-amber-600 dark:border-amber-400 text-amber-700 dark:text-amber-300 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white font-medium px-6 py-3 text-base transition duration-300 shadow-md"
         />
       )}
     </div>
