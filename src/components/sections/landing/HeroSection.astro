@@ -54,15 +54,15 @@ interface Props {
       <Fragment set:html={title} />
     </h1>
 
-    <p class="mt-4 text-lg text-neutral-800 dark:text-neutral-400 lg:w-4/5" set:html={subTitle}></p>
+    <p class="mt-4 text-lg text-neutral-700 dark:text-neutral-300 lg:w-4/5" set:html={subTitle}></p>
 
-    <!-- Botones CTA -->
+    <!-- Botones CTA con menos verde -->
     <div class="mt-7 flex flex-col sm:flex-row gap-4">
       {primaryBtn && (
         <PrimaryCTA
           title={primaryBtn}
           url={primaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg bg-green-800 dark:bg-green-400 text-white dark:text-black font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
+          customClasses="w-full sm:w-auto text-center rounded-lg bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold px-6 py-3 text-base transition duration-300 shadow-md transform hover:scale-105"
         />
       )}
       
@@ -70,7 +70,7 @@ interface Props {
         <SecondaryCTA
           title={secondaryBtn}
           url={secondaryBtnURL}
-          customClasses="w-full sm:w-auto text-center rounded-lg border border-green-400 dark:border-green-500 text-green-800 dark:text-green-300 hover:bg-green-400 hover:text-white dark:hover:bg-green-500 dark:hover:text-black font-medium px-6 py-3 text-base transition duration-300"
+          customClasses="w-full sm:w-auto text-center rounded-lg border-2 border-slate-700 dark:border-slate-500 text-slate-800 dark:text-slate-300 hover:bg-slate-700 hover:text-white dark:hover:bg-slate-500 dark:hover:text-white font-medium px-6 py-3 text-base transition duration-300"
         />
       )}
     </div>
