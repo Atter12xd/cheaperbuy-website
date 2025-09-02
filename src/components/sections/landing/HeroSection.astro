@@ -106,17 +106,20 @@ interface Props {
     )}
   </div>
 
-  <!-- Sección de imagen elegante -->
+  <!-- Sección de imagen con tamaño fijo y más grande -->
   <div class="flex justify-center md:justify-end">
     <div class="relative">
-      <img
-        id="heroImage"
-        src="/images/fo-ro1.jpeg"
-        alt={alt || "Imagen del producto"}
-        class="w-full max-w-[300px] md:max-w-[500px] lg:max-w-[650px] object-cover rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700 transition-opacity duration-500 ease-in-out"
-        draggable="false"
-        loading="eager"
-      />
+      <!-- Contenedor fijo para todas las imágenes -->
+      <div class="w-[400px] md:w-[600px] lg:w-[800px] h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
+        <img
+          id="heroImage"
+          src="/images/fo-ro1.jpeg"
+          alt={alt || "Imagen del producto"}
+          class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+          draggable="false"
+          loading="eager"
+        />
+      </div>
       
       <!-- Indicadores discretos -->
       <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
@@ -157,6 +160,6 @@ interface Props {
     }
   }
 
-  // Cambiar imagen cada 3 segundos (1 segundo más rápido)
+  // Cambiar imagen cada 3 segundos
   setInterval(changeImage, 3000);
 </script>
