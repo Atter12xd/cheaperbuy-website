@@ -50,7 +50,7 @@ interface Props {
   <div>
     <!-- Distintivo de calidad sutil -->
     <div class="inline-block px-4 py-2 mb-6 text-sm font-medium text-brown-700 bg-brown-50 dark:bg-brown-900 dark:text-brown-300 rounded-lg border border-brown-200 dark:border-brown-700">
-      Especialistas desde 2015
+      {Astro.currentLocale === "en" ? "Specialists since 2015" : "Especialistas desde 2015"}
     </div>
 
     <h1 class="text-4xl font-bold text-neutral-800 dark:text-neutral-100 sm:text-5xl lg:text-6xl leading-tight mb-6">
@@ -59,25 +59,33 @@ interface Props {
 
     <div class="text-lg text-neutral-700 dark:text-neutral-300 lg:w-4/5 leading-relaxed mb-8" set:html={subTitle}></div>
 
-    <!-- Beneficios principales de manera elegante -->
-    <div class="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-neutral-700 dark:text-neutral-300">
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
-        <span class="font-medium">Garantía de 10 años</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
-        <span class="font-medium">Instalación incluida</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
-        <span class="font-medium">Financiamiento disponible</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
-        <span class="font-medium">Asesoría personalizada</span>
-      </div>
-    </div>
+    <!-- Beneficios principales bilingües -->
+<div class="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-neutral-700 dark:text-neutral-300">
+  <div class="flex items-center gap-3">
+    <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
+    <span class="font-medium">
+      {Astro.currentLocale === "en" ? "10-year warranty" : "Garantía de 10 años"}
+    </span>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
+    <span class="font-medium">
+      {Astro.currentLocale === "en" ? "Installation included" : "Instalación incluida"}
+    </span>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
+    <span class="font-medium">
+      {Astro.currentLocale === "en" ? "Financing available" : "Financiamiento disponible"}
+    </span>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="w-2 h-2 bg-brown-600 rounded-full"></div>
+    <span class="font-medium">
+      {Astro.currentLocale === "en" ? "Personal advice" : "Asesoría personalizada"}
+    </span>
+  </div>
+</div>
 
     <!-- Botones CTA profesionales -->
     <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -110,7 +118,7 @@ interface Props {
   <div class="flex justify-center md:justify-end">
     <div class="relative">
       <!-- Contenedor fijo para todas las imágenes -->
-      <div class="w-[400px] md:w-[600px] lg:w-[700px] h-[300px] md:h-[450px] lg:h-[490px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
+      <div class="w-[400px] md:w-[600px] lg:w-[800px] h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
         <img
           id="heroImage"
           src="/images/fo-ro1.jpeg"
