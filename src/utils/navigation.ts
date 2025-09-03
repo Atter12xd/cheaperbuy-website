@@ -5,6 +5,7 @@ const navBarLinks = [
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
+  { name: "Alumunio", url: "/aluminio" },
 ];
 
 const footerLinks = [

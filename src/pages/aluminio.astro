@@ -1,0 +1,586 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+
+// Import images
+import p1 from "@images/p1.jpeg";
+import p2 from "@images/p2.jpeg";
+import p3 from "@images/p3.jpeg";
+import p4 from "@images/p4.jpeg";
+import p5 from "@images/p5.jpeg";
+
+// Videos
+const videos = [
+  "/images/p26.mp4",
+  "/images/p27.mp4", 
+  "/images/p28.mp4",
+  "/images/p29.mp4",
+  "/images/p30.mp4"
+];
+
+const products = [
+  {
+    id: 1,
+    name: "Elite Modern Door",
+    price: "$2,850",
+    description: "High-resistance aluminum door with premium finish and advanced security system.",
+    category: "Modern",
+    image: p1,
+    type: "image",
+    isNew: true
+  },
+  {
+    id: 2,
+    name: "Crystal Sliding Door",
+    price: "$3,200", 
+    description: "Elegant aluminum sliding door with tempered glass, perfect for modern spaces.",
+    category: "Sliding",
+    image: p2,
+    type: "image",
+    featured: true
+  },
+  {
+    id: 3,
+    name: "Premium Swing Door",
+    price: "$2,650",
+    description: "Contemporary aluminum swing door with excellent thermal insulation.",
+    category: "Swing",
+    image: p3,
+    type: "image"
+  },
+  {
+    id: 4,
+    name: "Commercial System", 
+    price: "$4,100",
+    description: "Complete aluminum door system designed for commercial and institutional use.",
+    category: "Commercial",
+    image: p4,
+    type: "image"
+  },
+  {
+    id: 5,
+    name: "Classic Residential",
+    price: "$2,350",
+    description: "Aluminum door with classic design, ideal for homes seeking elegance and functionality.",
+    category: "Classic",
+    image: p5,
+    type: "image"
+  },
+  {
+    id: 6,
+    name: "Installation Process",
+    price: "Included",
+    description: "Watch the complete installation process of our premium aluminum doors.",
+    category: "Installation",
+    video: videos[0],
+    type: "video"
+  },
+  {
+    id: 7,
+    name: "Security System",
+    price: "Quote",
+    description: "Learn about the security features of our aluminum door systems.",
+    category: "Security",
+    video: videos[1],
+    type: "video"
+  },
+  {
+    id: 8,
+    name: "Pro Maintenance",
+    price: "Guide Included",
+    description: "Learn how to maintain your aluminum doors in perfect condition for years.",
+    category: "Maintenance",
+    video: videos[2],
+    type: "video"
+  },
+  {
+    id: 9, 
+    name: "Customization",
+    price: "No Additional Cost",
+    description: "Discover the customization options available for your ideal door.",
+    category: "Customization",
+    video: videos[3],
+    type: "video"
+  },
+  {
+    id: 10,
+    name: "Extended Warranty",
+    price: "Included",
+    description: "Learn about our extended warranty and maintenance service we offer.",
+    category: "Warranty",
+    video: videos[4],
+    type: "video"
+  }
+];
+
+const generateWhatsAppMessage = (product) => {
+  const message = `Hi! I'm interested in: *${product.name}*
+💰 Price: ${product.price}
+📝 ${product.description}
+I would like more information. Thank you!`;
+  return encodeURIComponent(message);
+};
+---
+
+<MainLayout
+  title="Premium Aluminum Doors | Cheaper Buy"
+  lang="en"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/aluminum",
+    url: "https://screwfast.uk/aluminum",
+    name: "Premium Aluminum Doors | Cheaper Buy",
+    description: "Discover our collection of high-quality aluminum doors with modern designs, extended warranty and competitive prices.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://screwfast.uk/",
+      name: "Cheaper Buy",
+      description: "Cheaper Buy offers premium wood floors and high-quality aluminum doors with professional installation and extended warranty.",
+    },
+    inLanguage: "en",
+  }}
+>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-brown-50 via-brown-100 to-brown-200 dark:from-brown-900 dark:via-brown-800 dark:to-brown-700">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23A0522D" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+  
+  <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold tracking-tight text-brown-900 dark:text-brown-100 sm:text-5xl md:text-6xl">
+        <span class="block">Premium Aluminum</span>
+        <span class="block bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">Doors</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-3xl text-lg text-brown-600 dark:text-brown-300">
+        Transform your spaces with our latest generation aluminum doors. Design, security and durability in perfect harmony.
+      </p>
+      
+      <!-- Stats -->
+      <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">10+</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Years Warranty</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">500+</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Installations</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">24/7</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Support</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">100%</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Peruvian</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+  <!-- Filters -->
+  <div class="mb-12 text-center">
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full bg-brown-600 text-white font-medium transition-all hover:bg-brown-700 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2">
+        All
+      </button>
+      <button data-filter="image" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Products
+      </button>
+      <button data-filter="video" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Videos
+      </button>
+      <button data-filter="Modern" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Modern
+      </button>
+      <button data-filter="Commercial" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Commercial
+      </button>
+    </div>
+  </div>
+<!-- Product Gallery Grid -->
+  <div id="product-gallery" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    {products.map((product) => (
+      <div class={`product-card group cursor-pointer rounded-2xl bg-white dark:bg-brown-800 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden ${product.type} ${product.category}`}>
+        <!-- Image/Video Container -->
+        <div class="relative aspect-square overflow-hidden">
+          {product.type === "image" ? (
+            <img
+              src={product.image.src}
+              alt={product.name}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+          ) : (
+            <video
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src={product.video} type="video/mp4" />
+            </video>
+          )}
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <!-- Badges -->
+          <div class="absolute top-3 left-3 flex flex-col gap-2">
+            {product.isNew && (
+              <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+            )}
+            {product.featured && (
+              <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">FEATURED</span>
+            )}
+            <span class={`text-white text-xs font-medium px-2 py-1 rounded-full ${
+              product.type === "video" ? "bg-red-500" : "bg-brown-500"
+            }`}>
+              {product.type === "video" ? "VIDEO" : "PHOTO"}
+            </span>
+          </div>
+
+          <!-- Quick Action Button -->
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <button class="quick-view-btn bg-white dark:bg-brown-800 text-brown-800 dark:text-brown-200 p-2 rounded-full shadow-lg hover:bg-brown-100 dark:hover:bg-brown-700 transition-colors" data-product-id={product.id}>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-brown-900 dark:text-brown-100 group-hover:text-brown-700 dark:group-hover:text-brown-300 transition-colors">
+            {product.name}
+          </h3>
+          <p class="mt-2 text-sm text-brown-600 dark:text-brown-400 line-clamp-2">
+            {product.description}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-brown-800 dark:text-brown-200">
+              {product.price}
+            </span>
+            <a
+              href={`https://wa.me/51933484150?text=${generateWhatsAppMessage(product)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-medium px-3 py-2 rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              Order
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Load More Button -->
+  <div class="mt-12 text-center">
+    <button id="load-more-btn" class="hidden bg-brown-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-brown-700 transition-colors transform hover:scale-105">
+      Load More Products
+    </button>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 opacity-0 invisible transition-all duration-300">
+  <div class="bg-white dark:bg-brown-800 rounded-2xl w-full max-w-6xl max-h-[95vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+    <div id="modal-content" class="p-4 sm:p-6">
+      <!-- Modal content will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('product-modal');
+    const modalContent = document.getElementById('modal-content');
+
+    // Products data for modal
+    const productData = {
+      1: { 
+        name: "Elite Modern Door", 
+        price: "$2,850", 
+        description: "High-resistance aluminum door with premium finish and advanced security system.", 
+        features: ["Aluminum 6063-T5", "6mm tempered glass", "Multi-point lock", "10 year warranty"] 
+      },
+      2: { 
+        name: "Crystal Sliding Door", 
+        price: "$3,200", 
+        description: "Elegant aluminum sliding door with tempered glass, perfect for modern spaces.", 
+        features: ["Reinforced profile", "Silent bearing", "Security glass", "Easy maintenance"] 
+      },
+      3: { 
+        name: "Premium Swing Door", 
+        price: "$2,650", 
+        description: "Contemporary aluminum swing door with excellent thermal insulation.", 
+        features: ["Double sealing", "Reinforced hinges", "Anodized finish", "Corrosion resistant"] 
+      },
+      4: { 
+        name: "Commercial System", 
+        price: "$4,100", 
+        description: "Complete aluminum door system designed for commercial and institutional use.", 
+        features: ["Commercial certification", "High durability", "Multiple configurations", "Specialized installation"] 
+      },
+      5: { 
+        name: "Classic Residential", 
+        price: "$2,350", 
+        description: "Aluminum door with classic design, ideal for homes seeking elegance and functionality.", 
+        features: ["Timeless design", "Easy installation", "Minimal maintenance", "Customizable colors"] 
+      },
+      6: { 
+        name: "Installation Process", 
+        price: "Included", 
+        description: "Watch the complete installation process of our premium aluminum doors.", 
+        features: ["Professional installation", "Specialized equipment", "Quality guarantee", "Certified process"] 
+      },
+      7: { 
+        name: "Security System", 
+        price: "Quote", 
+        description: "Learn about the security features of our aluminum door systems.", 
+        features: ["Smart lock", "Anti-lever system", "Structural reinforcements", "Security certification"] 
+      },
+      8: { 
+        name: "Pro Maintenance", 
+        price: "Guide Included", 
+        description: "Learn how to maintain your aluminum doors in perfect condition for years.", 
+        features: ["Specialized cleaning", "Periodic lubrication", "Preventive inspection", "Technical support"] 
+      },
+      9: { 
+        name: "Customization", 
+        price: "No Additional Cost", 
+        description: "Discover the customization options available for your ideal door.", 
+        features: ["Multiple colors", "Different textures", "Decorative glass", "Premium hardware"] 
+      },
+      10: { 
+        name: "Extended Warranty", 
+        price: "Included", 
+        description: "Learn about our extended warranty and maintenance service we offer.", 
+        features: ["10 year warranty", "24/7 service", "Original parts", "Certified technicians"] 
+      }
+    };
+
+    // Videos data
+    const videoData = {
+      6: "/images/p26.mp4",
+      7: "/images/p27.mp4",
+      8: "/images/p28.mp4",
+      9: "/images/p29.mp4",
+      10: "/images/p30.mp4"
+    };
+   // Filter buttons
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active', 'bg-brown-600', 'text-white'));
+        filterBtns.forEach(b => b.classList.add('bg-brown-200', 'text-brown-800', 'dark:bg-brown-700', 'dark:text-brown-200'));
+        
+        btn.classList.add('active', 'bg-brown-600', 'text-white');
+        btn.classList.remove('bg-brown-200', 'text-brown-800', 'dark:bg-brown-700', 'dark:text-brown-200');
+        
+        const filter = btn.dataset.filter;
+        
+        productCards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Quick view modal
+    document.querySelectorAll('.quick-view-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = parseInt(btn.dataset.productId);
+        const product = productData[productId];
+        
+        if (product) {
+          let mediaContent = '';
+          
+          if (productId <= 5) {
+            // For images (products 1-5)
+            const productCard = btn.closest('.product-card');
+            const imgElement = productCard.querySelector('img');
+            if (imgElement && imgElement.src) {
+              mediaContent = `<div class="mb-6 sm:mb-8">
+                <img src="${imgElement.src}" alt="${product.name}" class="w-full h-64 sm:h-80 lg:h-96 xl:h-[450px] object-cover rounded-lg shadow-xl" />
+              </div>`;
+            }
+          } else {
+            // For videos (products 6-10)
+            const videoSrc = videoData[productId];
+            if (videoSrc) {
+              mediaContent = `<div class="mb-6 sm:mb-8">
+                <video class="w-full h-64 sm:h-80 lg:h-96 xl:h-[450px] object-cover rounded-lg shadow-xl" controls autoplay muted loop>
+                  <source src="${videoSrc}" type="video/mp4" />
+                  Your browser does not support HTML5 videos.
+                </video>
+              </div>`;
+            }
+          }
+
+          modalContent.innerHTML = `
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-4">
+              <h2 class="text-xl sm:text-2xl font-bold text-brown-900 dark:text-brown-100 pr-8">${product.name}</h2>
+              <button id="close-modal" class="absolute top-4 right-4 sm:relative sm:top-0 sm:right-0 text-brown-500 hover:text-brown-700 dark:text-brown-400 dark:hover:text-brown-200 transition-colors p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            
+            ${mediaContent}
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              <div>
+                <div class="bg-brown-50 dark:bg-brown-700/30 p-3 sm:p-4 rounded-lg mb-4 sm:mb-6">
+                  <p class="text-2xl sm:text-3xl font-bold text-brown-600 dark:text-brown-400">${product.price}</p>
+                </div>
+                <p class="text-brown-600 dark:text-brown-400 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">${product.description}</p>
+                <h3 class="text-lg font-semibold text-brown-800 dark:text-brown-200 mb-3 sm:mb-4">Key Features:</h3>
+                <ul class="space-y-2 sm:space-y-3">
+                  ${product.features.map(f => `
+                    <li class="flex items-start gap-3 text-brown-600 dark:text-brown-400 text-sm sm:text-base">
+                      <span class="text-green-500 font-bold text-lg mt-0.5 flex-shrink-0">✓</span> 
+                      <span>${f}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+              <div class="flex flex-col justify-center mt-6 lg:mt-0">
+                <div class="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 sm:p-6 rounded-xl border border-green-200 dark:border-green-800">
+                  <h4 class="text-base sm:text-lg font-semibold text-brown-800 dark:text-brown-200 mb-3">Interested in this product?</h4>
+                  <p class="text-brown-600 dark:text-brown-400 text-sm mb-3 sm:mb-4">Contact us via WhatsApp to receive:</p>
+                  <ul class="text-sm text-brown-600 dark:text-brown-400 mb-4 space-y-1">
+                    <li>• Personalized quote</li>
+                    <li>• Technical consulting</li>
+                    <li>• Immediate availability</li>
+                    <li>• Professional installation</li>
+                  </ul>
+                  <a href="https://wa.me/51933484150?text=${encodeURIComponent(`Hi! I'm interested in: *${product.name}* - Price: ${product.price}. ${product.description} I would like more information and a quote.`)}" 
+                     target="_blank" 
+                     class="w-full bg-green-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold text-center hover:bg-green-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    <span>Order via WhatsApp</span>
+                  </a>
+                  <p class="text-xs text-brown-500 dark:text-brown-400 text-center mt-3">Immediate response • Free quote • Installation included</p>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          modal.classList.remove('opacity-0', 'invisible');
+          modal.querySelector('.bg-white').classList.remove('scale-95');
+          modal.querySelector('.bg-white').classList.add('scale-100');
+          
+          // Close modal event
+          document.getElementById('close-modal').addEventListener('click', closeModal);
+        }
+      });
+    });
+// Close modal function
+    function closeModal() {
+      modal.classList.add('opacity-0', 'invisible');
+      modal.querySelector('.bg-white').classList.add('scale-95');
+      modal.querySelector('.bg-white').classList.remove('scale-100');
+    }
+
+    // Close modal on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Video hover effects
+    const videoCards = document.querySelectorAll('.product-card video');
+    videoCards.forEach(video => {
+      const card = video.closest('.product-card');
+      
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+
+    // Smooth scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    productCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(card);
+    });
+
+    // Search functionality (bonus)
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        productCards.forEach(card => {
+          const productName = card.querySelector('h3').textContent.toLowerCase();
+          const productDesc = card.querySelector('p').textContent.toLowerCase();
+          
+          if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
+            card.style.display = 'block';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              if (!card.style.opacity || card.style.opacity === '0') {
+                card.style.display = 'none';
+              }
+            }, 300);
+          }
+        });
+      });
+    }
+  });
+</script>
+
+</MainLayout>

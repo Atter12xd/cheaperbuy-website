@@ -1,0 +1,539 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+
+// Importar las imágenes
+import p1 from "@images/p1.jpeg";
+import p2 from "@images/p2.jpeg";
+import p3 from "@images/p3.jpeg";
+import p4 from "@images/p4.jpeg";
+import p5 from "@images/p5.jpeg";
+
+// Videos
+const videos = [
+  "/images/p26.mp4",
+  "/images/p27.mp4", 
+  "/images/p28.mp4",
+  "/images/p29.mp4",
+  "/images/p30.mp4"
+];
+
+const productos = [
+  {
+    id: 1,
+    nombre: "Puerta Elite Moderna",
+    precio: "S/. 2,850",
+    descripcion: "Puerta de aluminio de alta resistencia con acabado premium y sistema de seguridad avanzado.",
+    categoria: "Modernas",
+    imagen: p1,
+    tipo: "imagen",
+    nuevo: true
+  },
+  {
+    id: 2,
+    nombre: "Corrediza Cristal",
+    precio: "S/. 3,200", 
+    descripcion: "Elegante puerta corrediza de aluminio con cristal templado, perfecta para espacios modernos.",
+    categoria: "Corredizas",
+    imagen: p2,
+    tipo: "imagen",
+    destacado: true
+  },
+  {
+    id: 3,
+    nombre: "Batiente Premium",
+    precio: "S/. 2,650",
+    descripcion: "Puerta batiente de aluminio con diseno contemporaneo y excelente aislamiento termico.",
+    categoria: "Batientes",
+    imagen: p3,
+    tipo: "imagen"
+  },
+  {
+    id: 4,
+    nombre: "Sistema Comercial", 
+    precio: "S/. 4,100",
+    descripcion: "Sistema completo de puertas de aluminio disenado para uso comercial e institucional.",
+    categoria: "Comerciales",
+    imagen: p4,
+    tipo: "imagen"
+  },
+  {
+    id: 5,
+    nombre: "Residencial Clasica",
+    precio: "S/. 2,350",
+    descripcion: "Puerta de aluminio con diseno clasico, ideal para hogares que buscan elegancia y funcionalidad.",
+    categoria: "Clasicas",
+    imagen: p5,
+    tipo: "imagen"
+  },
+  {
+    id: 6,
+    nombre: "Proceso Instalacion",
+    precio: "Incluido",
+    descripcion: "Observa el proceso completo de instalacion de nuestras puertas de aluminio premium.",
+    categoria: "Instalacion",
+    video: videos[0],
+    tipo: "video"
+  },
+  {
+    id: 7,
+    nombre: "Sistema Seguridad",
+    precio: "Consultar",
+    descripcion: "Conoce las caracteristicas de seguridad de nuestros sistemas de puertas de aluminio.",
+    categoria: "Seguridad",
+    video: videos[1],
+    tipo: "video"
+  },
+  {
+    id: 8,
+    nombre: "Mantenimiento Pro",
+    precio: "Guia incluida",
+    descripcion: "Aprende como mantener tus puertas de aluminio en perfecto estado durante anos.",
+    categoria: "Mantenimiento",
+    video: videos[2],
+    tipo: "video"
+  },
+  {
+    id: 9, 
+    nombre: "Personalizacion",
+    precio: "Sin costo adicional",
+    descripcion: "Descubre las opciones de personalizacion disponibles para tu puerta ideal.",
+    categoria: "Personalizacion",
+    video: videos[3],
+    tipo: "video"
+  },
+  {
+    id: 10,
+    nombre: "Garantia Extendida",
+    precio: "Incluido",
+    descripcion: "Conoce nuestra garantia extendida y el servicio de mantenimiento que ofrecemos.",
+    categoria: "Garantia",
+    video: videos[4],
+    tipo: "video"
+  }
+];
+
+const generarMensajeWhatsApp = (producto) => {
+  const mensaje = `¡Hola! Me interesa: *${producto.nombre}*
+💰 Precio: ${producto.precio}
+📝 ${producto.descripcion}
+Me gustaria mas informacion. ¡Gracias!`;
+  return encodeURIComponent(mensaje);
+};
+---
+
+<MainLayout
+  title="Puertas de Aluminio Premium | Cheaper Buy"
+  lang="fr"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/fr/aluminio",
+    url: "https://screwfast.uk/fr/aluminio",
+    name: "Puertas de Aluminio Premium | Cheaper Buy",
+    description: "Descubre nuestra coleccion de puertas de aluminio de alta calidad con disenos modernos, garantia extendida y precios competitivos.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://screwfast.uk/fr/",
+      name: "Cheaper Buy",
+      description: "Cheaper Buy ofrece pisos de madera premium y puertas de aluminio de alta calidad con instalacion profesional y garantia extendida.",
+    },
+    inLanguage: "fr",
+  }}
+>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-brown-50 via-brown-100 to-brown-200 dark:from-brown-900 dark:via-brown-800 dark:to-brown-700">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23A0522D" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+  
+  <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold tracking-tight text-brown-900 dark:text-brown-100 sm:text-5xl md:text-6xl">
+        <span class="block">Puertas de Aluminio</span>
+        <span class="block bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">Premium</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-3xl text-lg text-brown-600 dark:text-brown-300">
+        Transforma tus espacios con nuestras puertas de aluminio de ultima generacion. Diseno, seguridad y durabilidad en perfecta armonia.
+      </p>
+      
+      <!-- Stats -->
+      <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">10+</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Anos Garantia</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">500+</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Instalaciones</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">24/7</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Soporte</div>
+        </div>
+        <div class="rounded-lg bg-white/80 dark:bg-brown-800/80 p-4 backdrop-blur-sm">
+          <div class="text-2xl font-bold text-brown-800 dark:text-brown-200">100%</div>
+          <div class="text-sm text-brown-600 dark:text-brown-400">Peruano</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+  <!-- Filters -->
+  <div class="mb-12 text-center">
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full bg-brown-600 text-white font-medium transition-all hover:bg-brown-700 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2">
+        Todo
+      </button>
+      <button data-filter="imagen" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Productos
+      </button>
+      <button data-filter="video" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Videos
+      </button>
+      <button data-filter="Modernas" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Modernas
+      </button>
+      <button data-filter="Comerciales" class="filter-btn px-4 py-2 rounded-full bg-brown-200 text-brown-800 font-medium transition-all hover:bg-brown-300 focus:ring-2 focus:ring-brown-500 focus:ring-offset-2 dark:bg-brown-700 dark:text-brown-200 dark:hover:bg-brown-600">
+        Comerciales
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Gallery Grid -->
+  <div id="product-gallery" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    {productos.map((producto) => (
+      <div class={`product-card group cursor-pointer rounded-2xl bg-white dark:bg-brown-800 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden ${producto.tipo} ${producto.categoria}`}>
+        <!-- Image/Video Container -->
+        <div class="relative aspect-square overflow-hidden">
+          {producto.tipo === "imagen" ? (
+            <img
+              src={producto.imagen.src}
+              alt={producto.nombre}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+          ) : (
+            <video
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src={producto.video} type="video/mp4" />
+            </video>
+          )}
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <!-- Badges -->
+          <div class="absolute top-3 left-3 flex flex-col gap-2">
+            {producto.nuevo && (
+              <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</span>
+            )}
+            {producto.destacado && (
+              <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">DESTACADO</span>
+            )}
+            <span class={`text-white text-xs font-medium px-2 py-1 rounded-full ${
+              producto.tipo === "video" ? "bg-red-500" : "bg-brown-500"
+            }`}>
+              {producto.tipo === "video" ? "VIDEO" : "FOTO"}
+            </span>
+          </div>
+
+          <!-- Quick Action Button -->
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <button class="quick-view-btn bg-white dark:bg-brown-800 text-brown-800 dark:text-brown-200 p-2 rounded-full shadow-lg hover:bg-brown-100 dark:hover:bg-brown-700 transition-colors" data-product-id={producto.id}>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-brown-900 dark:text-brown-100 group-hover:text-brown-700 dark:group-hover:text-brown-300 transition-colors">
+            {producto.nombre}
+          </h3>
+          <p class="mt-2 text-sm text-brown-600 dark:text-brown-400 line-clamp-2">
+            {producto.descripcion}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-brown-800 dark:text-brown-200">
+              {producto.precio}
+            </span>
+            <a
+              href={`https://wa.me/51933484150?text=${generarMensajeWhatsApp(producto)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-medium px-3 py-2 rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              Pedir
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Load More Button -->
+  <div class="mt-12 text-center">
+    <button id="load-more-btn" class="hidden bg-brown-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-brown-700 transition-colors transform hover:scale-105">
+      Cargar Mas Productos
+    </button>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 opacity-0 invisible transition-all duration-300">
+  <div class="bg-white dark:bg-brown-800 rounded-2xl w-full max-w-6xl max-h-[95vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+    <div id="modal-content" class="p-4 sm:p-6">
+      <!-- Modal content will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('product-modal');
+    const modalContent = document.getElementById('modal-content');
+
+    // Products data for modal
+    const productData = {
+      1: { nombre: "Puerta Elite Moderna", precio: "S/. 2,850", descripcion: "Puerta de aluminio de alta resistencia con acabado premium y sistema de seguridad avanzado.", caracteristicas: ["Aluminio 6063-T5", "Vidrio templado 6mm", "Cerradura multipunto", "Garantia 10 anos"] },
+      2: { nombre: "Corrediza Cristal", precio: "S/. 3,200", descripcion: "Elegante puerta corrediza de aluminio con cristal templado, perfecta para espacios modernos.", caracteristicas: ["Perfil reforzado", "Rodamiento silencioso", "Cristal de seguridad", "Facil mantenimiento"] },
+      3: { nombre: "Batiente Premium", precio: "S/. 2,650", descripcion: "Puerta batiente de aluminio con diseno contemporaneo y excelente aislamiento termico.", caracteristicas: ["Doble sellado", "Bisagras reforzadas", "Acabado anodizado", "Resistente a la corrosion"] },
+      4: { nombre: "Sistema Comercial", precio: "S/. 4,100", descripcion: "Sistema completo de puertas de aluminio disenado para uso comercial e institucional.", caracteristicas: ["Certificacion comercial", "Alta durabilidad", "Multiples configuraciones", "Instalacion especializada"] },
+      5: { nombre: "Residencial Clasica", precio: "S/. 2,350", descripcion: "Puerta de aluminio con diseno clasico, ideal para hogares que buscan elegancia y funcionalidad.", caracteristicas: ["Diseno atemporal", "Facil instalacion", "Mantenimiento minimo", "Colores personalizables"] },
+      6: { nombre: "Proceso Instalacion", precio: "Incluido", descripcion: "Observa el proceso completo de instalacion de nuestras puertas de aluminio premium.", caracteristicas: ["Instalacion profesional", "Equipo especializado", "Garantia de calidad", "Proceso certificado"] },
+      7: { nombre: "Sistema Seguridad", precio: "Consultar", descripcion: "Conoce las caracteristicas de seguridad de nuestros sistemas de puertas de aluminio.", caracteristicas: ["Cerradura inteligente", "Sistema anti-palanca", "Refuerzos estructurales", "Certificacion de seguridad"] },
+      8: { nombre: "Mantenimiento Pro", precio: "Guia incluida", descripcion: "Aprende como mantener tus puertas de aluminio en perfecto estado durante anos.", caracteristicas: ["Limpieza especializada", "Lubricacion periodica", "Inspeccion preventiva", "Soporte tecnico"] },
+      9: { nombre: "Personalizacion", precio: "Sin costo adicional", descripcion: "Descubre las opciones de personalizacion disponibles para tu puerta ideal.", caracteristicas: ["Multiples colores", "Diferentes texturas", "Vidrios decorativos", "Herrajes premium"] },
+      10: { nombre: "Garantia Extendida", precio: "Incluido", descripcion: "Conoce nuestra garantia extendida y el servicio de mantenimiento que ofrecemos.", caracteristicas: ["Garantia 10 anos", "Servicio 24/7", "Repuestos originales", "Tecnicos certificados"] }
+    };
+
+    // Videos data
+    const videoData = {
+      6: "/images/p26.mp4",
+      7: "/images/p27.mp4",
+      8: "/images/p28.mp4",
+      9: "/images/p29.mp4",
+      10: "/images/p30.mp4"
+    };
+
+    // Filter buttons
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active', 'bg-brown-600', 'text-white'));
+        filterBtns.forEach(b => b.classList.add('bg-brown-200', 'text-brown-800', 'dark:bg-brown-700', 'dark:text-brown-200'));
+        
+        btn.classList.add('active', 'bg-brown-600', 'text-white');
+        btn.classList.remove('bg-brown-200', 'text-brown-800', 'dark:bg-brown-700', 'dark:text-brown-200');
+        
+        const filter = btn.dataset.filter;
+        
+        productCards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Quick view modal
+    document.querySelectorAll('.quick-view-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = parseInt(btn.dataset.productId);
+        const product = productData[productId];
+        
+        if (product) {
+          let mediaContent = '';
+          
+          if (productId <= 5) {
+            // Para imágenes (productos 1-5)
+            const productCard = btn.closest('.product-card');
+            const imgElement = productCard.querySelector('img');
+            if (imgElement && imgElement.src) {
+              mediaContent = `<div class="mb-6 sm:mb-8">
+                <img src="${imgElement.src}" alt="${product.nombre}" class="w-full h-64 sm:h-80 lg:h-96 xl:h-[450px] object-cover rounded-lg shadow-xl" />
+              </div>`;
+            }
+          } else {
+            // Para videos (productos 6-10)
+            const videoSrc = videoData[productId];
+            if (videoSrc) {
+              mediaContent = `<div class="mb-6 sm:mb-8">
+                <video class="w-full h-64 sm:h-80 lg:h-96 xl:h-[450px] object-cover rounded-lg shadow-xl" controls autoplay muted loop>
+                  <source src="${videoSrc}" type="video/mp4" />
+                  Tu navegador no soporta videos HTML5.
+                </video>
+              </div>`;
+            }
+          }
+
+          modalContent.innerHTML = `
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-4">
+              <h2 class="text-xl sm:text-2xl font-bold text-brown-900 dark:text-brown-100 pr-8">${product.nombre}</h2>
+              <button id="close-modal" class="absolute top-4 right-4 sm:relative sm:top-0 sm:right-0 text-brown-500 hover:text-brown-700 dark:text-brown-400 dark:hover:text-brown-200 transition-colors p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            
+            ${mediaContent}
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              <div>
+                <div class="bg-brown-50 dark:bg-brown-700/30 p-3 sm:p-4 rounded-lg mb-4 sm:mb-6">
+                  <p class="text-2xl sm:text-3xl font-bold text-brown-600 dark:text-brown-400">${product.precio}</p>
+                </div>
+                <p class="text-brown-600 dark:text-brown-400 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">${product.descripcion}</p>
+                <h3 class="text-lg font-semibold text-brown-800 dark:text-brown-200 mb-3 sm:mb-4">Características principales:</h3>
+                <ul class="space-y-2 sm:space-y-3">
+                  ${product.caracteristicas.map(c => `
+                    <li class="flex items-start gap-3 text-brown-600 dark:text-brown-400 text-sm sm:text-base">
+                      <span class="text-green-500 font-bold text-lg mt-0.5 flex-shrink-0">✓</span> 
+                      <span>${c}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+              <div class="flex flex-col justify-center mt-6 lg:mt-0">
+                <div class="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 sm:p-6 rounded-xl border border-green-200 dark:border-green-800">
+                  <h4 class="text-base sm:text-lg font-semibold text-brown-800 dark:text-brown-200 mb-3">¿Te interesa este producto?</h4>
+                  <p class="text-brown-600 dark:text-brown-400 text-sm mb-3 sm:mb-4">Contáctanos vía WhatsApp para recibir:</p>
+                  <ul class="text-sm text-brown-600 dark:text-brown-400 mb-4 space-y-1">
+                    <li>• Cotización personalizada</li>
+                    <li>• Asesoramiento técnico</li>
+                    <li>• Disponibilidad inmediata</li>
+                    <li>• Instalación profesional</li>
+                  </ul>
+                  <a href="https://wa.me/51933484150?text=${encodeURIComponent(`¡Hola! Me interesa: *${product.nombre}* - Precio: ${product.precio}. ${product.descripcion} Me gustaría más información y cotización.`)}" 
+                     target="_blank" 
+                     class="w-full bg-green-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold text-center hover:bg-green-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    <span>Hacer Pedido por WhatsApp</span>
+                  </a>
+                  <p class="text-xs text-brown-500 dark:text-brown-400 text-center mt-3">Respuesta inmediata • Cotización gratuita • Instalación incluida</p>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          modal.classList.remove('opacity-0', 'invisible');
+          modal.querySelector('.bg-white').classList.remove('scale-95');
+          modal.querySelector('.bg-white').classList.add('scale-100');
+          
+          // Close modal event
+          document.getElementById('close-modal').addEventListener('click', closeModal);
+        }
+      });
+    });
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.add('opacity-0', 'invisible');
+      modal.querySelector('.bg-white').classList.add('scale-95');
+      modal.querySelector('.bg-white').classList.remove('scale-100');
+    }
+
+    // Close modal on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Video hover effects
+    const videoCards = document.querySelectorAll('.product-card video');
+    videoCards.forEach(video => {
+      const card = video.closest('.product-card');
+      
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+
+    // Smooth scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    productCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(card);
+    });
+
+    // Search functionality (bonus)
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        productCards.forEach(card => {
+          const productName = card.querySelector('h3').textContent.toLowerCase();
+          const productDesc = card.querySelector('p').textContent.toLowerCase();
+          
+          if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
+            card.style.display = 'block';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              if (!card.style.opacity || card.style.opacity === '0') {
+                card.style.display = 'none';
+              }
+            }, 300);
+          }
+        });
+      });
+    }
+  });
+</script>
+
+</MainLayout>
