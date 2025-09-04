@@ -18,7 +18,20 @@ const videos = [
   "/images/p30.mp4"
 ];
 
-const productos = [
+interface Producto {
+  id: number;
+  nombre: string;
+  precio: string;
+  descripcion: string;
+  categoria: string;
+  imagen?: typeof p1;
+  video?: string;
+  tipo: "imagen" | "video";
+  nuevo?: boolean;
+  destacado?: boolean;
+}
+
+const productos: Producto[] = [
   {
     id: 1,
     nombre: "Puerta Elite Moderna",
@@ -113,7 +126,8 @@ const productos = [
   }
 ];
 
-const generarMensajeWhatsApp = (producto) => {
+const generarMensajeWhatsApp = (producto: Producto) => {
+
   const mensaje = `¡Hola! Me interesa: *${producto.nombre}*
 💰 Precio: ${producto.precio}
 📝 ${producto.descripcion}
@@ -144,7 +158,7 @@ Me gustaria mas informacion. ¡Gracias!`;
 
 <!-- Hero Section -->
 <section class="relative overflow-hidden bg-gradient-to-br from-brown-50 via-brown-100 to-brown-200 dark:from-brown-900 dark:via-brown-800 dark:to-brown-700">
-  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23A0522D" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+<div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23A0522D%22%20fill-opacity=%220.05%22%3E%3Cpath%20d=%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
   
   <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <div class="text-center">
@@ -208,9 +222,9 @@ Me gustaria mas informacion. ¡Gracias!`;
       <div class={`product-card group cursor-pointer rounded-2xl bg-white dark:bg-brown-800 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden ${producto.tipo} ${producto.categoria}`}>
         <!-- Image/Video Container -->
         <div class="relative aspect-square overflow-hidden">
-          {producto.tipo === "imagen" ? (
-            <img
-              src={producto.imagen.src}
+          {producto.tipo === "imagen" && producto.imagen ? (
+  <img
+    src={producto.imagen.src}
               alt={producto.nombre}
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
@@ -220,7 +234,7 @@ Me gustaria mas informacion. ¡Gracias!`;
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               muted
               loop
-              playsInline
+              playsinline
               preload="metadata"
             >
               <source src={producto.video} type="video/mp4" />
@@ -303,15 +317,31 @@ Me gustaria mas informacion. ¡Gracias!`;
 </div>
 
 <script>
+  interface ProductData {
+  nombre: string;
+  precio: string;
+  descripcion: string;
+  caracteristicas: string[];
+}
+
+interface ProductDataMap {
+  [key: number]: ProductData;
+}
+
+interface VideoDataMap {
+  [key: number]: string;
+}
+
+
   document.addEventListener('DOMContentLoaded', function() {
     // Filter functionality
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-    const modal = document.getElementById('product-modal');
-    const modalContent = document.getElementById('modal-content');
+    const filterBtns = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLButtonElement>;
+const productCards = document.querySelectorAll('.product-card') as NodeListOf<HTMLElement>;
+const modal = document.getElementById('product-modal') as HTMLElement | null;
+const modalContent = document.getElementById('modal-content') as HTMLElement | null;
 
     // Products data for modal
-    const productData = {
+    const productData: ProductDataMap = {
       1: { nombre: "Puerta Elite Moderna", precio: "S/. 2,850", descripcion: "Puerta de aluminio de alta resistencia con acabado premium y sistema de seguridad avanzado.", caracteristicas: ["Aluminio 6063-T5", "Vidrio templado 6mm", "Cerradura multipunto", "Garantia 10 anos"] },
       2: { nombre: "Corrediza Cristal", precio: "S/. 3,200", descripcion: "Elegante puerta corrediza de aluminio con cristal templado, perfecta para espacios modernos.", caracteristicas: ["Perfil reforzado", "Rodamiento silencioso", "Cristal de seguridad", "Facil mantenimiento"] },
       3: { nombre: "Batiente Premium", precio: "S/. 2,650", descripcion: "Puerta batiente de aluminio con diseno contemporaneo y excelente aislamiento termico.", caracteristicas: ["Doble sellado", "Bisagras reforzadas", "Acabado anodizado", "Resistente a la corrosion"] },
@@ -325,7 +355,7 @@ Me gustaria mas informacion. ¡Gracias!`;
     };
 
     // Videos data
-    const videoData = {
+    const videoData: VideoDataMap = {
       6: "/images/p26.mp4",
       7: "/images/p27.mp4",
       8: "/images/p28.mp4",
@@ -342,11 +372,11 @@ Me gustaria mas informacion. ¡Gracias!`;
         btn.classList.add('active', 'bg-brown-600', 'text-white');
         btn.classList.remove('bg-brown-200', 'text-brown-800', 'dark:bg-brown-700', 'dark:text-brown-200');
         
-        const filter = btn.dataset.filter;
+        const filter = (btn as HTMLElement).dataset.filter || 'all';
         
         productCards.forEach(card => {
           if (filter === 'all' || card.classList.contains(filter)) {
-            card.style.display = 'block';
+            (card as HTMLElement).style.display = 'block';
             setTimeout(() => {
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
@@ -366,11 +396,14 @@ Me gustaria mas informacion. ¡Gracias!`;
     document.querySelectorAll('.quick-view-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const productId = parseInt(btn.dataset.productId);
+        const productIdStr = (btn as HTMLElement).dataset.productId;
+if (!productIdStr) return;
+
+const productId = parseInt(productIdStr);
         const product = productData[productId];
         
-        if (product) {
-          let mediaContent = '';
+        if (product && modalContent) {
+          let mediaContent = '';  
           
           if (productId <= 5) {
             // Para imágenes (productos 1-5)
@@ -414,7 +447,7 @@ Me gustaria mas informacion. ¡Gracias!`;
                 <p class="text-brown-600 dark:text-brown-400 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">${product.descripcion}</p>
                 <h3 class="text-lg font-semibold text-brown-800 dark:text-brown-200 mb-3 sm:mb-4">Características principales:</h3>
                 <ul class="space-y-2 sm:space-y-3">
-                  ${product.caracteristicas.map(c => `
+                  ${product.caracteristicas.map((c: string) => `
                     <li class="flex items-start gap-3 text-brown-600 dark:text-brown-400 text-sm sm:text-base">
                       <span class="text-green-500 font-bold text-lg mt-0.5 flex-shrink-0">✓</span> 
                       <span>${c}</span>
@@ -518,7 +551,7 @@ Me gustaria mas informacion. ¡Gracias!`;
           const productDesc = card.querySelector('p').textContent.toLowerCase();
           
           if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
-            card.style.display = 'block';
+            (card as HTMLElement).style.display = 'block';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           } else {
