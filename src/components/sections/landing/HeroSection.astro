@@ -4,7 +4,7 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 import heroImage from "@images/casa1.jpeg";
-import foRo1 from "@images/fo-ro1.jpeg";
+import p26Video from "@images/p26.mp4";
 import foRo2 from "@images/fo-ro2.jpeg";
 import foRo3 from "@images/fo-ro3.jpeg";
 import p12 from "@images/p12.jpeg";
@@ -46,7 +46,7 @@ interface Props {
 
 <!-- Sección principal profesional y elegante -->
 <section
-  class="mx-auto max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8 2xl:max-w-full grid gap-8 md:grid-cols-2 md:items-center"
+  class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 2xl:max-w-full grid gap-6 md:grid-cols-2 md:items-center"
 >
   <!-- Sección de texto profesional -->
   <div>
@@ -120,25 +120,25 @@ interface Props {
   <div class="flex justify-center md:justify-end">
     <div class="relative">
       <!-- Contenedor fijo para todas las imágenes -->
-      <div class="w-[400px] md:w-[600px] lg:w-[800px] h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
+<div class="w-[272px] md:w-[408px] lg:w-[476px] h-[204px] md:h-[306px] lg:h-[357px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
   <img
-    id="heroImage"
-    src="/images/fo-ro1.jpeg"
-    alt={alt || "Imagen del producto"}
-    class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+  id="heroImage"
+  src="/images/fo-ro2.jpeg"
+  alt={alt || "Imagen del producto"}
+  class="w-full h-full object-cover transition-opacity duration-500 ease-in-out hidden"
     draggable="false"
     loading="eager"
   />
   <video
-    id="heroVideo"
-    class="w-full h-full object-cover transition-opacity duration-500 ease-in-out hidden"
-    muted
-    autoplay
-    loop
-    playsinline
-  >
-    <source src="/images/p28.mp4" type="video/mp4" />
-  </video>
+  id="heroVideo"
+  class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+  muted
+  autoplay
+  loop
+  playsinline
+>
+  <source src="/images/p26.mp4" type="video/mp4" />
+</video>
 </div>
       
       <!-- Indicadores discretos -->
@@ -155,11 +155,11 @@ interface Props {
 
 <!-- Script simple y efectivo -->
 <script>
-  const mediaItems = [
-  { type: "image", src: "/images/fo-ro1.jpeg" },
+const mediaItems = [
+  { type: "video", src: "/images/p26.mp4" },
+  { type: "video", src: "/images/p28.mp4" },
   { type: "image", src: "/images/fo-ro2.jpeg" },
   { type: "image", src: "/images/p12.jpeg" },
-  { type: "video", src: "/images/p28.mp4" },
   { type: "image", src: "/images/fo-ro3.jpeg" }
 ];
 const indicators = ["indicator1", "indicator2", "indicator3", "indicator4", "indicator5"];
@@ -199,5 +199,23 @@ const indicators = ["indicator1", "indicator2", "indicator3", "indicator4", "ind
 }
 
   // Cambiar imagen cada 3 segundos
-  setInterval(changeImage, 3000);
+  let currentInterval: ReturnType<typeof setTimeout> | undefined;
+
+
+function startInterval() {
+  const currentMedia = mediaItems[currentIndex];
+  const duration = currentMedia.type === "video" ? 5000 : 3000; // 5 seg para videos, 3 seg para imágenes
+  
+  if (currentInterval) {
+    clearTimeout(currentInterval);
+  }
+  
+  currentInterval = setTimeout(() => {
+    changeImage();
+    startInterval(); // Reiniciar con la nueva duración
+  }, duration);
+}
+
+// Iniciar el primer cambio
+startInterval();
 </script>
