@@ -7,6 +7,8 @@ import heroImage from "@images/casa1.jpeg";
 import foRo1 from "@images/fo-ro1.jpeg";
 import foRo2 from "@images/fo-ro2.jpeg";
 import foRo3 from "@images/fo-ro3.jpeg";
+import p12 from "@images/p12.jpeg";
+import p28Video from "@images/p28.mp4";
 
 const {
   title,
@@ -119,54 +121,82 @@ interface Props {
     <div class="relative">
       <!-- Contenedor fijo para todas las imágenes -->
       <div class="w-[400px] md:w-[600px] lg:w-[800px] h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden rounded-lg shadow-2xl border border-neutral-200 dark:border-neutral-700">
-        <img
-          id="heroImage"
-          src="/images/fo-ro1.jpeg"
-          alt={alt || "Imagen del producto"}
-          class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
-          draggable="false"
-          loading="eager"
-        />
-      </div>
+  <img
+    id="heroImage"
+    src="/images/fo-ro1.jpeg"
+    alt={alt || "Imagen del producto"}
+    class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+    draggable="false"
+    loading="eager"
+  />
+  <video
+    id="heroVideo"
+    class="w-full h-full object-cover transition-opacity duration-500 ease-in-out hidden"
+    muted
+    autoplay
+    loop
+    playsinline
+  >
+    <source src="/images/p28.mp4" type="video/mp4" />
+  </video>
+</div>
       
       <!-- Indicadores discretos -->
       <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-        <div class="w-3 h-3 bg-white/80 rounded-full shadow-md transition-all duration-300" id="indicator1"></div>
-        <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator2"></div>
-        <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator3"></div>
-      </div>
+  <div class="w-3 h-3 bg-white/80 rounded-full shadow-md transition-all duration-300" id="indicator1"></div>
+  <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator2"></div>
+  <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator3"></div>
+  <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator4"></div>
+  <div class="w-3 h-3 bg-white/40 rounded-full shadow-md transition-all duration-300" id="indicator5"></div>
+</div>
     </div>
   </div>
 </section>
 
 <!-- Script simple y efectivo -->
 <script>
-  const images = [
-    "/images/fo-ro1.jpeg",
-    "/images/fo-ro2.jpeg",
-    "/images/fo-ro3.jpeg"
-  ];
-  const indicators = ["indicator1", "indicator2", "indicator3"];
+  const mediaItems = [
+  { type: "image", src: "/images/fo-ro1.jpeg" },
+  { type: "image", src: "/images/fo-ro2.jpeg" },
+  { type: "image", src: "/images/p12.jpeg" },
+  { type: "video", src: "/images/p28.mp4" },
+  { type: "image", src: "/images/fo-ro3.jpeg" }
+];
+const indicators = ["indicator1", "indicator2", "indicator3", "indicator4", "indicator5"];
   let currentIndex = 0;
 
   function changeImage() {
-    const heroImage = document.getElementById("heroImage") as HTMLImageElement;
+  const heroImage = document.getElementById("heroImage") as HTMLImageElement;
+  const heroVideo = document.getElementById("heroVideo") as HTMLVideoElement;
+  
+  if (heroImage && heroVideo) {
+    const currentMedia = mediaItems[currentIndex];
     
-    if (heroImage) {
-      // Cambiar imagen
-      heroImage.src = images[currentIndex];
-      
-      // Actualizar indicadores
-      indicators.forEach((id, index) => {
-        const indicator = document.getElementById(id);
-        if (indicator) {
-          indicator.style.backgroundColor = index === currentIndex ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.4)";
-        }
-      });
-      
-      currentIndex = (currentIndex + 1) % images.length;
+    if (currentMedia.type === "image") {
+      // Mostrar imagen, ocultar video
+      heroImage.src = currentMedia.src;
+      heroImage.classList.remove("hidden");
+      heroVideo.classList.add("hidden");
+      heroVideo.pause();
+    } else {
+      // Mostrar video, ocultar imagen
+      heroVideo.src = currentMedia.src;
+      heroImage.classList.add("hidden");
+      heroVideo.classList.remove("hidden");
+      heroVideo.play().catch(() => {}); // Reproducir video
     }
+    
+    // Actualizar indicadores
+    indicators.forEach((id, index) => {
+      const indicator = document.getElementById(id);
+      if (indicator) {
+        indicator.style.backgroundColor = index === currentIndex ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.4)";
+      }
+    });
+    
+    currentIndex = (currentIndex + 1) % mediaItems.length;
   }
+}
 
   // Cambiar imagen cada 3 segundos
   setInterval(changeImage, 3000);
