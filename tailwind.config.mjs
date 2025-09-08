@@ -14,41 +14,82 @@ export default {
       black: "#000000",
       white: "#ffffff",
       gray: colors.gray,
-      neutral: colors.neutral,  // Used mainly for text color
-      green: {
-        50: "#f7f9f8", // Verde muy claro (para fondos suaves)
-        100: "#e8f1ea", // Verde pastel
-        200: "#d0e4d3", // Verde claro
-        300: "#b6d6ba", // Verde natural
-        400: "#8eb895", // Verde del logo, más cálido
-        500: "#6d9873", // Verde destacado para textos o botones
-        600: "#547b5a", // Verde más oscuro para énfasis
-        700: "#3c5f43", // Verde oscuro
-        800: "#2a4531", // Verde profundo para contrastes
-        900: "#1a2d20", // Verde más oscuro, para modos oscuros
+      neutral: colors.neutral,
+      
+      // Colores principales basados en tu logo
+      primary: {
+        50: "#f8f9fa",   // Gris muy claro
+        100: "#e9ecef",  // Gris claro del logo
+        200: "#dee2e6",  // Plateado claro
+        300: "#ced4da",  // Plateado medio
+        400: "#adb5bd",  // Plateado
+        500: "#6c757d",  // Gris medio del logo
+        600: "#495057",  // Gris oscuro
+        700: "#343a40",  // Negro grisáceo del logo
+        800: "#212529",  // Negro del logo
+        900: "#000000",  // Negro puro
       },
-      brown: {
-        50: "#f9f5f2",
-        100: "#efe6df",
-        200: "#dcc8be",
-        300: "#c4a497",
-        400: "#a97f6f",
-        500: "#A0522D", // Marrón medio
-        600: "#8B4513", // Marrón oscuro
-        700: "#5C3317", // Marrón más oscuro
-        800: "#3f2316",
-        900: "#241208",
+      
+      // Colores de madera del logo
+      wood: {
+        50: "#fdf7f0",   // Muy claro
+        100: "#f7e6d3",  // Claro
+        200: "#efd3b7",  // Medio claro
+        300: "#d4a574",  // Madera clara del logo
+        400: "#c49660",  // Madera del logo
+        500: "#b8935c",  // Madera principal
+        600: "#a67c47",  // Madera oscura
+        700: "#8b5a2b",  // Madera muy oscura
+        800: "#6d4526",  // Marrón oscuro
+        900: "#5c3317",  // Marrón muy oscuro
       },
-      yellow: {
-        50: "#fefce8",
-        100: "#fef9c3",
-        400: "#facc15",
-        500: "#eab308",
-      }, // Amarillo para acentos
-      red: colors.red, // Usado para alertas o íconos específicos
-      zinc: colors.zinc, // Usado principalmente para sombras y bordes
+      
+      // Mantener algunos acentos para elementos específicos
+      accent: {
+        50: "#fff7ed",
+        100: "#ffedd5", 
+        200: "#fed7aa",
+        300: "#fdba74",
+        400: "#fb923c",  // Naranja para acentos
+        500: "#f97316",  // Naranja principal
+        600: "#ea580c",
+        700: "#c2410c",
+        800: "#9a3412",
+        900: "#7c2d12",
+      },
+      
+      // Verde más sutil para elementos de éxito
+      success: {
+        50: "#f0fdf4",
+        100: "#dcfce7",
+        200: "#bbf7d0",
+        300: "#86efac",
+        400: "#4ade80",
+        500: "#22c55e",
+        600: "#16a34a",
+        700: "#15803d",
+        800: "#166534",
+        900: "#14532d",
+      },
+      
+      // Rojos para alertas
+      red: colors.red,
+      zinc: colors.zinc,
     },
-    extend: {},
+    extend: {
+      // Gradientes personalizados
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(135deg, #f8f9fa 0%, #dee2e6 50%, #495057 100%)',
+        'wood-gradient': 'linear-gradient(135deg, #d4a574 0%, #c49660 50%, #a67c47 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+      },
+      // Sombras personalizadas
+      boxShadow: {
+        'brand': '0 4px 6px -1px rgba(73, 80, 87, 0.1), 0 2px 4px -1px rgba(73, 80, 87, 0.06)',
+        'brand-lg': '0 10px 15px -3px rgba(73, 80, 87, 0.1), 0 4px 6px -2px rgba(73, 80, 87, 0.05)',
+        'wood': '0 4px 6px -1px rgba(196, 150, 96, 0.2), 0 2px 4px -1px rgba(196, 150, 96, 0.1)',
+      }
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),

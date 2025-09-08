@@ -1,89 +1,246 @@
-/* Dark mode colors. */
+/* Paleta de colores basada en el logo de Archiper Builder Supply */
 :root {
-    --primary-button-hover: #ff801f;
-    --backdrop-color: #272727cc;
-    --sl-color-accent: #ff801f;
-    --sl-color-accent-high: #ffa057;
-    --sl-color-accent-low: #562800;
-    --sl-color-black: #181818;
-    --sl-color-gray-1: #eee;
-    --sl-color-gray-2: #c2c2c2;
-    --sl-color-gray-3: #8b8b8b;
-    --sl-color-gray-4: #585858;
-    --sl-color-gray-5: #383838;
-    --sl-color-gray-6: #272727;
-    --sl-color-white: #fff;
-    --yellow-hsl: 43.3, 96.4%, 56.3%;
-    --overlay-yellow: hsla(var(--yellow-hsl), .2);
-    --border: hsla(var(--border-neutral), .4);
-    --border-neutral: 0, 0%, 25.1%;
+  /* Colores principales del logo */
+  --primary-50: #f8f9fa;
+  --primary-100: #e9ecef;
+  --primary-200: #dee2e6;
+  --primary-300: #ced4da;
+  --primary-400: #adb5bd;
+  --primary-500: #6c757d;
+  --primary-600: #495057;
+  --primary-700: #343a40;
+  --primary-800: #212529;
+  --primary-900: #000000;
+  
+  /* Colores de madera del logo */
+  --wood-50: #fdf7f0;
+  --wood-100: #f7e6d3;
+  --wood-200: #efd3b7;
+  --wood-300: #d4a574;
+  --wood-400: #c49660;
+  --wood-500: #b8935c;
+  --wood-600: #a67c47;
+  --wood-700: #8b5a2b;
+  --wood-800: #6d4526;
+  --wood-900: #5c3317;
+  
+  /* Variables del sistema actualizadas */
+  --primary-button-hover: var(--wood-600);
+  --backdrop-color: rgba(73, 80, 87, 0.8);
+  --sl-color-accent: var(--wood-500);
+  --sl-color-accent-high: var(--wood-400);
+  --sl-color-accent-low: var(--wood-700);
+  --sl-color-black: var(--primary-800);
+  --sl-color-gray-1: var(--primary-50);
+  --sl-color-gray-2: var(--primary-100);
+  --sl-color-gray-3: var(--primary-300);
+  --sl-color-gray-4: var(--primary-400);
+  --sl-color-gray-5: var(--primary-500);
+  --sl-color-gray-6: var(--primary-600);
+  --sl-color-white: #ffffff;
+  --primary-hsl: 210, 11%, 15%;
+  --overlay-primary: hsla(var(--primary-hsl), 0.1);
+  --border: hsla(var(--border-neutral), 0.4);
+  --border-neutral: 210, 16%, 82%;
 }
 
-/* Light mode colors. */
+/* Light mode colors */
 :root[data-theme='light'] {
-    --primary-button-hover: #ff801f;
-    --backdrop-color: #f6f6f699;
-    --sl-color-accent: #f76b15;
-    --sl-color-accent-high: #562800;
-    --sl-color-accent-low: #ffa057;
-    --sl-color-black: #fff;
-    --sl-color-gray-1: #272727;
-    --sl-color-gray-2: #383838;
-    --sl-color-gray-3: #585858;
-    --sl-color-gray-4: #8b8b8b;
-    --sl-color-gray-5: #c2c2c2;
-    --sl-color-gray-6: #eee;
-    --sl-color-gray-7: #f6f6f6;
-    --sl-color-white: #181818;
-    --yellow-hsl: 47.9, 95.8%, 53.1%;
-    --border-yellow: 54.9, 96.7%, 88%;
-    --border: hsla(var(--border-yellow), .4);
+  --primary-button-hover: var(--wood-700);
+  --backdrop-color: rgba(248, 249, 250, 0.95);
+  --sl-color-accent: var(--wood-600);
+  --sl-color-accent-high: var(--wood-700);
+  --sl-color-accent-low: var(--wood-400);
+  --sl-color-black: #ffffff;
+  --sl-color-gray-1: var(--primary-800);
+  --sl-color-gray-2: var(--primary-700);
+  --sl-color-gray-3: var(--primary-600);
+  --sl-color-gray-4: var(--primary-500);
+  --sl-color-gray-5: var(--primary-400);
+  --sl-color-gray-6: var(--primary-200);
+  --sl-color-gray-7: var(--primary-50);
+  --sl-color-white: var(--primary-800);
+  --primary-hsl: 210, 17%, 98%;
+  --border-primary: 210, 16%, 93%;
+  --border: hsla(var(--border-primary), 0.4);
 }
 
+/* Fondo sutil de la página */
 .page {
-    background: linear-gradient(215deg, var(--overlay-yellow), transparent 40%), radial-gradient(var(--overlay-yellow), transparent 40%) no-repeat center center / cover, radial-gradient(var(--overlay-yellow), transparent 65%) no-repeat center center / cover;
-    background-blend-mode: overlay;
+  background: 
+    linear-gradient(215deg, var(--overlay-primary), transparent 40%), 
+    radial-gradient(var(--overlay-primary), transparent 40%) no-repeat center center / cover, 
+    radial-gradient(rgba(166, 124, 71, 0.03), transparent 65%) no-repeat center center / cover;
+  background-blend-mode: overlay;
 }
 
+/* Estilos del header */
 header {
-    border: none !important;
-    padding: 0 !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 header.header {
-    background-color: transparent !important;
-    height: 4.5rem !important;
-    margin-inline: auto !important;
-    padding-block: 0 !important;
-    padding-inline: 2rem !important;
+  background-color: transparent !important;
+  height: 4.5rem !important;
+  margin-inline: auto !important;
+  padding-block: 0 !important;
+  padding-inline: 2rem !important;
 }
 
 header > div:first-of-type {
-    backdrop-filter: blur(12px) !important;
-    background-color: var(--backdrop-color) !important;
-    border: 1px var(--border) solid;
-    border-radius: 36px;
-    height: 100% !important;
-    margin-inline: auto !important;
-    margin-top: 1rem !important;
-    max-width: 1536px;
-    padding-inline: 2rem !important;
-    width: auto !important;
+  backdrop-filter: blur(12px) !important;
+  background-color: var(--backdrop-color) !important;
+  border: 1px var(--border) solid;
+  border-radius: 36px;
+  height: 100% !important;
+  margin-inline: auto !important;
+  margin-top: 1rem !important;
+  max-width: 1536px;
+  padding-inline: 2rem !important;
+  width: auto !important;
 }
 
+/* Sidebar y paneles */
+#starlight__sidebar {
+  border-radius: 1rem;
+  margin-top: 2rem !important;
+}
+
+.content-panel:first-of-type {
+  margin-top: 2rem !important;
+}
+
+.right-sidebar {
+  top: 2rem !important;
+}
+
+#starlight__on-this-page--mobile {
+  border: none !important;
+}
+
+mobile-starlight-toc > nav {
+  border: none !important;
+  border-radius: 1rem;
+  margin-top: 2rem !important;
+}
+
+/* Elementos de formulario */
 select {
-    background-image: none;
-    box-shadow: none;
+  background-image: none;
+  box-shadow: none;
+}
+
+select:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* Tarjetas y enlaces */
+article.card {
+  border-radius: 0.5rem;
+}
+
+.pagination-links a:hover {
+  border-color: var(--sl-color-accent);
+}
+
+.sl-link-card:hover {
+  border-color: var(--sl-color-gray-4) !important;
+}
+
+/* Botones principales */
+.sl-link-button.primary {
+  background: linear-gradient(135deg, var(--wood-500), var(--wood-600));
+  border: none;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sl-link-button.primary:hover {
-    background-color: var(--primary-button-hover);
-    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, var(--wood-600), var(--wood-700));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 147, 92, 0.3);
 }
 
 .sl-link-button.primary:hover svg {
-    transform: translateX(0.25rem);
-    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0.25rem);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-    
+/* Asides personalizados */
+.starlight-aside--tip {
+  background: linear-gradient(45deg, var(--wood-300), var(--wood-400));
+  border: 1px solid var(--wood-500);
+  border-radius: 0.5rem;
+  color: var(--wood-900);
+}
+
+.starlight-aside--note {
+  background: linear-gradient(45deg, var(--primary-200), var(--primary-300));
+  border: 1px solid var(--primary-400);
+  border-radius: 0.5rem;
+  color: var(--primary-800);
+}
+
+.starlight-aside__icon {
+  transform: scale(0.8);
+}
+
+.starlight-aside--tip .starlight-aside__title {
+  color: var(--wood-800);
+  font-weight: 600;
+}
+
+.starlight-aside--note .starlight-aside__title {
+  color: var(--primary-700);
+  font-weight: 600;
+}
+
+/* Listas personalizadas */
+.sl-markdown-content ul:not(:where(.not-content *)) {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sl-markdown-content ul:not(:where(.not-content *)) > li {
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.sl-markdown-content li:not(:where(.not-content *)) > ul,
+.sl-markdown-content li + li:not(:where(.not-content *)) {
+  margin-top: 0.625rem;
+}
+
+.sl-markdown-content ul:not(:where(.not-content *)) > li:before {
+  background: var(--wood-500);
+  border-radius: 1px;
+  content: "";
+  height: 2px;
+  left: 2px;
+  position: absolute;
+  top: 13px;
+  width: 0.875rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 800px) {
+  mobile-starlight-toc > nav {
+    border-radius: 1rem;
+    margin-top: 3rem !important;
+  }
+
+  header > div:first-of-type {
+    padding-inline-end: 5rem !important;
+  }
+
+  starlight-menu-button > button {
+    right: 3rem !important;
+    top: 2.2rem !important;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  header.header {
+    padding-inline: 1.5rem !important;
+  }
+}

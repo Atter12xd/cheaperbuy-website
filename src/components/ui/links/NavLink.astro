@@ -19,7 +19,7 @@ If URL is '/' (home page), assign ID as 'home'
   id={url === "/" ? "home" : url.replace("/", "")}
   href={url}
   data-astro-prefetch
-  class="rounded-lg text-base font-medium text-brown-700 outline-none ring-brown-500 hover:text-brown-800 hover:bg-brown-100/30 focus-visible:ring dark:text-brown-300 dark:ring-brown-400 dark:hover:text-brown-100 dark:hover:bg-brown-700/30 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base transition-all duration-200"
+  class="rounded-lg text-base font-medium text-primary-700 outline-none ring-wood-500 hover:text-primary-800 hover:bg-primary-100/30 focus-visible:ring dark:text-primary-300 dark:ring-wood-400 dark:hover:text-primary-100 dark:hover:bg-primary-700/30 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base transition-all duration-200"
 >
   {name}
 </a>
@@ -40,12 +40,18 @@ If URL is '/' (home page), assign ID as 'home'
 
     if (nav) {
       nav.classList.remove(
-        "text-brown-700",
-        "dark:text-brown-300",
-        "hover:text-brown-800",
-        "dark:hover:text-brown-100"
+        "text-primary-700",
+        "dark:text-primary-300",
+        "hover:text-primary-800",
+        "dark:hover:text-primary-100"
       );
-      nav.classList.add("text-brown-600", "dark:text-brown-200", "bg-brown-200/40", "dark:bg-brown-600/40", "font-semibold");
+      nav.classList.add(
+        "text-wood-600", 
+        "dark:text-wood-300", 
+        "bg-wood-100/50", 
+        "dark:bg-wood-800/40", 
+        "font-semibold"
+      );
       nav.setAttribute("aria-current", "page");
     }
   });
