@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 
 const {
@@ -48,7 +45,8 @@ const mediaItems = [
 ---
 
 <!-- Hero Section Principal -->
-<section class="relative mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 2xl:max-w-full">
+<section class="hero-section relative mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 2xl:max-w-full">
+
   <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
     
     <!-- Sección de Información del Producto -->
@@ -358,7 +356,7 @@ const mediaItems = [
     const selectedSizeDisplay = document.getElementById('selectedSizeDisplay');
     
     sizeOptions.forEach(option => {
-      option.addEventListener('click', function() {
+  option.addEventListener('click', function(this: HTMLElement) {
         sizeOptions.forEach(opt => {
           opt.classList.remove('border-wood-500', 'dark:border-wood-500', 'bg-wood-500', 'dark:bg-wood-500', 'text-white', 'shadow-md');
           opt.classList.add('border-primary-200', 'dark:border-primary-700', 'text-primary-700', 'dark:text-primary-300');
@@ -383,7 +381,7 @@ const mediaItems = [
     const selectedMaterialDisplay = document.getElementById('selectedMaterialDisplay');
     
     materialOptions.forEach(option => {
-      option.addEventListener('click', function() {
+  option.addEventListener('click', function(this: HTMLElement) {
         materialOptions.forEach(opt => {
           opt.classList.remove('border-wood-500', 'dark:border-wood-500', 'bg-wood-500', 'dark:bg-wood-500', 'text-white', 'shadow-md');
           opt.classList.add('border-primary-200', 'dark:border-primary-700', 'text-primary-700', 'dark:text-primary-300');
