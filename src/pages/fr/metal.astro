@@ -29,35 +29,35 @@ const avatarSrcs = [
 >
 
 <!-- Hero Principal -->
-<section class="relative py-20 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-primary-900 dark:via-primary-800 dark:to-primary-900 overflow-hidden">
+<section class="relative py-20 bg-gradient-to-br from-wood-50 via-wood-100 to-wood-50 dark:from-primary-900 dark:via-primary-800 dark:to-primary-900 overflow-hidden">
   <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23A0522D%22%20fill-opacity=%220.05%22%3E%3Cpath%20d=%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
   
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-20">
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-primary-800 dark:text-primary-100 mb-8">
         <span class="block">
-          {Astro.currentLocale === "en" ? "Premium Aluminum" : "Puertas y Ventanas de"}
+          {Astro.currentLocale === "en" ? "Premium Steel" : "Estructuras de"}
         </span>
         <span class="block bg-gradient-to-r from-wood-600 via-wood-700 to-wood-800 bg-clip-text text-transparent">
-          {Astro.currentLocale === "en" ? "Doors & Windows" : "Aluminio Premium"}
+          {Astro.currentLocale === "en" ? "Structures & Metal" : "Acero Premium"}
         </span>
       </h1>
       <p class="mx-auto max-w-4xl text-xl md:text-2xl text-primary-600 dark:text-primary-300 leading-relaxed mb-12">
         {Astro.currentLocale === "en" 
-          ? "Transform your spaces with our cutting-edge aluminum doors and windows. Design, security and durability in perfect harmony with a 10-year warranty."
-          : "Transforma tus espacios con nuestras puertas y ventanas de aluminio de última generación. Diseño, seguridad y durabilidad en perfecta armonía con garantía de 10 años."}
+          ? "Build with maximum strength and reliability. Our premium steel structures offer the solidity your project needs with a 15-year warranty and unmatched durability."
+          : "Construye con máxima resistencia y confiabilidad. Nuestras estructuras de acero premium ofrecen la solidez que tu proyecto necesita con garantía de 15 años y durabilidad inigualable."}
       </p>
       
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a href="#productos" class="group inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-primary-800 to-primary-900 rounded-xl hover:from-primary-900 hover:to-black transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-          {Astro.currentLocale === "en" ? "Explore Our Products" : "Explorar Nuestros Productos"}
+          {Astro.currentLocale === "en" ? "Explore Steel Products" : "Explorar Productos de Acero"}
           <svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </a>
         <a href={Astro.currentLocale === "en" 
-          ? "https://wa.me/51933484150?text=Hello%2C%20I%27m%20interested%20in%20information%20about%20your%20aluminum%20products." 
-          : "https://wa.me/51933484150?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20productos%20de%20aluminio."} 
+          ? "https://wa.me/51933484150?text=Hello%2C%20I%27m%20interested%20in%20information%20about%20your%20steel%20structures." 
+          : "https://wa.me/51933484150?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20estructuras%20de%20acero."} 
         target="_blank" class="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-primary-800 dark:text-primary-200 bg-white dark:bg-primary-800 border-2 border-primary-300 dark:border-primary-600 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-700 transition-all duration-300 shadow-xl">
           {Astro.currentLocale === "en" ? "Request Quote" : "Solicitar Cotización"}
         </a>
@@ -66,83 +66,83 @@ const avatarSrcs = [
   </div>
 </section>
 
-<!-- Presentación de Aluminio -->
+<!-- Presentación de Acero -->
 <section class="py-16 bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-primary-900 dark:via-primary-800 dark:to-primary-900">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold text-primary-800 dark:text-primary-100 mb-6">
-        {Astro.currentLocale === "en" ? "Why Choose Aluminum?" : "¿Por Qué Elegir Aluminio?"}
+        {Astro.currentLocale === "en" ? "Why Choose Steel?" : "¿Por Qué Elegir Acero?"}
       </h2>
       <p class="text-xl text-primary-600 dark:text-primary-300 max-w-4xl mx-auto leading-relaxed">
         {Astro.currentLocale === "en" 
-          ? "Aluminum is the perfect choice for modern construction. Lightweight, durable, and sustainable, our premium aluminum products combine cutting-edge technology with elegant design." 
-          : "El aluminio es la elección perfecta para la construcción moderna. Liviano, duradero y sostenible, nuestros productos de aluminio premium combinan tecnología de vanguardia con diseño elegante."}
+          ? "Steel is the backbone of modern construction. With unmatched strength, versatility, and longevity, our premium steel structures provide the foundation for projects that last generations." 
+          : "El acero es la columna vertebral de la construcción moderna. Con resistencia inigualable, versatilidad y longevidad, nuestras estructuras de acero premium proporcionan la base para proyectos que duran generaciones."}
       </p>
     </div>
 
-    <!-- Ventajas del Aluminio -->
+    <!-- Ventajas del Acero -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
       <div class="text-center group">
         <div class="mx-auto w-20 h-20 bg-gradient-to-br from-wood-600 to-wood-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path>
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "Lightweight & Strong" : "Liviano y Resistente"}
+          {Astro.currentLocale === "en" ? "Maximum Strength" : "Máxima Resistencia"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300">
           {Astro.currentLocale === "en" 
-            ? "3x lighter than steel but equally strong and durable" 
-            : "3 veces más liviano que el acero pero igualmente fuerte y duradero"}
+            ? "Superior tensile strength supports heavy loads and extreme conditions" 
+            : "Resistencia a la tracción superior soporta cargas pesadas y condiciones extremas"}
         </p>
       </div>
 
       <div class="text-center group">
         <div class="mx-auto w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.5 5.5L21 21m-4.35-4.35a7.5 7.5 0 111.06-1.06L21 21"></path>
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "Eco-Friendly" : "Eco-Amigable"}
+          {Astro.currentLocale === "en" ? "Fire Resistant" : "Resistente al Fuego"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300">
           {Astro.currentLocale === "en" 
-            ? "100% recyclable material with minimal environmental impact" 
-            : "Material 100% reciclable con mínimo impacto ambiental"}
+            ? "High melting point provides excellent fire safety and structural integrity" 
+            : "Alto punto de fusión proporciona excelente seguridad contra incendios e integridad estructural"}
         </p>
       </div>
 
       <div class="text-center group">
         <div class="mx-auto w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "Corrosion Resistant" : "Resistente a la Corrosión"}
+          {Astro.currentLocale === "en" ? "Seismic Resistance" : "Resistencia Sísmica"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300">
           {Astro.currentLocale === "en" 
-            ? "Natural oxide layer protects against rust and weather" 
-            : "Capa de óxido natural protege contra óxido y clima"}
+            ? "Flexibility and ductility provide superior earthquake resistance" 
+            : "Flexibilidad y ductilidad proporcionan resistencia superior a terremotos"}
         </p>
       </div>
 
       <div class="text-center group">
         <div class="mx-auto w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "Low Maintenance" : "Bajo Mantenimiento"}
+          {Astro.currentLocale === "en" ? "Fast Construction" : "Construcción Rápida"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300">
           {Astro.currentLocale === "en" 
-            ? "No painting or special treatments needed, just simple cleaning" 
-            : "No necesita pintura o tratamientos especiales, solo limpieza simple"}
+            ? "Prefabricated components enable faster assembly and installation" 
+            : "Componentes prefabricados permiten ensamblaje e instalación más rápidos"}
         </p>
       </div>
     </div>
@@ -151,25 +151,25 @@ const avatarSrcs = [
     <div class="bg-gradient-to-r from-primary-800 to-primary-900 dark:from-primary-700 dark:to-primary-800 rounded-2xl p-8 text-white">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-4xl font-bold text-wood-400 mb-2">25+</div>
+          <div class="text-4xl font-bold text-wood-400 mb-2">100+</div>
           <div class="text-primary-200">
-            {Astro.currentLocale === "en" ? "Years Durability" : "Años de Durabilidad"}
+            {Astro.currentLocale === "en" ? "Years Structural Integrity" : "Años de Integridad Estructural"}
           </div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-wood-400 mb-2">100%</div>
+          <div class="text-4xl font-bold text-wood-400 mb-2">95%</div>
           <div class="text-primary-200">
-            {Astro.currentLocale === "en" ? "Recyclable" : "Reciclable"}
+            {Astro.currentLocale === "en" ? "Recyclable Material" : "Material Reciclable"}
           </div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-wood-400 mb-2">350+</div>
+          <div class="text-4xl font-bold text-wood-400 mb-2">450+</div>
           <div class="text-primary-200">
-            {Astro.currentLocale === "en" ? "Happy Clients" : "Clientes Satisfechos"}
+            {Astro.currentLocale === "en" ? "Industrial Projects" : "Proyectos Industriales"}
           </div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-wood-400 mb-2">10</div>
+          <div class="text-4xl font-bold text-wood-400 mb-2">15</div>
           <div class="text-primary-200">
             {Astro.currentLocale === "en" ? "Year Warranty" : "Años Garantía"}
           </div>
@@ -184,12 +184,12 @@ const avatarSrcs = [
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold text-primary-800 dark:text-primary-100 mb-6">
-        {Astro.currentLocale === "en" ? "Our Aluminum Products" : "Nuestros Productos de Aluminio"}
+        {Astro.currentLocale === "en" ? "Our Metal Products" : "Nuestros Productos de Metal"}
       </h2>
       <p class="text-xl text-primary-600 dark:text-primary-300 max-w-3xl mx-auto">
         {Astro.currentLocale === "en" 
-          ? "Discover our complete range of premium aluminum doors and windows, each designed with precision and built to last" 
-          : "Descubre nuestra gama completa de puertas y ventanas de aluminio premium, cada una diseñada con precisión y construida para durar"}
+          ? "Discover our complete range of premium metal structures and components, each engineered for maximum strength and built to withstand decades" 
+          : "Descubre nuestra gama completa de estructuras de metal premium y componentes metálicos, cada uno diseñado para máxima resistencia y construido para resistir décadas"}
       </p>
     </div>
 
@@ -453,7 +453,7 @@ const avatarSrcs = [
       </a>
     </div>
 
-    <!-- CTA después del catálogo -->
+   <!-- CTA después del catálogo -->
     <div class="text-center mt-16">
       <div class="bg-gradient-to-r from-wood-600 to-wood-700 rounded-2xl p-8 text-white max-w-4xl mx-auto">
         <h3 class="text-2xl font-bold mb-4">
@@ -461,11 +461,11 @@ const avatarSrcs = [
         </h3>
         <p class="text-wood-100 mb-6">
           {Astro.currentLocale === "en" 
-            ? "Our experts can design and manufacture aluminum products tailored to your specific requirements" 
-            : "Nuestros expertos pueden diseñar y fabricar productos de aluminio adaptados a tus requerimientos específicos"}
+            ? "Our experts can design and manufacture metal structures tailored to your specific requirements" 
+            : "Nuestros expertos pueden diseñar y fabricar estructuras de metal adaptadas a tus requerimientos específicos"}
         </p>
-        <a
-          href="https://wa.me/51933484150?text=Hola%2C%20necesito%20una%20cotización%20personalizada%20para%20productos%20de%20aluminio."
+        <a 
+          href="https://wa.me/51933484150?text=Hola%2C%20necesito%20una%20cotización%20personalizada%20para%20estructuras%20de%20metal."
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center px-8 py-4 text-base font-semibold text-wood-700 bg-white rounded-lg hover:bg-wood-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -489,14 +489,14 @@ const avatarSrcs = [
       </h2>
       <p class="text-xl text-primary-600 dark:text-primary-300 max-w-3xl mx-auto">
         {Astro.currentLocale === "en" 
-          ? "Our aluminum products meet the highest international standards for quality and performance" 
-          : "Nuestros productos de aluminio cumplen con los más altos estándares internacionales de calidad y rendimiento"}
+          ? "Our metal products meet the highest international standards for quality and structural performance" 
+          : "Nuestros productos de metal cumplen con los más altos estándares internacionales de calidad y rendimiento estructural"}
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Material Premium -->
-      <div class="bg-white dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
+      <div class="bg-primary-50 dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
         <div class="flex items-center mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-wood-600 to-wood-700 rounded-xl flex items-center justify-center mr-4">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -504,31 +504,31 @@ const avatarSrcs = [
             </svg>
           </div>
           <h3 class="text-2xl font-bold text-primary-800 dark:text-primary-100">
-            {Astro.currentLocale === "en" ? "Premium Material" : "Material Premium"}
+            {Astro.currentLocale === "en" ? "Premium Steel" : "Acero Premium"}
           </h3>
         </div>
         <ul class="space-y-3 text-primary-600 dark:text-primary-300">
           <li class="flex items-center">
             <span class="w-3 h-3 bg-wood-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Aluminum 6063-T5 aerospace grade" : "Aluminio 6063-T5 grado aeroespacial"}</span>
+            <span>{Astro.currentLocale === "en" ? "Structural steel A36 grade" : "Acero estructural grado A36"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-wood-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Corrosion resistant coating" : "Recubrimiento resistente a la corrosión"}</span>
+            <span>{Astro.currentLocale === "en" ? "Hot-dip galvanized coating" : "Recubrimiento galvanizado por inmersión"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-wood-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Anodized premium finish" : "Acabado premium anodizado"}</span>
+            <span>{Astro.currentLocale === "en" ? "Anti-corrosive primer finish" : "Acabado con primer anticorrosivo"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-wood-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "UV protection guarantee" : "Garantía de protección UV"}</span>
+            <span>{Astro.currentLocale === "en" ? "Seismic resistance certification" : "Certificación de resistencia sísmica"}</span>
           </li>
         </ul>
       </div>
 
       <!-- Dimensiones y Configuraciones -->
-      <div class="bg-white dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
+      <div class="bg-primary-50 dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
         <div class="flex items-center mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mr-4">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -542,51 +542,51 @@ const avatarSrcs = [
         <ul class="space-y-3 text-primary-600 dark:text-primary-300">
           <li class="flex items-center">
             <span class="w-3 h-3 bg-blue-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Height: 1.80m - 2.40m" : "Alto: 1.80m - 2.40m"}</span>
+            <span>{Astro.currentLocale === "en" ? "Beams: 3m - 12m length" : "Vigas: 3m - 12m de longitud"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-blue-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Width: 60cm - 120cm" : "Ancho: 60cm - 120cm"}</span>
+            <span>{Astro.currentLocale === "en" ? "Columns: 15cm - 40cm width" : "Columnas: 15cm - 40cm de ancho"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-blue-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Profile thickness: 2.0mm - 3.0mm" : "Grosor de perfil: 2.0mm - 3.0mm"}</span>
+            <span>{Astro.currentLocale === "en" ? "Plate thickness: 6mm - 25mm" : "Grosor de plancha: 6mm - 25mm"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-blue-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Custom sizes available" : "Medidas personalizadas disponibles"}</span>
+            <span>{Astro.currentLocale === "en" ? "Custom fabrication available" : "Fabricación personalizada disponible"}</span>
           </li>
         </ul>
       </div>
 
-      <!-- Sistema de Seguridad -->
-      <div class="bg-white dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
+      <!-- Sistema de Soldadura -->
+      <div class="bg-primary-50 dark:bg-primary-800 rounded-xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 hover:shadow-2xl transition-shadow duration-300">
         <div class="flex items-center mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-700 rounded-xl flex items-center justify-center mr-4">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
           <h3 class="text-2xl font-bold text-primary-800 dark:text-primary-100">
-            {Astro.currentLocale === "en" ? "Security System" : "Sistema de Seguridad"}
+            {Astro.currentLocale === "en" ? "Welding System" : "Sistema de Soldadura"}
           </h3>
         </div>
         <ul class="space-y-3 text-primary-600 dark:text-primary-300">
           <li class="flex items-center">
             <span class="w-3 h-3 bg-green-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Multi-point security lock" : "Cerradura de seguridad multipunto"}</span>
+            <span>{Astro.currentLocale === "en" ? "AWS certified welding process" : "Proceso de soldadura certificado AWS"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-green-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Tempered glass 6mm-8mm" : "Cristal templado 6mm-8mm"}</span>
+            <span>{Astro.currentLocale === "en" ? "Full penetration welds" : "Soldaduras de penetración completa"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-green-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Anti-theft reinforced hinges" : "Bisagras reforzadas antirrobo"}</span>
+            <span>{Astro.currentLocale === "en" ? "Non-destructive testing included" : "Pruebas no destructivas incluidas"}</span>
           </li>
           <li class="flex items-center">
             <span class="w-3 h-3 bg-green-600 rounded-full mr-4 flex-shrink-0"></span>
-            <span>{Astro.currentLocale === "en" ? "Double sealing system" : "Sistema de doble sellado"}</span>
+            <span>{Astro.currentLocale === "en" ? "High-strength bolted connections" : "Conexiones empernadas de alta resistencia"}</span>
           </li>
         </ul>
       </div>
@@ -595,7 +595,7 @@ const avatarSrcs = [
 </section>
 
 <!-- Garantía y Servicios -->
-<section class="py-20 bg-white dark:bg-primary-800">
+<section class="py-20 bg-primary-50 dark:bg-primary-800">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold text-primary-800 dark:text-primary-100 mb-6">
@@ -603,8 +603,8 @@ const avatarSrcs = [
       </h2>
       <p class="text-xl text-primary-600 dark:text-primary-300 max-w-3xl mx-auto">
         {Astro.currentLocale === "en" 
-          ? "We stand behind our products with comprehensive warranties and professional services" 
-          : "Respaldamos nuestros productos con garantías integrales y servicios profesionales"}
+          ? "We stand behind our metal structures with comprehensive warranties and professional engineering" 
+          : "Respaldamos nuestras estructuras de metal con garantías integrales e ingeniería profesional"}
       </p>
     </div>
 
@@ -616,10 +616,10 @@ const avatarSrcs = [
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "10-Year Warranty" : "Garantía 10 Años"}
+          {Astro.currentLocale === "en" ? "15-Year Warranty" : "Garantía 15 Años"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300 leading-relaxed">
-          {Astro.currentLocale === "en" ? "Complete coverage on materials, workmanship, and structural integrity" : "Cobertura completa en materiales, mano de obra e integridad estructural"}
+          {Astro.currentLocale === "en" ? "Complete coverage on materials, welding quality, and structural integrity" : "Cobertura completa en materiales, calidad de soldadura e integridad estructural"}
         </p>
       </div>
 
@@ -630,10 +630,10 @@ const avatarSrcs = [
           </svg>
         </div>
         <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-3">
-          {Astro.currentLocale === "en" ? "Professional Installation" : "Instalación Profesional"}
+          {Astro.currentLocale === "en" ? "Certified Installation" : "Instalación Certificada"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300 leading-relaxed">
-          {Astro.currentLocale === "en" ? "Certified technicians with specialized tools and years of experience" : "Técnicos certificados con herramientas especializadas y años de experiencia"}
+          {Astro.currentLocale === "en" ? "Licensed structural engineers and certified welders with heavy equipment" : "Ingenieros estructurales licenciados y soldadores certificados con equipo pesado"}
         </p>
       </div>
 
@@ -647,7 +647,7 @@ const avatarSrcs = [
           {Astro.currentLocale === "en" ? "24/7 Support" : "Soporte 24/7"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300 leading-relaxed">
-          {Astro.currentLocale === "en" ? "Round-the-clock technical assistance for any questions or emergencies" : "Asistencia técnica las 24 horas para cualquier consulta o emergencia"}
+          {Astro.currentLocale === "en" ? "Emergency structural assistance and maintenance guidance" : "Asistencia estructural de emergencia y guía de mantenimiento"}
         </p>
       </div>
 
@@ -661,7 +661,7 @@ const avatarSrcs = [
           {Astro.currentLocale === "en" ? "International Shipping" : "Envío Internacional"}
         </h3>
         <p class="text-primary-600 dark:text-primary-300 leading-relaxed">
-          {Astro.currentLocale === "en" ? "Free shipping throughout Peru, Mexico, USA and Canada" : "Envío gratuito en todo Perú, México, EE.UU. y Canadá"}
+          {Astro.currentLocale === "en" ? "Heavy-duty logistics and delivery throughout Peru, Mexico, USA and Canada" : "Logística de carga pesada y entrega en todo Perú, México, EE.UU. y Canadá"}
         </p>
       </div>
     </div>
@@ -672,16 +672,16 @@ const avatarSrcs = [
 <section class="py-20 bg-gradient-to-r from-primary-800 via-primary-900 to-black">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-4xl font-bold text-white mb-6">
-      {Astro.currentLocale === "en" ? "Ready to Transform Your Space?" : "¿Listo para Transformar tu Espacio?"}
+      {Astro.currentLocale === "en" ? "Ready to Build with Steel?" : "¿Listo para Construir con Acero?"}
     </h2>
     <p class="text-xl text-primary-200 mb-10 max-w-3xl mx-auto leading-relaxed">
       {Astro.currentLocale === "en" 
-        ? "Join hundreds of satisfied customers who have chosen our premium aluminum products. Contact us today for a personalized consultation and free quote." 
-        : "Únete a cientos de clientes satisfechos que han elegido nuestros productos de aluminio premium. Contáctanos hoy para una consulta personalizada y cotización gratuita."}
+        ? "Join hundreds of satisfied developers and contractors who have chosen our premium metal structures. Contact us today for structural engineering consultation and free quote." 
+        : "Únete a cientos de desarrolladores y contratistas satisfechos que han elegido nuestras estructuras de metal premium. Contáctanos hoy para consulta de ingeniería estructural y cotización gratuita."}
     </p>
     <div class="flex flex-col sm:flex-row gap-6 justify-center">
-      <a
-        href="https://wa.me/51933484150?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20productos%20de%20aluminio%20premium.%20Me%20gustar%C3%ADa%20recibir%20una%20cotización%20personalizada."
+      
+       <a  href="https://wa.me/51933484150?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20estructuras%20de%20metal.%20Me%20gustar%C3%ADa%20recibir%20una%20cotización%20personalizada."
         target="_blank"
         rel="noopener noreferrer"
         class="group inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-green-600 rounded-xl hover:bg-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
@@ -692,14 +692,14 @@ const avatarSrcs = [
         {Astro.currentLocale === "en" ? "Get Free Quote via WhatsApp" : "Obtener Cotización Gratuita por WhatsApp"}
       </a>
       
-      <a
+      <a 
         href="/contact"
         class="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-transparent border-2 border-white rounded-xl hover:bg-white hover:text-primary-800 transition-all duration-300 shadow-xl"
       >
         <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
-        {Astro.currentLocale === "en" ? "Contact Our Experts" : "Contactar Nuestros Expertos"}
+        {Astro.currentLocale === "en" ? "Contact Our Engineers" : "Contactar Nuestros Ingenieros"}
       </a>
     </div>
   </div>

@@ -20,11 +20,13 @@ import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
 import arquitectoImagen from "@images/arquitecto-imagen.jpeg";
-import p26Video from "@images/p26.mp4";
+import p26Video from "@images/p1-4.mp4";
 import foRo2 from "@images/fo-ro2.jpeg";
 import foRo3 from "@images/fo-ro3.jpeg";
 import p12 from "@images/p12.jpeg";
 import p28Video from "@images/p28.mp4";
+import CompanyHeroSection from "@components/sections/landing/CompanyHeroSection.astro";
+
 
 
 
@@ -43,24 +45,12 @@ const avatarSrcs: Array<string> = [
     btnTitle="Saber mas de Nosotros"
     url="/blog"
   />
-<HeroSection
- title="PISOS DE MADERA Y PUERTAS PREMIUM"
- subTitle={`<span class="text-brown-600 dark:text-brown-400 font-semibold text-xl">
-   Calidad Premium - 100% Peruanas - Garantía Total
- </span><br><br>
- Especialistas en pisos de madera noble y puertas de aluminio y acero de alta gama. 
- <strong>Instalación profesional, acabados perfectos y precios competitivos</strong> para transformar su hogar con elegancia y durabilidad.`}
- primaryBtn="Ver Nuestros Productos"
- primaryBtnURL="/products"
- secondaryBtn="Solicitar Cotización"
- secondaryBtnURL="/contact"
- withReview={true}
- avatars={avatarSrcs}
- rating={`<span class="font-bold">4.8</span> / 5`}
- starCount={4}
- reviews={`Más de <span class="font-bold">12,800 clientes</span> confían en nosotros`}
- src={["/images/p1.jpeg", "/images/p2.jpeg", "/images/p3.jpeg", "/images/p4.jpeg", "/images/p5.jpeg", "/images/p6.jpeg"]}
- alt="Pisos de madera premium y puertas de calidad - Cheaper Buy"
+<CompanyHeroSection
+  withReview={true}
+  avatars={avatarSrcs}
+  rating={`<span class="font-bold">4.8</span> / 5`}
+  starCount={4}
+  reviews={`Más de <span class="font-bold">12,800 clientes</span> confían en nosotros`}
 />
 
 

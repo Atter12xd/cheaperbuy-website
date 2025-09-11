@@ -1,11 +1,13 @@
 // Enlaces de la barra de navegación
 const navBarLinks = [
   { name: "Inicio", url: "/fr/" },
-  { name: "Madera", url: "/fr/products" },
+ { name: "Aluminio", url: "/fr/aluminio" },
+  { name: "Madera", url: "/fr/madera" },
+  { name: "Metal", url: "/fr/metal" },
   { name: "Servicios", url: "/fr/services" },
   { name: "Blog", url: "/fr/blog" },
   { name: "Contáctanos", url: "/fr/contact" },
-  { name: "Aluminio", url: "/fr/aluminio" },
+ 
 ];
 
 // Enlaces del footer

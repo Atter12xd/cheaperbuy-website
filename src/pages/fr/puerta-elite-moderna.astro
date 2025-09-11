@@ -1,0 +1,223 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+
+// Datos para avatars
+const avatarSrcs = [
+  "/images/p1-1.jpeg",
+  "/images/p1-2.jpeg",
+  "/images/p1-3.jpeg"
+];
+---
+
+<MainLayout
+  title="Puerta Elite Moderna - Aluminio Premium | ARCHIPER BUILDER SUPPLY"
+  lang="es"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": "https://archiperbuilder.com/productos/puerta-elite-moderna",
+    url: "https://archiperbuilder.com/productos/puerta-elite-moderna",
+    name: "Puerta Elite Moderna de Aluminio",
+    description: "Puerta de aluminio de alta resistencia con acabado premium y sistema de seguridad avanzado. Perfecta para espacios modernos.",
+    brand: {
+      "@type": "Brand",
+      name: "ARCHIPER BUILDER SUPPLY"
+    },
+    offers: {
+      "@type": "Offer",
+      price: "2850.00",
+      priceCurrency: "PEN",
+      availability: "https://schema.org/InStock"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "89"
+    },
+    material: "Aluminio 6063-T5",
+    inLanguage: "es",
+  }}
+>
+
+<HeroSection
+  title="Puerta Elite <strong class='text-wood-600 dark:text-wood-400'>Moderna de Aluminio</strong>"
+  subTitle="Alta resistencia con acabado premium y sistema de seguridad avanzado"
+  primaryBtn="AGREGAR AL CARRITO"
+  primaryBtnURL="#add-to-cart"
+  secondaryBtn="Volver al Catálogo"
+  secondaryBtnURL="/aluminio"
+  withReview={true}
+  avatars={avatarSrcs}
+  starCount={5}
+  rating={`<span class="font-bold">4.9</span> / 5`}
+  reviews={`<span class="font-bold">89 clientes</span> han comprado este producto`}
+  alt="Puerta Elite Moderna de Aluminio - ARCHIPER BUILDER SUPPLY"
+/>
+
+<!-- Breadcrumb -->
+<section class="py-4 bg-primary-50 dark:bg-primary-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex text-sm text-primary-600 dark:text-primary-300">
+      <a href="/" class="hover:text-wood-600 dark:hover:text-wood-400 transition-colors">Inicio</a>
+      <span class="mx-2">/</span>
+      <a href="/aluminio" class="hover:text-wood-600 dark:hover:text-wood-400 transition-colors">Aluminio</a>
+      <span class="mx-2">/</span>
+      <span class="text-wood-600 dark:text-wood-400 font-medium">Puerta Elite Moderna</span>
+    </nav>
+  </div>
+</section>
+
+<!-- Detalles del Producto -->
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <!-- Información Técnica -->
+      <div>
+        <h2 class="text-2xl font-bold text-primary-800 dark:text-primary-100 mb-6">
+          Especificaciones Técnicas
+        </h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white dark:bg-primary-800 rounded-lg p-6 border border-primary-200 dark:border-primary-700">
+            <h3 class="text-lg font-semibold text-primary-800 dark:text-primary-100 mb-4">Material y Acabado</h3>
+            <ul class="space-y-2 text-primary-600 dark:text-primary-300">
+              <li>• Aluminio 6063-T5 de alta resistencia</li>
+              <li>• Acabado anodizado premium</li>
+              <li>• Resistente a la corrosión y rayos UV</li>
+              <li>• Múltiples opciones de color</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-primary-800 rounded-lg p-6 border border-primary-200 dark:border-primary-700">
+            <h3 class="text-lg font-semibold text-primary-800 dark:text-primary-100 mb-4">Dimensiones Disponibles</h3>
+            <ul class="space-y-2 text-primary-600 dark:text-primary-300">
+              <li>• Alto: 1.80m - 2.10m</li>
+              <li>• Ancho: 80cm - 100cm</li>
+              <li>• Grosor de perfil: 2.0mm</li>
+              <li>• Medidas personalizadas disponibles</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-primary-800 rounded-lg p-6 border border-primary-200 dark:border-primary-700">
+            <h3 class="text-lg font-semibold text-primary-800 dark:text-primary-100 mb-4">Sistema de Seguridad</h3>
+            <ul class="space-y-2 text-primary-600 dark:text-primary-300">
+              <li>• Cerradura multipunto de alta seguridad</li>
+              <li>• Cristal templado de 6mm</li>
+              <li>• Bisagras reforzadas antirrobo</li>
+              <li>• Sistema de doble sellado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ventajas y Beneficios -->
+      <div>
+        <h2 class="text-2xl font-bold text-primary-800 dark:text-primary-100 mb-6">
+          Ventajas y Beneficios
+        </h2>
+        
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+            <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-green-800 dark:text-green-300">Durabilidad Excepcional</h4>
+              <p class="text-green-700 dark:text-green-400 text-sm">Resistente a la intemperie, corrosión y deformación por más de 25 años.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-blue-800 dark:text-blue-300">Bajo Mantenimiento</h4>
+              <p class="text-blue-700 dark:text-blue-400 text-sm">Solo requiere limpieza básica, sin necesidad de pintura o tratamientos especiales.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-purple-800 dark:text-purple-300">Eficiencia Energética</h4>
+              <p class="text-purple-700 dark:text-purple-400 text-sm">Excelente aislamiento térmico que reduce costos de climatización.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+            <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-orange-800 dark:text-orange-300">Diseño Moderno</h4>
+              <p class="text-orange-700 dark:text-orange-400 text-sm">Líneas elegantes que complementan cualquier estilo arquitectónico contemporáneo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garantía -->
+        <div class="mt-8 p-6 bg-gradient-to-r from-wood-600 to-wood-700 rounded-lg text-white">
+          <h3 class="text-xl font-bold mb-2">Garantía Extendida</h3>
+          <p class="text-wood-100 mb-4">10 años de garantía completa en materiales y mano de obra</p>
+          <ul class="space-y-1 text-wood-200 text-sm">
+            <li>• Servicio técnico especializado</li>
+            <li>• Repuestos originales garantizados</li>
+            <li>• Soporte 24/7 para emergencias</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Productos Relacionados -->
+<section class="py-16 bg-primary-50 dark:bg-primary-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-primary-800 dark:text-primary-100 text-center mb-12">
+      Productos Relacionados
+    </h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Producto relacionado 1 -->
+      <a href="/productos/puerta-corrediza-cristal" class="group bg-white dark:bg-primary-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-primary-200 dark:border-primary-700 transform hover:scale-105">
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/p1-2.jpeg" alt="Puerta Corrediza Cristal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-primary-800 dark:text-primary-100 mb-2">Puerta Corrediza Cristal</h3>
+          <p class="text-primary-600 dark:text-primary-300 text-sm mb-3">Elegante puerta corrediza con cristal templado</p>
+          <span class="text-xl font-bold text-wood-600 dark:text-wood-400">S/. 3,200</span>
+        </div>
+      </a>
+
+      <!-- Producto relacionado 2 -->
+      <a href="/productos/puerta-batiente-premium" class="group bg-white dark:bg-primary-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-primary-200 dark:border-primary-700 transform hover:scale-105">
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/p1-3.jpeg" alt="Puerta Batiente Premium" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-primary-800 dark:text-primary-100 mb-2">Puerta Batiente Premium</h3>
+          <p class="text-primary-600 dark:text-primary-300 text-sm mb-3">Diseño contemporáneo con excelente aislamiento</p>
+          <span class="text-xl font-bold text-wood-600 dark:text-wood-400">S/. 2,650</span>
+        </div>
+      </a>
+
+     
+    </div>
+  </div>
+</section>
+
+</MainLayout>

@@ -15,21 +15,21 @@ interface Props {
 }
 ---
 
-<html lang={lang} class="lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="lenis lenis-smooth scroll-pt-24">
   <head>
     <Meta meta={meta} structuredData={structuredData} />
     <title>{title}</title>
     <script is:inline>
-      if (
-        localStorage.getItem("hs_theme") === "dark" ||
-        (!("hs_theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
+  if (
+    localStorage.getItem("hs_theme") === "dark" ||
+    (!("hs_theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+</script>
     <script>
       import "@scripts/lenisSmoothScroll.js";
     </script>
@@ -68,19 +68,15 @@ interface Props {
     </style>
   </head>
 
-  <body class="relative text-white overflow-y-auto min-h-screen">
-    <Navbar />
+  <body class="relative text-primary-800 dark:text-primary-100 overflow-y-auto min-h-screen">
+  <Navbar />
 
-    <!-- Contenido Principal con fondo aplicado -->
-    <main 
-      class="relative min-h-screen bg-cover bg-center bg-fixed backdrop-blur-xl"
-      style="background-image: url('/images/fondo-jo11.webp');"
-    >
-      <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 bg-white/90 dark:bg-black/75 shadow-lg rounded-lg p-6">
-        <slot />
-      </div>
-    </main>
+  <main class="relative min-h-screen bg-primary-50 dark:bg-primary-900 pt-24">
+  <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 bg-wood-50 dark:bg-primary-800 shadow-lg rounded-lg p-6">
+      <slot />
+    </div>
+  </main>
 
-    <FooterSection />
-  </body>
+  <FooterSection />
+</body>
 </html>

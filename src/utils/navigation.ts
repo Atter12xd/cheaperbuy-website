@@ -1,11 +1,14 @@
 
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
+   { name: "Aluminum", url: "/aluminio" },
+  { name: "wood", url: "/madera" },
+  { name: "Metal", url: "/metal" },
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
-  { name: "Alumunio", url: "/aluminio" },
+ 
+
 ];
 
 const footerLinks = [
