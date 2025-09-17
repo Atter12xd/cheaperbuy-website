@@ -13,10 +13,17 @@ export default defineConfig({
     domains: ["images.unsplash.com"],
   },
   prefetch: true,
+  
+  // Configuración para Supabase y CSP
+  vite: {
+    define: {
+      global: 'globalThis',
+    }
+  },
 
   integrations: [
     tailwind(),
-    react(), // ✅ Se agregó correctamente dentro de "integrations"
+    react(),
     sitemap({
       i18n: {
         defaultLocale: "en",
