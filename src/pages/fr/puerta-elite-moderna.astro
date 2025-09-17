@@ -1,7 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
-import AddToCartButton from '@components/cart/AddToCartButton';
 import CartNotification from '@components/cart/CartNotification';
 
 
@@ -58,22 +57,6 @@ const avatarSrcs = [
   alt="Puerta Elite Moderna de Aluminio - ARCHIPER BUILDER SUPPLY"
 />
 
-<!-- Botón de Agregar al Carrito Personalizado -->
-<section class="py-8 bg-white dark:bg-primary-900">
-  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <AddToCartButton 
-        client:load
-        productId="arch-alu-001"
-        productName="Puerta Elite Moderna de Aluminio"
-        productPrice={2850.00}
-        productSlug="puerta-elite-moderna"
-        size="lg"
-        variant="primary"
-      />
-    </div>
-  </div>
-</section>
 
 <!-- Notificaciones del Carrito -->
 <CartNotification client:load />
