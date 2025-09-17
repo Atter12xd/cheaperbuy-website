@@ -1,6 +1,9 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
+import AddToCartButton from '@components/cart/AddToCartButton';
+import CartNotification from '@components/cart/CartNotification';
+
 
 // Datos para avatars
 const avatarSrcs = [
@@ -43,8 +46,8 @@ const avatarSrcs = [
 <HeroSection
   title="Puerta Elite <strong class='text-wood-600 dark:text-wood-400'>Moderna de Aluminio</strong>"
   subTitle="Alta resistencia con acabado premium y sistema de seguridad avanzado"
-  primaryBtn="AGREGAR AL CARRITO"
-  primaryBtnURL="#add-to-cart"
+  primaryBtn=""
+  primaryBtnURL=""
   secondaryBtn="Volver al Catálogo"
   secondaryBtnURL="/aluminio"
   withReview={true}
@@ -54,6 +57,26 @@ const avatarSrcs = [
   reviews={`<span class="font-bold">89 clientes</span> han comprado este producto`}
   alt="Puerta Elite Moderna de Aluminio - ARCHIPER BUILDER SUPPLY"
 />
+
+<!-- Botón de Agregar al Carrito Personalizado -->
+<section class="py-8 bg-white dark:bg-primary-900">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <AddToCartButton 
+        client:load
+        productId="arch-alu-001"
+        productName="Puerta Elite Moderna de Aluminio"
+        productPrice={2850.00}
+        productSlug="puerta-elite-moderna"
+        size="lg"
+        variant="primary"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Notificaciones del Carrito -->
+<CartNotification client:load />
 
 <!-- Breadcrumb -->
 <section class="py-4 bg-primary-50 dark:bg-primary-900">
