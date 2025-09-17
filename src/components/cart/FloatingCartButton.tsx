@@ -24,46 +24,51 @@ const FloatingCartButton: React.FC = () => {
 
   // Obtener items del carrito directamente de Supabase
   const fetchCartItems = async () => {
-    try {
-      let sessionId = localStorage.getItem('archiper_cart_session');
-      
-      if (!sessionId) {
-        sessionId = `archiper_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        localStorage.setItem('archiper_cart_session', sessionId);
-      }
-
-      const { data: cart } = await supabase
-        .from('carts')
-        .select(`
-          id,
-          cart_items (
-            id,
-            product_id,
-            quantity,
-            unit_price,
-            total_price,
-            product:products (
-              name,
-              sku
-            )
-          )
-        `)
-        .eq('session_id', sessionId)
-        .single();
-
-      if (cart?.cart_items) {
-        setCartItems(cart.cart_items);
-        setCartId(cart.id);
-      } else {
-        setCartItems([]);
-      }
-    } catch (error) {
-      console.error('Error fetching cart:', error);
-      setCartItems([]);
-    } finally {
-      setIsLoading(false);
+  try {
+    let sessionId = localStorage.getItem('archiper_cart_session');
+    
+    if (!sessionId) {
+      sessionId = `archiper_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      localStorage.setItem('archiper_cart_session', sessionId);
     }
-  };
+
+    console.log('🔍 Buscando carrito con session_id:', sessionId); // ADD THIS
+
+    const { data: cart, error } = await supabase  // ADD error
+      .from('carts')
+      .select(`
+        id,
+        cart_items (
+          id,
+          product_id,
+          quantity,
+          unit_price,
+          total_price,
+          product:products (
+            name,
+            sku
+          )
+        )
+      `)
+      .eq('session_id', sessionId)
+      .single();
+
+    console.log('📦 Respuesta de Supabase:', { cart, error }); // ADD THIS
+    console.log('🛒 Cart items encontrados:', cart?.cart_items?.length || 0); // ADD THIS
+
+    if (cart?.cart_items) {
+      setCartItems(cart.cart_items);
+      setCartId(cart.id);
+    } else {
+      setCartItems([]);
+    }
+  } catch (error) {
+    console.error('❌ Error fetching cart:', error);
+    setCartItems([]);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   // Actualizar cantidad
   const updateQuantity = async (productId: string, newQuantity: number) => {
@@ -157,7 +162,7 @@ const FloatingCartButton: React.FC = () => {
     return `S/. ${amount.toFixed(2)}`;
   };
 
-  // Helper function para obtener el producto
+ // Helper function para obtener el producto
   const getProduct = (item: CartItem) => {
     if (Array.isArray(item.product)) {
       return item.product[0] || { name: 'Producto', sku: '' };
@@ -176,6 +181,13 @@ const FloatingCartButton: React.FC = () => {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
+
+  console.log('🎯 Estado final:', {
+  isLoading,
+  totalItems,
+  cartItemsLength: cartItems.length,
+  cartId
+});
 
   if (isLoading || totalItems === 0) return null;
 
