@@ -8,7 +8,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://screwfast.uk",
+  site: "https://archipierbuildersupply.com",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -88,14 +88,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk/social.webp",
+            content: "https://archipierbuildersupply.com/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk/social.webp",
+            content: "https://archipierbuildersupply.com/social.webp",
           },
         },
       ],
