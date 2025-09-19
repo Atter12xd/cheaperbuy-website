@@ -390,6 +390,8 @@ async function handleAddToCart() {
     });
 
     if (!addItemResponse.ok) {
+       const errorData = await addItemResponse.text();
+  console.error('❌ Error response:', addItemResponse.status, errorData);
       throw new Error('Error al agregar item al carrito');
     }
 
