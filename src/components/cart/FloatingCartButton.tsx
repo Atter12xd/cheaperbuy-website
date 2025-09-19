@@ -356,9 +356,8 @@ const FloatingCartButton: React.FC = () => {
                 <button 
                   className="w-full bg-gradient-to-r from-wood-600 to-wood-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   onClick={() => {
-                    console.log('Ir al checkout');
-                    // Aquí irá la navegación al checkout
-                  }}
+  window.location.href = '/checkout';
+}}
                 >
                   Proceder al Pago
                 </button>
