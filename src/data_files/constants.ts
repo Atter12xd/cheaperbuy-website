@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "Cheaper Buy",
-  tagline: "Maderas de Alta Calidad para Construcción y Diseño",
-  description: "Cheaper Buy ofrece maderas premium para pisos, parquet, marcos de puertas y más Encuentra la mejor calidad con envíos rápidos y precios accesibles.",
-  description_short: "Compra maderas de alta calidad en Cheaper Buy.",
-  url: "https://cheaper.online",
-  author: "Cheaper Buy",
+  title: "ARCHIPER BUILDER SUPPLY",
+  tagline: "Materiales de Construcción Premium - Puertas de Alta Calidad",
+  description: "ARCHIPER BUILDER SUPPLY ofrece puertas premium de aluminio, metal y madera con garantía completa. Materiales de construcción de alta calidad con envío nacional y servicio técnico especializado.",
+  description_short: "Materiales de construcción premium y puertas de alta calidad.",
+  url: "https://archipierbuildersupply.com",
+  author: "ARCHIPER BUILDER SUPPLY",
 };
 
 export const SEO = {
@@ -15,7 +15,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "es-PE",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,
@@ -33,7 +33,39 @@ export const OG = {
   locale: "es_PE",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title} | Compra Maderas Premium`,
-  description: "En Cheaper Buy encontrarás pisos de madera, parquet y más. Calidad premium, resistencia y precios accesibles.",
+  title: `${SITE.title} | Puertas y Materiales de Construcción Premium`,
+  description: "En ARCHIPER BUILDER SUPPLY encontrarás puertas de aluminio, metal y madera de alta calidad. Garantía extendida, instalación profesional y envío nacional.",
   image: ogImageSrc,
 };
+
+// Información de la empresa
+export const COMPANY = {
+  name: "ARCHIPER BUILDER SUPPLY SAC",
+  ruc: "20610836276",
+  address: "Mz. D, Lote 4, departamento 702 Residencial Porto Verde",
+  contact: "Ruth Mery Vallejos Cortijo",
+  phone: "+51 XXX XXX XXX",
+  email: "ventas@archipierbuildersupply.com",
+  whatsapp: "+51XXXXXXXXX", // Actualizar con número real
+  businessHours: "Lunes a Viernes 8:00 AM - 6:00 PM, Sábados 8:00 AM - 2:00 PM",
+  bankAccounts: {
+    soles: {
+      bank: "Banco de Crédito del Perú (BCP)",
+      account: "570 7899 0114 047",
+      cci: "002 570 1789 9011 404 702"
+    },
+    dollars: {
+      bank: "Banco de Crédito del Perú (BCP)",
+      account: "570 7935 1201 182",
+      cci: "002 570 1793 5120 118 205"
+    }
+  }
+};
+
+// Especialidades de la empresa
+export const SPECIALTIES = [
+  "Puertas de Metal para Patio (8 pies)",
+  "Puertas de Aluminio Corredizas",
+  "Puertas Panorámicas con Vidrio Templado",
+  "Puertas de Madera Premium"
+];
