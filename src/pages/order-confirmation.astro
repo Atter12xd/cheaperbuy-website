@@ -1,0 +1,94 @@
+---
+// src/pages/order-confirmation.astro
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const order = Astro.url.searchParams.get('order');
+
+---
+
+<MainLayout
+  title="Orden Confirmada - ARCHIPER BUILDER SUPPLY"
+  lang="es"
+>
+
+<section class="py-16">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+    <div class="mb-8">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      
+      <h1 class="text-3xl font-bold text-primary-800 dark:text-primary-100 mb-2">
+        ¡Orden Confirmada!
+      </h1>
+      
+      <p class="text-lg text-primary-600 dark:text-primary-400 mb-4">
+        Gracias por tu compra. Hemos recibido tu orden correctamente.
+      </p>
+      
+      {order && (
+        <div class="bg-primary-100 dark:bg-primary-800 rounded-lg p-4 mb-6">
+          <p class="text-sm text-primary-600 dark:text-primary-400">Número de orden:</p>
+          <p class="text-xl font-bold text-primary-800 dark:text-primary-100">{order}</p>
+        </div>
+      )}
+    </div>
+
+    <div class="bg-white dark:bg-primary-800 rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-4">
+        ¿Qué sigue?
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-wood-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-wood-600 font-bold">1</span>
+          </div>
+          <h3 class="font-semibold text-primary-800 dark:text-primary-100 mb-2">
+            Confirmación
+          </h3>
+          <p class="text-sm text-primary-600 dark:text-primary-400">
+            Te enviaremos un email con los detalles de tu orden y las instrucciones de pago.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-12 h-12 bg-wood-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-wood-600 font-bold">2</span>
+          </div>
+          <h3 class="font-semibold text-primary-800 dark:text-primary-100 mb-2">
+            Procesamiento
+          </h3>
+          <p class="text-sm text-primary-600 dark:text-primary-400">
+            Una vez confirmado el pago, procesaremos tu orden en 1-2 días hábiles.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-12 h-12 bg-wood-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-wood-600 font-bold">3</span>
+          </div>
+          <h3 class="font-semibold text-primary-800 dark:text-primary-100 mb-2">
+            Envío
+          </h3>
+          <p class="text-sm text-primary-600 dark:text-primary-400">
+            Te notificaremos cuando tu pedido esté en camino con el número de seguimiento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <a 
+        href="/" 
+        class="inline-flex items-center px-6 py-3 bg-wood-600 text-white rounded-lg hover:bg-wood-700 transition-colors"
+      >
+        Continuar Comprando
+      </a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

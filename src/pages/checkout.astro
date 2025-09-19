@@ -1,0 +1,104 @@
+---
+// src/pages/checkout.astro
+import MainLayout from "@/layouts/MainLayout.astro";
+import CheckoutForm from '@components/checkout/CheckoutForm';
+---
+
+<MainLayout
+  title="Checkout - ARCHIPER BUILDER SUPPLY"
+  lang="es"
+  meta="Completa tu compra de forma segura. Enviamos a todo el país con garantía completa."
+>
+
+<!-- Checkout Header -->
+<section class="py-8 bg-primary-50 dark:bg-primary-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold text-primary-800 dark:text-primary-100 mb-2">
+        Finalizar Compra
+      </h1>
+      <p class="text-primary-600 dark:text-primary-400">
+        Completa tus datos para procesar tu pedido de forma segura
+      </p>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="mt-8 flex justify-center">
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+            ✓
+          </div>
+          <span class="ml-2 text-sm text-green-600 font-medium">Carrito</span>
+        </div>
+        
+        <div class="w-8 h-0.5 bg-wood-600"></div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-wood-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+            2
+          </div>
+          <span class="ml-2 text-sm text-wood-600 font-medium">Checkout</span>
+        </div>
+        
+        <div class="w-8 h-0.5 bg-primary-300"></div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-primary-300 rounded-full flex items-center justify-center text-primary-600 text-sm font-medium">
+            3
+          </div>
+          <span class="ml-2 text-sm text-primary-500">Pago</span>
+        </div>
+        
+        <div class="w-8 h-0.5 bg-primary-300"></div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-primary-300 rounded-full flex items-center justify-center text-primary-600 text-sm font-medium">
+            4
+          </div>
+          <span class="ml-2 text-sm text-primary-500">Confirmación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Checkout Form -->
+<section class="py-12">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <CheckoutForm client:load />
+  </div>
+</section>
+
+<!-- Security Info -->
+<section class="py-8 bg-primary-100 dark:bg-primary-800">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <div class="flex justify-center items-center space-x-6 text-primary-600 dark:text-primary-400">
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+          </svg>
+          <span class="text-sm font-medium">Compra Segura</span>
+        </div>
+        
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-sm font-medium">Garantía Completa</span>
+        </div>
+        
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-wood-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+            <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"/>
+          </svg>
+          <span class="text-sm font-medium">Envío Nacional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</MainLayout>
