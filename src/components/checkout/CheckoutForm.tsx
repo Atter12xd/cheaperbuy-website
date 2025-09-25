@@ -721,8 +721,8 @@ const CheckoutForm: React.FC = () => {
               ¿Necesitas ayuda?
             </h3>
             <div className="text-sm text-primary-600 dark:text-primary-400 space-y-1">
-              <p>📞 Llámanos: +51 XXX XXX XXX</p>
-              <p>📧 Email: ventas@archiperbuilder.com</p>
+              <p>📞 Llámanos: +51 975 733 744</p>
+              <p>📧 Email: AntonioGutierrez@archipierbuildersupply.com</p>
               <p>🕒 Lun-Vie: 8AM-6PM | Sáb: 8AM-2PM</p>
             </div>
           </div>

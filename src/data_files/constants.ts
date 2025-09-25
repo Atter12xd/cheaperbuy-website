@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ARCHIPER BUILDER SUPPLY",
+  title: "ARCHIPIER BUILDER SUPPLY",
   tagline: "Materiales de Construcción Premium - Puertas de Alta Calidad",
-  description: "ARCHIPER BUILDER SUPPLY ofrece puertas premium de aluminio, metal y madera con garantía completa. Materiales de construcción de alta calidad con envío nacional y servicio técnico especializado.",
+  description: "ARCHIPIER BUILDER SUPPLY ofrece puertas premium de aluminio, metal y madera con garantía completa. Materiales de construcción de alta calidad con envío nacional y servicio técnico especializado.",
   description_short: "Materiales de construcción premium y puertas de alta calidad.",
   url: "https://archipierbuildersupply.com",
-  author: "ARCHIPER BUILDER SUPPLY",
+  author: "ARCHIPIER BUILDER SUPPLY",
 };
 
 export const SEO = {
