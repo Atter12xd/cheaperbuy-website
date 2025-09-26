@@ -53,11 +53,11 @@ const countries: Country[] = [
 
 const EnhancedInteractiveGlobe: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene>();
-  const rendererRef = useRef<THREE.WebGLRenderer>();
-  const cameraRef = useRef<THREE.PerspectiveCamera>();
-  const globeRef = useRef<THREE.Mesh>();
-  const markersRef = useRef<THREE.Group>();
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const globeRef = useRef<THREE.Mesh | null>(null);
+  const markersRef = useRef<THREE.Group | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -149,12 +149,12 @@ const EnhancedInteractiveGlobe: React.FC = () => {
 
   // Manejar clic en marcadores
   const handleMarkerClick = (event: MouseEvent) => {
-    if (!cameraRef.current || !rendererRef.current) return;
+    if (!cameraRef.current || !rendererRef.current || !mountRef.current) return;
 
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
-    const rect = mountRef.current!.getBoundingClientRect();
+    const rect = mountRef.current.getBoundingClientRect();
     mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
@@ -286,7 +286,9 @@ const EnhancedInteractiveGlobe: React.FC = () => {
         };
 
         // Event listeners
-        mountRef.current.addEventListener('click', handleMarkerClick);
+        if (mountRef.current) {
+          mountRef.current.addEventListener('click', handleMarkerClick);
+        }
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mousedown', onMouseDown);
         window.addEventListener('mouseup', onMouseUp);
@@ -323,7 +325,9 @@ const EnhancedInteractiveGlobe: React.FC = () => {
 
         // Cleanup
         return () => {
-          mountRef.current?.removeEventListener('click', handleMarkerClick);
+          if (mountRef.current) {
+            mountRef.current.removeEventListener('click', handleMarkerClick);
+          }
           window.removeEventListener('mousemove', onMouseMove);
           window.removeEventListener('mousedown', onMouseDown);
           window.removeEventListener('mouseup', onMouseUp);
