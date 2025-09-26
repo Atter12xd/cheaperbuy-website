@@ -1,0 +1,121 @@
+---
+import EnhancedInteractiveGlobe from "@components/ui/EnhancedInteractiveGlobe.tsx";
+
+// Recibe las props
+const { title, subTitle, showMap } = Astro.props;
+
+interface Props {
+  title?: string;
+  subTitle?: string;
+  showMap?: boolean;
+}
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+  
+  <!-- Título y subtítulo centrados -->
+  <div class="text-center mb-12">
+    <div class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-wood-700 bg-wood-50 dark:bg-wood-900 dark:text-wood-300 rounded-lg border border-wood-200 dark:border-wood-700">
+      {Astro.currentLocale === "en" ? "Global Presence" : "Presencia Global"}
+    </div>
+    
+    <h2 class="text-3xl font-bold text-primary-800 dark:text-primary-100 sm:text-4xl lg:text-5xl mb-6">
+      {title || (Astro.currentLocale === "en" ? "We ship worldwide" : "Enviamos a todo el mundo")}
+    </h2>
+    
+    <p class="text-xl text-primary-600 dark:text-primary-300 max-w-3xl mx-auto leading-relaxed">
+      {subTitle || (Astro.currentLocale === "en" 
+        ? "From our main office in Peru to distributors in Mexico, United States, and Canada. Quality without borders." 
+        : "Desde nuestra sede principal en Perú hasta distribuidores en México, Estados Unidos y Canadá. Calidad sin fronteras.")}
+    </p>
+  </div>
+
+  <!-- Globo interactivo mejorado -->
+  {showMap && (
+    <div class="mt-12">
+      <EnhancedInteractiveGlobe client:only="react" />
+    </div>
+  )}
+
+  <!-- Información adicional sobre envíos -->
+  <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Envíos Internacionales -->
+    <div class="text-center p-6 bg-white dark:bg-primary-800 rounded-xl shadow-md border border-primary-200 dark:border-primary-700 hover:shadow-lg transition-shadow duration-300">
+      <div class="w-16 h-16 bg-gradient-to-r from-wood-600 to-wood-700 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-2">
+        {Astro.currentLocale === "en" ? "International Shipping" : "Envíos Internacionales"}
+      </h3>
+      <p class="text-primary-600 dark:text-primary-300">
+        {Astro.currentLocale === "en" 
+          ? "We deliver to North America with reliable logistics partners"
+          : "Entregamos en Norteamérica con socios logísticos confiables"}
+      </p>
+    </div>
+
+    <!-- Garantía Global -->
+    <div class="text-center p-6 bg-white dark:bg-primary-800 rounded-xl shadow-md border border-primary-200 dark:border-primary-700 hover:shadow-lg transition-shadow duration-300">
+      <div class="w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-2">
+        {Astro.currentLocale === "en" ? "Global Warranty" : "Garantía Global"}
+      </h3>
+      <p class="text-primary-600 dark:text-primary-300">
+        {Astro.currentLocale === "en" 
+          ? "10-year warranty valid in all countries we serve"
+          : "Garantía de 10 años válida en todos los países que atendemos"}
+      </p>
+    </div>
+
+    <!-- Soporte Local -->
+    <div class="text-center p-6 bg-white dark:bg-primary-800 rounded-xl shadow-md border border-primary-200 dark:border-primary-700 hover:shadow-lg transition-shadow duration-300">
+      <div class="w-16 h-16 bg-gradient-to-r from-wood-600 to-wood-700 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.944l5.657 5.657M12 21.056l-5.657-5.657M12 2.944l-5.657 5.657M12 21.056l5.657-5.657"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 mb-2">
+        {Astro.currentLocale === "en" ? "Local Support" : "Soporte Local"}
+      </h3>
+      <p class="text-primary-600 dark:text-primary-300">
+        {Astro.currentLocale === "en" 
+          ? "Local distributors provide installation and maintenance support"
+          : "Distribuidores locales brindan soporte de instalación y mantenimiento"}
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Call to Action -->
+  <div class="mt-16 text-center">
+    <div class="inline-flex flex-col sm:flex-row gap-4">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-wood-600 to-wood-700 rounded-lg hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+        {Astro.currentLocale === "en" ? "Request International Quote" : "Solicitar Cotización Internacional"}
+      </a>
+      
+      <a
+        href="/shipping"
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-wood-700 dark:text-wood-300 bg-transparent border-2 border-wood-600 dark:border-wood-400 rounded-lg hover:bg-wood-50 dark:hover:bg-wood-900 transition-all duration-300"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        {Astro.currentLocale === "en" ? "Shipping Information" : "Información de Envíos"}
+      </a>
+    </div>
+  </div>
+
+</section>

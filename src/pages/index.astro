@@ -25,6 +25,9 @@ import foRo1 from "@images/fo-ro1.jpeg";
 import foRo2 from "@images/fo-ro2.jpeg";
 import foRo3 from "@images/fo-ro3.jpeg";
 import CompanyHeroSection from "@components/sections/landing/CompanyHeroSection.astro";
+import CompanyShowcaseSection from "@components/sections/landing/CompanyShowcaseSection.astro";
+import EnhancedGlobeSection from "@components/sections/landing/EnhancedGlobeSection.astro";
+
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -48,11 +51,17 @@ const avatarSrcs: Array<string> = [
   starCount={4}
   reviews={`More than <span class="font-bold">12,800 clients</span> trust us`}
 />
+
+
+<!-- Nueva sección de presentación -->
+<CompanyShowcaseSection />
+
 <ClientsSection
 title="🌎 We are located in the following countries"
 subTitle=""
 showMap={true}
 />
+
 
 <FeaturesGeneral
 title="Meeting Industry Demands"
