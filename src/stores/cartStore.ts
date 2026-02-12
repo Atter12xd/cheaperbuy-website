@@ -1,7 +1,7 @@
 // src/stores/cartStore.ts
 import { atom } from 'nanostores';
 import { persistentAtom } from '@nanostores/persistent';
-import { CartService, type Cart, type CartItem } from '@/lib/supabase';
+import { CartService, type CartItem } from '@/lib/supabase';
 
 // Tipos para el estado del carrito
 export interface CartState {
@@ -61,7 +61,7 @@ export const cartActions = {
       
       // Generar sessionId si no existe
       if (!sessionId) {
-        sessionId = `archiper_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        sessionId = `archiper_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
         $sessionId.set(sessionId);
       }
 
