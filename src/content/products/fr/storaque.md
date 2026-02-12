@@ -6,8 +6,8 @@ main:
   content: |
     Storaque wood is highly valued for its strength and durability in extreme conditions. Its dark brown tone with well-defined grain patterns makes it an attractive choice for construction and fine woodworking. It stands out for its hardness and dimensional stability, making it an ideal choice for flooring, structures, and high-quality furniture.
 
-  imgCard: "@/images/storaque/storaque.jpg"
-  imgMain: "@/images/storaque/storaque.jpg"
+  imgCard: "@/images/storaque/Storaque.jpg"
+  imgMain: "@/images/storaque/Storaque.jpg"
   imgAlt: "Storaque wood in use"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -60,5 +60,5 @@ specificationsRight:
     subTitle: "Ideal for decorative details and luxury finishes."
 blueprints:
   first: "@/images/storaque/storaque-centrada.jpg"
-  second: "@/images/storaque/storaque_lateral.jpg"
+  second: "@/images/storaque/Storaque_Lateral.jpg"
 ---

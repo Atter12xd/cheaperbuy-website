@@ -6,8 +6,8 @@ main:
   content: |
     La madera de Storaque es altamente valorada por su resistencia y durabilidad en condiciones extremas. Su tonalidad marrón oscuro con vetas bien definidas la hace una opción atractiva para la construcción y la carpintería fina. Se destaca por su dureza y estabilidad dimensional, lo que la convierte en una elección ideal para pisos, estructuras y mobiliario de alta calidad.
 
-  imgCard: "@/images/storaque/storaque.jpg"
-  imgMain: "@/images/storaque/storaque.jpg"
+  imgCard: "@/images/storaque/Storaque.jpg"
+  imgMain: "@/images/storaque/Storaque.jpg"
   imgAlt: "Madera de Storaque en uso"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -60,5 +60,5 @@ specificationsRight:
     subTitle: "Ideal para detalles decorativos y acabados de lujo."
 blueprints:
   first: "@/images/storaque/storaque-centrada.jpg"
-  second: "@/images/storaque/storaque_lateral.jpg"
+  second: "@/images/storaque/Storaque_Lateral.jpg"
 ---
