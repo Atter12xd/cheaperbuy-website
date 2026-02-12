@@ -118,9 +118,8 @@ interface Props {
   </h3>
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
     
-    <!-- Botón Aluminio -->
-    
-     <a  href="/aluminio"
+    <!-- Botón Aluminio (1) -->
+     <a  href={Astro.currentLocale === "fr" ? "/fr/aluminio" : "/aluminio"}
       class="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white bg-gradient-to-r from-wood-600 to-wood-700 rounded-lg hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
     >
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,29 +131,27 @@ interface Props {
       </svg>
     </a>
 
-    <!-- Botón Metal -->
-    
-     <a  href="/metal"
-      class="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white bg-gradient-to-r from-primary-700 to-primary-800 rounded-lg hover:from-primary-800 hover:to-primary-900 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-    >
-      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path>
-      </svg>
-      {Astro.currentLocale === "en" ? "Metal Products" : "Productos de Metal"}
-      <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-      </svg>
-    </a>
-
-    <!-- Botón Madera -->
-    
-      <a href="/madera"
+    <!-- Botón Madera (2) -->
+      <a href={Astro.currentLocale === "fr" ? "/fr/madera" : "/madera"}
       class="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white bg-gradient-to-r from-wood-600 to-wood-700 rounded-lg hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
     >
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
       </svg>
       {Astro.currentLocale === "en" ? "Premium Wood" : "Productos de Madera"}
+      <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+
+    <!-- Botón Metal (3) -->
+     <a  href={Astro.currentLocale === "fr" ? "/fr/metal" : "/metal"}
+      class="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white bg-gradient-to-r from-primary-700 to-primary-800 rounded-lg hover:from-primary-800 hover:to-primary-900 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+    >
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path>
+      </svg>
+      {Astro.currentLocale === "en" ? "Metal Products" : "Productos de Metal"}
       <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
@@ -244,6 +241,7 @@ interface Props {
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Order: Aluminum, Wood, Metal first
     const companyImages = [
       {
         src: "/images/p1-1.jpeg",
@@ -251,14 +249,14 @@ interface Props {
         description: Astro.currentLocale === "en" ? "Modern and resistant designs" : "Diseños modernos y resistentes"
       },
       {
-        src: "/images/p1-2.jpeg", 
-        title: Astro.currentLocale === "en" ? "Metal Structures" : "Estructuras de Metal",
-        description: Astro.currentLocale === "en" ? "Solid and durable construction" : "Construcción sólida y duradera"
-      },
-      {
         src: "/images/p3.jpeg",
         title: Astro.currentLocale === "en" ? "Noble Wood Floors" : "Pisos de Madera Noble",
         description: Astro.currentLocale === "en" ? "Natural elegance for your home" : "Elegancia natural para tu hogar"
+      },
+      {
+        src: "/images/p1-2.jpeg",
+        title: Astro.currentLocale === "en" ? "Metal Structures" : "Estructuras de Metal",
+        description: Astro.currentLocale === "en" ? "Solid and durable construction" : "Construcción sólida y duradera"
       },
       {
         src: "/images/p4.jpeg",

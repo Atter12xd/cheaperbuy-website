@@ -1,13 +1,12 @@
-// Enlaces de la barra de navegación
+// Orden: Aluminio, Madera, Metal (Español)
 const navBarLinks = [
   { name: "Inicio", url: "/fr/" },
- { name: "Aluminio", url: "/fr/aluminio" },
+  { name: "Aluminio", url: "/fr/aluminio" },
   { name: "Madera", url: "/fr/madera" },
   { name: "Metal", url: "/fr/metal" },
   { name: "Servicios", url: "/fr/services" },
   { name: "Blog", url: "/fr/blog" },
   { name: "Contáctanos", url: "/fr/contact" },
- 
 ];
 
 // Enlaces del footer

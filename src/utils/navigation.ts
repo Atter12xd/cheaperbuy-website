@@ -1,14 +1,13 @@
 
+// Order: Aluminum, Wood, Metal (English)
 const navBarLinks = [
   { name: "Home", url: "/" },
-   { name: "Aluminum", url: "/aluminio" },
-  { name: "wood", url: "/madera" },
+  { name: "Aluminum", url: "/aluminio" },
+  { name: "Wood", url: "/madera" },
   { name: "Metal", url: "/metal" },
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
- 
-
 ];
 
 const footerLinks = [
