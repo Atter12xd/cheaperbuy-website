@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { supabase } from '@/lib/supabase';
+
+const PEN_TO_USD = 0.27;
+const paypalClientId = typeof import.meta !== 'undefined' && (import.meta as any).env?.PUBLIC_PAYPAL_CLIENT_ID || '';
 
 interface CartItem {
   id: string;
@@ -159,9 +163,91 @@ const CheckoutForm: React.FC = () => {
     return `ARCH${year}${timestamp}`;
   };
 
+  const createOrderInSupabase = async (paymentStatus: 'pending' | 'paid') => {
+    const { data: order, error: orderError } = await supabase
+      .from('orders')
+      .insert([{
+        order_number: generateOrderNumber(),
+        customer_email: formData.email,
+        customer_phone: formData.phone,
+        subtotal,
+        tax_amount: tax,
+        shipping_amount: shipping,
+        total_amount: total,
+        billing_address: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          companyName: formData.companyName,
+          taxId: formData.taxId,
+          addressLine1: formData.addressLine1,
+          addressLine2: formData.addressLine2,
+          city: formData.city,
+          state: formData.state,
+          postalCode: formData.postalCode,
+          country: formData.country
+        },
+        shipping_address: formData.sameAsBilling ? {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          addressLine1: formData.addressLine1,
+          addressLine2: formData.addressLine2,
+          city: formData.city,
+          state: formData.state,
+          postalCode: formData.postalCode,
+          country: formData.country
+        } : {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          ...formData.shippingAddress,
+          country: formData.country
+        },
+        notes: formData.notes,
+        payment_method: formData.paymentMethod,
+        currency: 'PEN',
+        discount_amount: 0,
+        status: 'pending',
+        payment_status: paymentStatus
+      }])
+      .select()
+      .single();
+
+    if (orderError) throw orderError;
+
+    const orderItems = cartItems.map(item => ({
+      order_id: order.id,
+      product_id: item.product_id,
+      product_sku: getProduct(item).sku,
+      product_name: getProduct(item).name,
+      quantity: item.quantity,
+      unit_price: item.unit_price,
+      product_options: {}
+    }));
+
+    const { error: itemsError } = await supabase
+      .from('order_items')
+      .insert(orderItems);
+
+    if (itemsError) throw itemsError;
+
+    const sessionId = localStorage.getItem('archiper_cart_session');
+    if (sessionId) {
+      const { data: cart } = await supabase
+        .from('carts')
+        .select('id')
+        .eq('session_id', sessionId)
+        .single();
+      if (cart) {
+        await supabase.from('cart_items').delete().eq('cart_id', cart.id);
+        await supabase.from('carts').delete().eq('id', cart.id);
+      }
+    }
+
+    return order;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (cartItems.length === 0) {
       alert('Tu carrito está vacío');
       return;
@@ -172,92 +258,15 @@ const CheckoutForm: React.FC = () => {
       return;
     }
 
+    if (formData.paymentMethod === 'paypal') {
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Crear orden en Supabase
-      const { data: order, error: orderError } = await supabase
-        .from('orders')
-        .insert([{
-          order_number: generateOrderNumber(),
-          customer_email: formData.email,
-          customer_phone: formData.phone,
-          subtotal,
-          tax_amount: tax,
-          shipping_amount: shipping,
-          total_amount: total,
-          billing_address: {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            companyName: formData.companyName,
-            taxId: formData.taxId,
-            addressLine1: formData.addressLine1,
-            addressLine2: formData.addressLine2,
-            city: formData.city,
-            state: formData.state,
-            postalCode: formData.postalCode,
-            country: formData.country
-          },
-          shipping_address: formData.sameAsBilling ? {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            addressLine1: formData.addressLine1,
-            addressLine2: formData.addressLine2,
-            city: formData.city,
-            state: formData.state,
-            postalCode: formData.postalCode,
-            country: formData.country
-          } : {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            ...formData.shippingAddress,
-            country: formData.country
-          },
-          notes: formData.notes,
-          currency: 'PEN',
-          status: 'pending',
-          payment_status: 'pending'
-        }])
-        .select()
-        .single();
-
-      if (orderError) throw orderError;
-
-      // Crear items de la orden
-      const orderItems = cartItems.map(item => ({
-        order_id: order.id,
-        product_id: item.product_id,
-        product_sku: getProduct(item).sku,
-        product_name: getProduct(item).name,
-        quantity: item.quantity,
-        unit_price: item.unit_price,
-        product_options: {}
-      }));
-
-      const { error: itemsError } = await supabase
-        .from('order_items')
-        .insert(orderItems);
-
-      if (itemsError) throw itemsError;
-
-      // Limpiar carrito
-      const sessionId = localStorage.getItem('archiper_cart_session');
-      if (sessionId) {
-        const { data: cart } = await supabase
-          .from('carts')
-          .select('id')
-          .eq('session_id', sessionId)
-          .single();
-
-        if (cart) {
-          await supabase.from('cart_items').delete().eq('cart_id', cart.id);
-          await supabase.from('carts').delete().eq('id', cart.id);
-        }
-      }
-
-      // Redirigir a página de confirmación
+      const order = await createOrderInSupabase('pending');
       window.location.href = `/order-confirmation?order=${order.order_number}`;
-
     } catch (error) {
       console.error('Error creating order:', error);
       alert('Error al procesar la orden. Por favor intenta nuevamente.');
@@ -602,6 +611,60 @@ const CheckoutForm: React.FC = () => {
                 </div>
               </div>
             </label>
+
+            {formData.paymentMethod === 'paypal' && !paypalClientId && (
+              <p className="text-sm text-amber-600 dark:text-amber-400 pt-2">
+                PayPal no está configurado. Añade PUBLIC_PAYPAL_CLIENT_ID en las variables de entorno o elige otro método de pago.
+              </p>
+            )}
+            {formData.paymentMethod === 'paypal' && paypalClientId && (
+              <div className="pt-4 border-t border-primary-200 dark:border-primary-600">
+                <p className="text-sm text-primary-600 dark:text-primary-400 mb-3">
+                  Total a pagar en USD: ${(total * PEN_TO_USD).toFixed(2)}
+                </p>
+                <PayPalScriptProvider options={{ clientId: paypalClientId, currency: 'USD' }}>
+                  <PayPalButtons
+                    style={{ layout: 'vertical' }}
+                    createOrder={async () => {
+                      if (!formData.firstName?.trim() || !formData.lastName?.trim() || !formData.email?.trim() || !formData.phone?.trim() || !formData.addressLine1?.trim() || !formData.city?.trim() || !formData.postalCode?.trim()) {
+                        alert('Completa todos los campos obligatorios antes de pagar con PayPal.');
+                        throw new Error('Validation failed');
+                      }
+                      const amountUsd = total * PEN_TO_USD;
+                      const res = await fetch('/api/create-paypal-order', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ amount: amountUsd, currency: 'USD' })
+                      });
+                      if (!res.ok) throw new Error('Failed to create PayPal order');
+                      const data = await res.json();
+                      return data.orderID;
+                    }}
+                    onApprove={async (data) => {
+                      setIsSubmitting(true);
+                      try {
+                        const captureRes = await fetch('/api/capture-paypal-order', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ orderID: data.orderID })
+                        });
+                        if (!captureRes.ok) throw new Error('Capture failed');
+                        const order = await createOrderInSupabase('paid');
+                        window.location.href = `/order-confirmation?order=${order.order_number}`;
+                      } catch (err) {
+                        console.error(err);
+                        alert('Error al confirmar el pago. Intenta de nuevo.');
+                        setIsSubmitting(false);
+                      }
+                    }}
+                    onError={(err) => {
+                      console.error('PayPal error:', err);
+                      alert('Error con PayPal. Intenta de nuevo.');
+                    }}
+                  />
+                </PayPalScriptProvider>
+              </div>
+            )}
           </div>
         </div>
 
@@ -686,24 +749,30 @@ const CheckoutForm: React.FC = () => {
             </div>
           </div>
           
-          {/* Botón de finalizar compra */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full mt-6 bg-gradient-to-r from-wood-600 to-wood-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none"
-          >
-           {isSubmitting ? (
-              <div className="flex items-center justify-center">
-                <svg className="animate-spin h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-                </svg>
-                Procesando...
-              </div>
-            ) : (
-              'Finalizar Compra'
-            )}
-          </button>
+          {/* Botón de finalizar compra (oculto si pago con PayPal) */}
+          {formData.paymentMethod === 'paypal' ? (
+            <p className="w-full mt-6 text-center text-sm text-primary-600 dark:text-primary-400">
+              Usa el botón de PayPal arriba para pagar.
+            </p>
+          ) : (
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full mt-6 bg-gradient-to-r from-wood-600 to-wood-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-wood-700 hover:to-wood-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center">
+                  <svg className="animate-spin h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                  </svg>
+                  Procesando...
+                </div>
+              ) : (
+                'Finalizar Compra'
+              )}
+            </button>
+          )}
           
           {/* Información de seguridad */}
           <div className="mt-4 text-center">

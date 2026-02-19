@@ -1,89 +1,78 @@
 ---
-// Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
-
-// Importing necessary functions from Astro
+import { SITE } from "@data/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { SITE } from "@data/constants";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return id.startsWith("en/");
-  })
+// Spanish products page: use content with id starting with "fr/"
+const allProducts: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) => id.startsWith("fr/"))
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id,
+    a.data.main.id - b.data.main.id
 );
 
-// Define variables for page content
-const title: string = "Nuestros Productos de Madera";
-const subTitle: string =
-  "En Cheaper Buy, ofrecemos una selección de maderas premium, cuidadosamente elegidas por su calidad, resistencia y belleza natural. Nuestra variedad de maderas es perfecta para pisos, revestimientos, muebles y estructuras, garantizando una combinación ideal de durabilidad y diseño elegante."
+const productsMadera = allProducts;
 
-  "Cada tipo de madera que ofrecemos ha sido seleccionada para brindar alto rendimiento y un acabado excepcional, adaptándose a diferentes necesidades y estilos arquitectónicos."
+const title = "Productos";
+const subTitle =
+  "En ARCHIPIER BUILDER SUPPLY ofrecemos materiales premium: aluminio, madera y metal. Explora nuestras categorías.";
 
-"🔹 Explora nuestra colección y descubre la madera ideal para tu proyecto. 🌳✨";
-
-// Testimonial data that will be rendered in the component
 const testimonials = [
-  // First testimonial data
   {
     content:
-      " \"Desde que trabajo con Cheaper Buy, la calidad de mis proyectos ha mejorado significativamente. Sus productos de madera son resistentes, elegantes y fáciles de instalar. ¡Totalmente recomendados!\" ",
+      "\"Desde que trabajo con ARCHIPIER BUILDER SUPPLY, la calidad de mis proyectos ha mejorado significativamente. Sus productos son resistentes, elegantes y fáciles de instalar. ¡Totalmente recomendados!\"",
     author: "Carlos Mendoza",
-    role: "Arquitecto  | Mendoza & Asociados",
+    role: "Arquitecto | Mendoza & Asociados",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
-  // Second testimonial data
   {
     content:
-      " \"Como diseñadora, siempre busco materiales de alta calidad que aporten estilo y durabilidad. La madera de Cheaper Buy ha sido clave en mis proyectos, brindando acabados impecables y una amplia variedad de opciones.\" ",
+      "\"Como diseñadora, siempre busco materiales de alta calidad. ARCHIPIER BUILDER SUPPLY ha sido clave en mis proyectos, brindando acabados impecables y una amplia variedad de opciones.\"",
     author: "María González",
-    role: "Diseñadora de Interiores | Espacios Creativoss",
+    role: "Diseñadora de Interiores | Espacios Creativos",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
-  // Third testimonial data
   {
     content:
-      " \"Llevo más de 15 años en carpintería, y puedo decir con seguridad que los productos de Cheaper Buy son de los mejores que he utilizado. La madera es fuerte, bien tratada y se adapta perfectamente a cualquier diseño. Además, el servicio al cliente es excepcional.\" ",
+      "\"Llevo más de 15 años en carpintería. Los productos de ARCHIPIER BUILDER SUPPLY son de los mejores que he utilizado. Además, el servicio al cliente es excepcional.\"",
     author: "Richard Kim",
-    role: " Carpintero Profesional | WoodWright",
+    role: "Carpintero Profesional | WoodWright",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle = `Productos | ${SITE.title}`;
 ---
 
 <MainLayout
   title={pageTitle}
+  lang="es"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/products",
-    "url": "https://screwfast.uk/products",
-    "name": "Hardware Tools | ScrewFast",
-    "description": "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
-    "isPartOf": {
+    "@id": `${SITE.url}/fr/products`,
+    url: `${SITE.url}/fr/products`,
+    name: `Productos | ${SITE.title}`,
+    description: "Materiales de construcción premium: aluminio, madera y metal. ARCHIPIER BUILDER SUPPLY.",
+    isPartOf: {
       "@type": "WebSite",
-      "url": "https://screwfast.uk",
-      "name": "ScrewFast",
-      "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
     },
-    "inLanguage": "en-US"
+    inLanguage: "es",
   }}
 >
   <div
@@ -106,32 +95,56 @@ const pageTitle: string = `Products | ${SITE.title}`;
       </div>
       <PrimaryCTA title="Historias de Clientes" url="#testimonials" noArrow={true} />
     </div>
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
-          } else {
-            return <CardWide product={product} />;
-          }
-        })
-      }
+
+    <!-- Sección: Aluminio -->
+    <section id="aluminio" class="scroll-mt-24 pb-12 md:pb-16">
+      <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
+        Aluminio
+      </h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Próximamente. Puertas y ventanas de aluminio premium.
+      </p>
+    </section>
+
+    <!-- Sección: Madera -->
+    <section id="madera" class="scroll-mt-24 pb-12 md:pb-16">
+      <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
+        Madera
+      </h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+        {
+          productsMadera.map((product, index) => {
+            const position = index % 4;
+            if (position === 0 || position === 3) {
+              return <CardSmall product={product} productLocale="fr" />;
+            } else {
+              return <CardWide product={product} productLocale="fr" />;
+            }
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Sección: Metal -->
+    <section id="metal" class="scroll-mt-24 pb-12 md:pb-16">
+      <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
+        Metal
+      </h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Próximamente. Puertas y herrajes de metal premium.
+      </p>
     </section>
   </div>
-  <!--Features statistics section-->
+
   <FeaturesStatsAlt
-    title="¿Por qué elegir Cheaper Buy?"
-    subTitle="Convierte tus ideas en realidad con los productos de Cheaper Buy. Ya sea que estés renovando tu hogar o trabajando en un gran proyecto, nuestra madera de alta calidad está diseñada para ofrecerte resistencia, elegancia y durabilidad con total confianza."
+    title="¿Por qué elegir ARCHIPIER BUILDER SUPPLY?"
+    subTitle="Convierte tus ideas en realidad con nuestros productos. Ya sea que estés renovando tu hogar o trabajando en un gran proyecto, nuestros materiales de alta calidad están diseñados para ofrecer resistencia, elegancia y durabilidad."
     benefits={[
-      "Maderas resistentes y de larga duración.",
+      "Materiales resistentes y de larga duración.",
       "Soluciones innovadoras adaptadas a cualquier proyecto.",
       "Atención personalizada para garantizar tu satisfacción.",
     ]}
   />
-  <!--Testimonials section-->
   <TestimonialsSectionAlt
     title="Lo que dicen nuestros clientes"
     testimonials={testimonials}

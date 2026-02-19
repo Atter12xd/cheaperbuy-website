@@ -1,9 +1,7 @@
-// Orden: Aluminio, Madera, Metal (Español)
+// Orden: Inicio, Productos, Servicios, Blog, Contacto (Español)
 const navBarLinks = [
   { name: "Inicio", url: "/fr/" },
-  { name: "Aluminio", url: "/fr/aluminio" },
-  { name: "Madera", url: "/fr/madera" },
-  { name: "Metal", url: "/fr/metal" },
+  { name: "Productos", url: "/fr/products" },
   { name: "Servicios", url: "/fr/services" },
   { name: "Blog", url: "/fr/blog" },
   { name: "Contáctanos", url: "/fr/contact" },

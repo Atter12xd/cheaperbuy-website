@@ -1,10 +1,8 @@
 
-// Order: Aluminum, Wood, Metal (English)
+// Order: Home, Products, Services, Blog, Contact (English)
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Aluminum", url: "/aluminio" },
-  { name: "Wood", url: "/madera" },
-  { name: "Metal", url: "/metal" },
+  { name: "Products", url: "/products" },
   { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },

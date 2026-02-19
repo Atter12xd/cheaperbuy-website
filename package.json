@@ -19,6 +19,7 @@
     "@astrojs/tailwind": "^5.1.5",
     "@nanostores/persistent": "^1.1.0",
     "@nanostores/react": "^1.0.0",
+    "@paypal/react-paypal-js": "^8.9.2",
     "@preline/accordion": "^2.5.0",
     "@preline/collapse": "^2.6.0",
     "@preline/dropdown": "^2.6.0",

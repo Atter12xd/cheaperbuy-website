@@ -89,6 +89,7 @@ export interface Order {
   customer_phone?: string;
   status: 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   payment_status: 'pending' | 'paid' | 'failed' | 'refunded';
+  payment_method?: string;
   currency: string;
   subtotal: number;
   tax_amount: number;
