@@ -1,25 +1,10 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import CardSmall from "@components/ui/cards/CardSmall.astro";
-import CardWide from "@components/ui/cards/CardWide.astro";
 import { SITE } from "@data/constants";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 
-// English: content id starts with "en/"
-const allProducts: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => id.startsWith("en/"))
-).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id
-);
-
-// Exclude Almendro and Ana Caspi from listing (item-t845, item-a765)
-const excludeIds = ["en/item-t845", "en/item-a765"];
-const productsMadera = allProducts.filter((p) => !excludeIds.includes(p.id));
-
-// Images from public/images — focus on aluminum and metal
+// Solo fotos de public/images — sin content collection, sin madera pesada
 const aluminioImages = ["/images/p13.jpeg", "/images/p14.jpeg", "/images/p20.jpeg", "/images/fo-ro2.jpeg", "/images/fo-ro1.jpeg"];
+const maderaImages = ["/images/p4.jpeg", "/images/p19.jpeg", "/images/p3.jpeg"];
 const metalImages = ["/images/p10.jpeg", "/images/p11.jpeg", "/images/p12.jpeg", "/images/p15.jpeg", "/images/p16.jpeg"];
 
 const title = "Products";
@@ -64,7 +49,6 @@ const subTitle =
       }
     </div>
 
-    <!-- Section: Aluminum — focus with images from public/images -->
     <section id="aluminio" class="scroll-mt-24 pb-12 md:pb-16">
       <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
         Aluminum
@@ -88,34 +72,29 @@ const subTitle =
       </div>
     </section>
 
-    <!-- Section: Wood — no Almendro/Ana Caspi -->
     <section id="madera" class="scroll-mt-24 pb-12 md:pb-16">
       <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
         Wood
       </h2>
-      {
-        productsMadera.length > 0 ? (
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-            {
-              productsMadera.map((product, index) => {
-                const position = index % 4;
-                if (position === 0 || position === 3) {
-                  return <CardSmall product={product} productLocale="en" />;
-                } else {
-                  return <CardWide product={product} productLocale="en" />;
-                }
-              })
-            }
-          </div>
-        ) : (
-          <p class="text-neutral-600 dark:text-neutral-400">
-            Coming soon. Premium wood products.
-          </p>
-        )
-      }
+      <p class="mb-6 text-neutral-600 dark:text-neutral-400">
+        Coming soon. Premium wood products.
+      </p>
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+        {
+          maderaImages.map((src) => (
+            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <img
+                src={src}
+                alt="Wood product"
+                class="h-48 w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
     </section>
 
-    <!-- Section: Metal — focus with images from public/images -->
     <section id="metal" class="scroll-mt-24 pb-12 md:pb-16">
       <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
         Metal
