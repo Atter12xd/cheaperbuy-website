@@ -1,15 +1,12 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
-import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
-import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 import { SITE } from "@data/constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-// Spanish products page: use content with id starting with "fr/"
+// Spanish: content id starts with "fr/"
 const allProducts: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id }) => id.startsWith("fr/"))
 ).sort(
@@ -17,41 +14,17 @@ const allProducts: CollectionEntry<"products">[] = (
     a.data.main.id - b.data.main.id
 );
 
-const productsMadera = allProducts;
+// Exclude Almendro and Ana Caspi (item-t845, item-a765)
+const excludeIds = ["fr/item-t845", "fr/item-a765"];
+const productsMadera = allProducts.filter((p) => !excludeIds.includes(p.id));
+
+// Imágenes de public/images — enfoque en aluminio y metal
+const aluminioImages = ["/images/p13.jpeg", "/images/p14.jpeg", "/images/p20.jpeg", "/images/fo-ro2.jpeg", "/images/fo-ro1.jpeg"];
+const metalImages = ["/images/p10.jpeg", "/images/p11.jpeg", "/images/p12.jpeg", "/images/p15.jpeg", "/images/p16.jpeg"];
 
 const title = "Productos";
 const subTitle =
   "En ARCHIPIER BUILDER SUPPLY ofrecemos materiales premium: aluminio, madera y metal. Explora nuestras categorías.";
-
-const testimonials = [
-  {
-    content:
-      "\"Desde que trabajo con ARCHIPIER BUILDER SUPPLY, la calidad de mis proyectos ha mejorado significativamente. Sus productos son resistentes, elegantes y fáciles de instalar. ¡Totalmente recomendados!\"",
-    author: "Carlos Mendoza",
-    role: "Arquitecto | Mendoza & Asociados",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
-  {
-    content:
-      "\"Como diseñadora, siempre busco materiales de alta calidad. ARCHIPIER BUILDER SUPPLY ha sido clave en mis proyectos, brindando acabados impecables y una amplia variedad de opciones.\"",
-    author: "María González",
-    role: "Diseñadora de Interiores | Espacios Creativos",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
-  {
-    content:
-      "\"Llevo más de 15 años en carpintería. Los productos de ARCHIPIER BUILDER SUPPLY son de los mejores que he utilizado. Además, el servicio al cliente es excepcional.\"",
-    author: "Richard Kim",
-    role: "Carpintero Profesional | WoodWright",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
-];
 
 const pageTitle = `Productos | ${SITE.title}`;
 ---
@@ -78,75 +51,94 @@ const pageTitle = `Productos | ${SITE.title}`;
   <div
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-      <div class="flex items-center gap-12">
-        <h1
-          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          {title}
-        </h1>
-        {
-          subTitle && (
-            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
-            </p>
-          )
-        }
-      </div>
-      <PrimaryCTA title="Historias de Clientes" url="#testimonials" noArrow={true} />
+    <div class="mb-8 md:mb-12">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        {title}
+      </h1>
+      {
+        subTitle && (
+          <p class="mt-2 max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+            {subTitle}
+          </p>
+        )
+      }
     </div>
 
-    <!-- Sección: Aluminio -->
+    <!-- Sección: Aluminio — fotos de public/images -->
     <section id="aluminio" class="scroll-mt-24 pb-12 md:pb-16">
       <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
         Aluminio
       </h2>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        Próximamente. Puertas y ventanas de aluminio premium.
+      <p class="mb-6 text-neutral-600 dark:text-neutral-400">
+        Puertas y ventanas de aluminio premium. Calidad y durabilidad para tu proyecto.
       </p>
-    </section>
-
-    <!-- Sección: Madera -->
-    <section id="madera" class="scroll-mt-24 pb-12 md:pb-16">
-      <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
-        Madera
-      </h2>
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
         {
-          productsMadera.map((product, index) => {
-            const position = index % 4;
-            if (position === 0 || position === 3) {
-              return <CardSmall product={product} productLocale="fr" />;
-            } else {
-              return <CardWide product={product} productLocale="fr" />;
-            }
-          })
+          aluminioImages.map((src) => (
+            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <img
+                src={src}
+                alt="Producto aluminio"
+                class="h-48 w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))
         }
       </div>
     </section>
 
-    <!-- Sección: Metal -->
+    <!-- Sección: Madera — sin Almendro/Ana Caspi -->
+    <section id="madera" class="scroll-mt-24 pb-12 md:pb-16">
+      <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
+        Madera
+      </h2>
+      {
+        productsMadera.length > 0 ? (
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            {
+              productsMadera.map((product, index) => {
+                const position = index % 4;
+                if (position === 0 || position === 3) {
+                  return <CardSmall product={product} productLocale="fr" />;
+                } else {
+                  return <CardWide product={product} productLocale="fr" />;
+                }
+              })
+            }
+          </div>
+        ) : (
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Próximamente. Productos de madera premium.
+          </p>
+        )
+      }
+    </section>
+
+    <!-- Sección: Metal — fotos de public/images -->
     <section id="metal" class="scroll-mt-24 pb-12 md:pb-16">
       <h2 class="mb-6 text-xl font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl">
         Metal
       </h2>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        Próximamente. Puertas y herrajes de metal premium.
+      <p class="mb-6 text-neutral-600 dark:text-neutral-400">
+        Puertas y herrajes de metal premium. Resistencia y acabado para cada aplicación.
       </p>
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+        {
+          metalImages.map((src) => (
+            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <img
+                src={src}
+                alt="Producto metal"
+                class="h-48 w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
     </section>
   </div>
-
-  <FeaturesStatsAlt
-    title="¿Por qué elegir ARCHIPIER BUILDER SUPPLY?"
-    subTitle="Convierte tus ideas en realidad con nuestros productos. Ya sea que estés renovando tu hogar o trabajando en un gran proyecto, nuestros materiales de alta calidad están diseñados para ofrecer resistencia, elegancia y durabilidad."
-    benefits={[
-      "Materiales resistentes y de larga duración.",
-      "Soluciones innovadoras adaptadas a cualquier proyecto.",
-      "Atención personalizada para garantizar tu satisfacción.",
-    ]}
-  />
-  <TestimonialsSectionAlt
-    title="Lo que dicen nuestros clientes"
-    testimonials={testimonials}
-  />
 </MainLayout>

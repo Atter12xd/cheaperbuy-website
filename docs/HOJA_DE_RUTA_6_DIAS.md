@@ -53,22 +53,24 @@ Para que todo **encaje** y sea **entendible**:
 
 ## Día 1 – Estructura y navegación (que todo “encaje” en el menú)
 
-**Objetivo:** Una sola entrada “Productos” en el menú; una sola página de listado con tres subsecciones (Aluminio, Madera, Metal); redirecciones para no romper enlaces viejos.
+**Objetivo:** Una sola entrada “Productos” en el menú; una sola página de listado con tres subsecciones (Aluminio, Madera, Metal); redirecciones para no romper enlaces viejos. Enfoque en aluminio y metal con imágenes de `public/images`.
 
 ### Tareas concretas
 
 | # | Tarea | Archivos | Qué hacer |
 |---|--------|----------|-----------|
 | 1.1 | Un solo ítem “Productos” en el nav | `src/utils/navigation.ts`, `src/utils/fr/navigation.ts` | Quitar los ítems "Aluminum", "Wood", "Metal". Dejar uno: "Products" → `/products` y "Productos" → `/fr/products`. Mantener orden: Home, **Productos**, Services, Blog, Contact. |
-| 1.2 | Página Productos con 3 subsecciones | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Una sola página por idioma. Estructura: (1) Título “Products” / “Productos”. (2) Tres bloques con id y subtítulo: `#aluminio` Aluminio, `#madera` Madera, `#metal` Metal. (3) Por ahora cada bloque puede listar productos de la collection filtrados por categoría (si existe) o placeholder “Próximamente” hasta Día 2–3. Corregir el filtro de collection: en `/products` usar contenido `en/`, en `/fr/products` usar contenido `fr/`. |
-| 1.3 | Redirecciones desde las páginas viejas | `src/pages/aluminio.astro`, `madera.astro`, `metal.astro` y `fr/aluminio.astro`, `fr/madera.astro`, `fr/metal.astro` | Convertir cada una en una redirección: en Astro, `return Astro.redirect('/products#aluminio')` o `/fr/products#aluminio` según corresponda, para que enlaces antiguos sigan funcionando. |
-| 1.4 | Unificar marca en Productos | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | En `title` y `structuredData` usar `SITE` de `@data/constants`: nombre ARCHIPIER BUILDER SUPPLY, url archipierbuildersupply.com. Eliminar referencias a ScrewFast y screwfast.uk. |
+| 1.2 | Página Productos con 3 subsecciones | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Una sola página por idioma. Estructura: (1) Título “Products” / “Productos”. (2) Tres bloques con id y subtítulo: `#aluminio` Aluminio, `#madera` Madera, `#metal` Metal. (3) **Imágenes desde `public/images`**: en Aluminio y Metal mostrar fotos del sitio (p13, p14, p20, fo-ro2, fondo-jo, etc.); Madera con placeholder o productos de collection sin Almendro/Ana Caspi. Corregir el filtro de collection: en `/products` usar contenido `en/`, en `/fr/products` usar contenido `fr/`. |
+| 1.3 | Redirecciones desde las páginas viejas | `src/pages/aluminio.astro`, `madera.astro`, `metal.astro` y `fr/...` | Convertir cada una en una redirección: `return Astro.redirect('/products#aluminio')` o `/fr/products#aluminio` según corresponda. |
+| 1.4 | Unificar marca en Productos | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | En `title` y `structuredData` usar `SITE` de `@data/constants`. Eliminar referencias a ScrewFast y screwfast.uk. |
+| 1.5 | Imágenes e interacción en Productos | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Usar **solo imágenes de `public/images`** (no Unsplash ni rutas @/images de productos viejos). **Anular** la interacción de “Historias de Clientes” / testimonios (quitar CTA y bloque de testimonios). **No listar** productos Almendro ni Ana Caspi (excluirlos del listado). Enfocarse en Aluminio y Metal con las nuevas fotos. |
 
 ### Criterio de éxito
 - El menú muestra: Inicio, Productos, Servicios, Blog, Contacto.
-- Al entrar a “Productos” se ve una sola página con tres bloques claros (Aluminio, Madera, Metal).
+- Al entrar a “Productos” se ve una sola página con tres bloques (Aluminio, Madera, Metal); Aluminio y Metal destacan con fotos de `public/images`.
+- No se muestran testimonios ni CTA “Historias de Clientes”; no aparecen productos Almendro ni Ana Caspi en el listado.
 - `/aluminio`, `/madera`, `/metal` (y `/fr/...`) redirigen a `/products#...` o `/fr/products#...`.
-- No aparece ScrewFast ni Cheaper Buy en Productos; solo ARCHIPIER BUILDER SUPPLY.
+- No aparece ScrewFast ni Cheaper Buy; solo ARCHIPIER BUILDER SUPPLY.
 
 ---
 
