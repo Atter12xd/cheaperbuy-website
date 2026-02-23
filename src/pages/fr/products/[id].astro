@@ -25,11 +25,13 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { product, redirectTo } = Astro.props;
+const { product: productProp, redirectTo } = Astro.props;
 
 if (redirectTo) {
   return Astro.redirect(redirectTo);
 }
+
+const product = productProp!;
 const pageTitle = `${product.nameEs} | ${SITE.title}`;
 const whatsappMessage = encodeURIComponent(`Hola, me interesa: ${product.nameEs}. Quisiera saber precio y disponibilidad.`);
 const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
