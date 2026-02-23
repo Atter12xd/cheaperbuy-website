@@ -1,0 +1,52 @@
+---
+import type { Product } from "@data/products";
+
+interface Props {
+  product: Product;
+  locale: "en" | "fr";
+}
+
+const { product, locale } = Astro.props;
+
+const name = locale === "fr" ? product.nameEs : product.nameEn;
+const detailUrl = locale === "fr" ? `/fr/products/${product.slug}` : `/products/${product.slug}`;
+const viewDetailsLabel = locale === "fr" ? "Ver más" : "View details";
+const priceLabelUsd = locale === "fr" ? "USD" : "USD";
+---
+
+<a
+  href={detailUrl}
+  class="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:border-neutral-300 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:border-neutral-600"
+>
+  <div class="relative aspect-[4/3] overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+    <img
+      src={product.image}
+      alt={name}
+      class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+      loading="lazy"
+      width="400"
+      height="300"
+    />
+  </div>
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="font-semibold text-neutral-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+      {name}
+    </h3>
+    <div class="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <span class="text-lg font-bold text-neutral-900 dark:text-white">
+        S/ {product.pricePen.toLocaleString()}
+      </span>
+      {
+        product.priceUsd != null && (
+          <span class="text-sm text-neutral-500 dark:text-neutral-400">
+            $ {product.priceUsd.toLocaleString()} {priceLabelUsd}
+          </span>
+        )
+      }
+    </div>
+    <span class="mt-4 inline-flex items-center text-sm font-medium text-primary-600 dark:text-primary-400">
+      {viewDetailsLabel}
+      <span class="ml-1 transition group-hover:translate-x-0.5" aria-hidden="true">→</span>
+    </span>
+  </div>
+</a>

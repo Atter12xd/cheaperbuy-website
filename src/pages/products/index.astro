@@ -1,15 +1,16 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import ProductCard from "@components/ui/cards/ProductCard.astro";
 import { SITE } from "@data/constants";
-
-// Solo fotos de public/images — sin content collection, sin madera pesada
-const aluminioImages = ["/images/p13.jpeg", "/images/p14.jpeg", "/images/p20.jpeg", "/images/fo-ro2.jpeg", "/images/fo-ro1.jpeg"];
-const maderaImages = ["/images/p4.jpeg", "/images/p19.jpeg", "/images/p3.jpeg"];
-const metalImages = ["/images/p10.jpeg", "/images/p11.jpeg", "/images/p12.jpeg", "/images/p15.jpeg", "/images/p16.jpeg"];
+import { getProductsByCategory } from "@data/products";
 
 const title = "Products";
 const subTitle =
-  "At ARCHIPIER BUILDER SUPPLY we offer premium materials: aluminum, wood, and metal. Browse our categories below.";
+  "At ARCHIPIER BUILDER SUPPLY we offer premium materials: aluminum, wood, and metal. Click on any product to see prices, benefits and details.";
+
+const aluminioProducts = getProductsByCategory("aluminum");
+const maderaProducts = getProductsByCategory("wood");
+const metalProducts = getProductsByCategory("metal");
 ---
 
 <MainLayout
@@ -54,19 +55,12 @@ const subTitle =
         Aluminum
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Premium aluminum doors and windows. Quality and durability for your project.
+        Premium aluminum doors and windows. Click on a product to see prices, benefits and details.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          aluminioImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Aluminum product"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          aluminioProducts.map((product) => (
+            <ProductCard product={product} locale="en" />
           ))
         }
       </div>
@@ -77,19 +71,12 @@ const subTitle =
         Wood
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Coming soon. Premium wood products.
+        Premium wood products. Click on a product to see prices, benefits and details.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          maderaImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Wood product"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          maderaProducts.map((product) => (
+            <ProductCard product={product} locale="en" />
           ))
         }
       </div>
@@ -100,19 +87,12 @@ const subTitle =
         Metal
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Premium metal doors and hardware. Strength and finish for every application.
+        Premium metal doors and hardware. Click on a product to see prices, benefits and details.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          metalImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Metal product"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          metalProducts.map((product) => (
+            <ProductCard product={product} locale="en" />
           ))
         }
       </div>

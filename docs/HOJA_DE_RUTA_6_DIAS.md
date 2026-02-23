@@ -74,23 +74,23 @@ Para que todo **encaje** y sea **entendible**:
 
 ---
 
-## Día 2 – Modelo de datos de productos (fotos, precio, información, medidas)
+## Día 2 – Ficha de producto: precios, beneficios, detalles (diseño profesional)
 
-**Objetivo:** Un esquema de producto único con precio, medidas y categoría; al menos un producto de ejemplo completo en ES y EN.
+**Objetivo:** Al hacer clic en una foto o en “Entrar” / “Adquirir producto”, el usuario ve una ficha con **precios**, **beneficios**, **detalles** y diseño profesional. Productos con nombres y datos rellenados; solo imágenes de `public/images`.
 
 ### Tareas concretas
 
 | # | Tarea | Archivos | Qué hacer |
 |---|--------|----------|-----------|
-| 2.1 | Ampliar schema de productos | `src/content/config.ts` | Añadir al schema: `category: z.enum(['aluminum','wood','metal'])`, `price_pen: z.number()`, `price_usd: z.number().optional()`, `measures: z.object({ width: z.string().optional(), height: z.string().optional(), depth: z.string().optional(), weight: z.string().optional() }).optional()` o similar. Mantener imgCard, imgMain, blueprints y el resto. |
-| 2.2 | Estructura de contenido por categoría | `src/content/products/en/`, `src/content/products/fr/` | Decidir: o carpetas `en/aluminum/`, `en/wood/`, `en/metal/` (y lo mismo en `fr/`) o un solo `en/` y `fr/` con `category` en el frontmatter. Añadir `category`, `price_pen`, `price_usd` y `measures` a todos los productos existentes (aunque sea con valores de ejemplo). |
-| 2.3 | Un producto ejemplo completo | Un `.md` en `en/` y su par en `fr/` | Un producto (ej. una madera o una puerta) con: título, descripción, imgCard, imgMain, category, price_pen, price_usd, measures, specs. Que sirva de plantilla para el resto. |
-| 2.4 | Imágenes | `src/images/` o `public/images/` | Asignar a cada producto al menos una imagen (existente o placeholder). Revisar rutas y mayúsculas/minúsculas para producción. |
+| 2.1 | Datos de productos (ligero) | `src/data_files/products.ts` | Un data file con los productos mostrados: slug, nombre (EN/ES), imagen (`/images/...`), categoría (aluminio/madera/metal), price_pen, price_usd opcional, benefits[], details, measures opcional. Un ítem por foto del listado (public/images). |
+| 2.2 | Listado con enlace a ficha | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Cada foto del listado enlaza a la ficha: `/products/[slug]` o `/fr/products/[slug]`. Opcional: mostrar nombre y “Ver detalle” / “Adquirir producto” en la card. |
+| 2.3 | Ficha de detalle profesional | `src/pages/products/[id].astro`, `src/pages/fr/products/[id].astro` | Página de detalle por slug: foto principal, nombre, **precio** (PEN y/o USD), **beneficios** (lista clara), **detalles** (descripción), medidas si aplica. Diseño limpio y profesional. CTA “Adquirir producto” / “Solicitar por WhatsApp” con enlace a WhatsApp. |
+| 2.4 | Imágenes | Solo `public/images` | Todas las fotos de productos salen de `public/images`; sin content collection pesada en esta ruta. |
 
 ### Criterio de éxito
-- El schema tiene category, price_pen, measures (y opcional price_usd).
-- Hay al menos un producto completo en EN y otro en FR con foto, precio e información y medidas.
-- La página Productos puede filtrar por `category` para mostrar aluminio / madera / metal por bloques.
+- Al hacer clic en una foto (o en “Entrar” / “Adquirir producto”) se abre la ficha del producto.
+- La ficha muestra: precios, beneficios, detalles y diseño profesional.
+- Nombres y datos rellenados para cada producto; CTA claro para adquirir o contactar.
 
 ---
 
@@ -102,14 +102,14 @@ Para que todo **encaje** y sea **entendible**:
 
 | # | Tarea | Archivos | Qué hacer |
 |---|--------|----------|-----------|
-| 3.1 | Listado por categoría en Productos | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Por cada bloque (Aluminio, Madera, Metal): `getCollection` filtrado por `category` y por idioma (`id.startsWith('en/')` o `id.startsWith('fr/')`). Mostrar cards: imagen, nombre, precio (PEN/USD), botón “Ver más” / “View details” que lleve a la URL de detalle. |
-| 3.2 | Rutas de detalle | `src/pages/products/[id].astro`, `src/pages/fr/products/[id].astro` (o `[...slug].astro`) | Asegurar que la URL sea amigable (slug). Cargar el producto por id/slug y locale. |
-| 3.3 | Contenido de la ficha | Mismo layout de detalle para EN y FR | Mostrar: galería (imgMain + blueprints u otras), nombre, precio (PEN y/o USD), descripción, **medidas** en un bloque visible, especificaciones, CTA (WhatsApp/contacto). Reutilizar lo que ya exista (tabs, etc.) y añadir lo que falte. |
-| 3.4 | Cards reutilizables | Componente de card de producto | Un solo componente (o dos variantes pequeña/ancha si se desea) que reciba producto y locale y muestre foto, nombre, precio y enlace. Usar en ambos idiomas. |
+| 3.1 | Listado por categoría en Productos | `src/pages/products/index.astro`, `src/pages/fr/products/index.astro` | Por cada bloque (Aluminio, Madera, Metal): productos del data file `getProductsByCategory()`. Mostrar cards con imagen, nombre, precio (PEN/USD), botón “Ver más” / “View details” → URL de detalle. |
+| 3.2 | Rutas de detalle | `src/pages/products/[id].astro`, `src/pages/fr/products/[id].astro` | URL amigable por slug. Cargar producto por slug desde `@data/products`; legacy IDs redirigen a listado. |
+| 3.3 | Contenido de la ficha | Mismo layout de detalle para EN y FR | Mostrar: imagen principal, nombre, precio (PEN y/o USD), descripción, **medidas** en bloque visible, beneficios, CTA WhatsApp. |
+| 3.4 | Cards reutilizables | `src/components/ui/cards/ProductCard.astro` | Un componente que reciba `product` y `locale` (en/fr) y muestre foto, nombre, precio (PEN/USD) y enlace “View details” / “Ver más”. Usar en ambos idiomas. |
 
 ### Criterio de éxito
-- En “Productos” se ven tres bloques; cada uno muestra solo productos de esa categoría.
-- Cada producto tiene ficha con: fotos, precio, información y medidas.
+- En “Productos” se ven tres bloques; cada uno muestra solo productos de esa categoría con card (foto, nombre, precio, “Ver más”).
+- Cada producto tiene ficha con: foto, precio, información, medidas y CTA.
 - Navegación EN/ES coherente: contenido en inglés en `/products`, en español en `/fr/products`.
 
 ---

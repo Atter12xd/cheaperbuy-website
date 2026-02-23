@@ -1,15 +1,16 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import ProductCard from "@components/ui/cards/ProductCard.astro";
 import { SITE } from "@data/constants";
-
-// Solo fotos de public/images — sin content collection, sin madera pesada
-const aluminioImages = ["/images/p13.jpeg", "/images/p14.jpeg", "/images/p20.jpeg", "/images/fo-ro2.jpeg", "/images/fo-ro1.jpeg"];
-const maderaImages = ["/images/p4.jpeg", "/images/p19.jpeg", "/images/p3.jpeg"];
-const metalImages = ["/images/p10.jpeg", "/images/p11.jpeg", "/images/p12.jpeg", "/images/p15.jpeg", "/images/p16.jpeg"];
+import { getProductsByCategory } from "@data/products";
 
 const title = "Productos";
 const subTitle =
-  "En ARCHIPIER BUILDER SUPPLY ofrecemos materiales premium: aluminio, madera y metal. Explora nuestras categorías.";
+  "En ARCHIPIER BUILDER SUPPLY ofrecemos materiales premium: aluminio, madera y metal. Haz clic en un producto para ver precios, beneficios y detalles.";
+
+const aluminioProducts = getProductsByCategory("aluminum");
+const maderaProducts = getProductsByCategory("wood");
+const metalProducts = getProductsByCategory("metal");
 
 const pageTitle = `Productos | ${SITE.title}`;
 ---
@@ -56,19 +57,12 @@ const pageTitle = `Productos | ${SITE.title}`;
         Aluminio
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Puertas y ventanas de aluminio premium. Calidad y durabilidad para tu proyecto.
+        Puertas y ventanas de aluminio premium. Haz clic en un producto para ver precios, beneficios y detalles.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          aluminioImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Producto aluminio"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          aluminioProducts.map((product) => (
+            <ProductCard product={product} locale="fr" />
           ))
         }
       </div>
@@ -79,19 +73,12 @@ const pageTitle = `Productos | ${SITE.title}`;
         Madera
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Próximamente. Productos de madera premium.
+        Productos de madera premium. Haz clic en un producto para ver precios, beneficios y detalles.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          maderaImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Producto madera"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          maderaProducts.map((product) => (
+            <ProductCard product={product} locale="fr" />
           ))
         }
       </div>
@@ -102,19 +89,12 @@ const pageTitle = `Productos | ${SITE.title}`;
         Metal
       </h2>
       <p class="mb-6 text-neutral-600 dark:text-neutral-400">
-        Puertas y herrajes de metal premium. Resistencia y acabado para cada aplicación.
+        Puertas y herrajes de metal premium. Haz clic en un producto para ver precios, beneficios y detalles.
       </p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-5">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          metalImages.map((src) => (
-            <div class="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700">
-              <img
-                src={src}
-                alt="Producto metal"
-                class="h-48 w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          metalProducts.map((product) => (
+            <ProductCard product={product} locale="fr" />
           ))
         }
       </div>
