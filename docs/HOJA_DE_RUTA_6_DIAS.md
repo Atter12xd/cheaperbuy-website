@@ -122,10 +122,10 @@ Para que todo **encaje** y sea **entendible**:
 
 | # | Tarea | Archivos | Qué hacer |
 |---|--------|----------|-----------|
-| 4.1 | Lista cerrada de productos | Documento o tabla (puede ser en este MD o en un data file) | Por categoría: nombre, slug, precio PEN/USD, medidas, origen de imagen. Incluir los que hoy están en las landings de aluminio/madera/metal si se quieren migrar a la collection. |
-| 4.2 | Markdown EN y FR | `src/content/products/en/`, `fr/` | Para cada producto: crear o actualizar `.md` con title, description, category, price_pen, measures, imgCard, imgMain, etc. Mismo slug/id en EN y FR para poder enlazar. |
-| 4.3 | Imágenes | Repo y referencias en frontmatter | Asignar imagen a cada producto; si falta, usar placeholder y anotar “reemplazar por foto real”. Revisar que no haya rutas rotas ni errores de mayúsculas. |
-| 4.4 | Revisión | Navegación manual | Recorrer listado y ficha en ambos idiomas; comprobar que no falte precio, medidas ni foto. |
+| 4.1 | Lista cerrada de productos | `src/data_files/products.ts` | Lista única por categoría: nombre EN/ES, slug, precio PEN/USD, medidas, imagen (`/images/...` desde `public/images`). Los 13 productos están definidos en el data file. |
+| 4.2 | Contenido bilingüe | Mismo data file | Cada producto tiene nameEn, nameEs, detailsEn, detailsEs, benefitsEn, benefitsEs. No se usa content collection markdown; todo en `products.ts`. |
+| 4.3 | Imágenes | `public/images/` | Todas las imágenes de productos son rutas `/images/...` (p3, p4, p10–p20, fo-ro1, fo-ro2). Sin placeholder; revisar mayúsculas en deploy (Linux). |
+| 4.4 | Revisión | Data file + fichas | Todos los productos tienen: precio (PEN y opcional USD), medidas (donde aplica), beneficios, detalles, imagen. Ficha EN en `/products/[slug]`, ES en `/fr/products/[slug]`. |
 
 ### Criterio de éxito
 - Todas las fichas tienen contenido completo (fotos, precio, información, medidas) en ES y EN.

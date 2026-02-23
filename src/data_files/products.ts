@@ -76,6 +76,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Control de ventilación", "Fácil limpieza", "Bisagras duraderas", "Opción tela mosquitera"],
     detailsEn: "Casement aluminum window. Perfect ventilation and easy maintenance. Available in multiple finishes.",
     detailsEs: "Ventana abatible de aluminio. Ventilación óptima y fácil mantenimiento. Disponible en varios acabados.",
+    measures: { width: "0.60 m – 1.20 m", height: "1.00 m – 1.50 m" },
   },
   {
     slug: "aluminio-5",
@@ -89,6 +90,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Perfil de sistema", "Eficiencia energética", "Aislamiento acústico", "Larga vida útil"],
     detailsEn: "High-performance aluminum system door. Ideal for projects requiring thermal and acoustic insulation.",
     detailsEs: "Puerta de sistema de aluminio de alto rendimiento. Ideal para proyectos que requieren aislamiento térmico y acústico.",
+    measures: { width: "hasta 3 m", height: "hasta 2.50 m" },
   },
   // Wood
   {
@@ -117,6 +119,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Diseño en paneles", "Estructura robusta", "Aspecto elegante", "Fácil instalación"],
     detailsEn: "Wood door with panel design. Combines aesthetics and resistance for homes and offices.",
     detailsEs: "Puerta de madera con diseño en paneles. Combina estética y resistencia para hogares y oficinas.",
+    measures: { width: "0.80 m – 1.00 m", height: "2.00 m – 2.20 m" },
   },
   {
     slug: "madera-3",
@@ -130,6 +133,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Ligera", "Acabado liso", "Uso interior", "Entrega rápida"],
     detailsEn: "Interior wood door. Light and resistant, ideal for bedrooms and hallways.",
     detailsEs: "Puerta interior de madera. Ligera y resistente, ideal para dormitorios y pasillos.",
+    measures: { width: "0.70 m – 0.90 m", height: "2.10 m" },
   },
   // Metal
   {
@@ -158,6 +162,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Marco reforzado", "Anti-palanca", "Cerradura durable", "Medida a pedido"],
     detailsEn: "Security metal door. Reinforced structure and high-resistance lock for maximum protection.",
     detailsEs: "Puerta de metal de seguridad. Estructura reforzada y cerradura de alta resistencia para máxima protección.",
+    measures: { width: "0.90 m – 1.20 m", height: "2.10 m – 2.40 m" },
   },
   {
     slug: "metal-3",
@@ -171,6 +176,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Una hoja", "Fácil instalación", "Resistente al clima", "Acabado pintado"],
     detailsEn: "Single leaf metal door. Ideal for side entrances, storage and utility areas.",
     detailsEs: "Puerta de metal de una hoja. Ideal para entradas laterales, almacenes y áreas de servicio.",
+    measures: { width: "0.80 m – 1.00 m", height: "2.00 m – 2.20 m" },
   },
   {
     slug: "metal-4",
@@ -184,6 +190,7 @@ export const PRODUCTS: Product[] = [
     benefitsEs: ["Grado industrial", "Opción resistente al fuego", "Uso rudo", "Larga vida"],
     detailsEn: "Industrial metal door. For warehouses, workshops and high-traffic commercial access.",
     detailsEs: "Puerta de metal industrial. Para bodegas, talleres y acceso comercial de alto tráfico.",
+    measures: { width: "1.00 m – 1.50 m", height: "2.10 m – 2.70 m" },
   },
   {
     slug: "metal-5",
